@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class OracleConnection {
+	@SuppressWarnings("unused")
 	private static Connection connection;
 	
 	public static Connection getConnection() throws ClassNotFoundException, SQLException {
