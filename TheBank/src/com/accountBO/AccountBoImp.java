@@ -35,9 +35,10 @@ public class AccountBoImp implements AccountBO {
 	}
 
 	@Override
-	public List<Account> getAccountsByStatus(int status) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Account> getAccountsByStatus(int status) throws BusinessException {
+		AccountDAO ad = new AccountDaoImp();
+		List<Account> accountList = ad.getAccountsByStatus(status);
+		return accountList;
 	}
 
 	@Override

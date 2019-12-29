@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -50,9 +51,33 @@ public class AccountDaoImp implements AccountDAO {
 	}
 
 	@Override
-	public List<Account> getAccountsByStatus(int status) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Account> getAccountsByStatus(int status) throws BusinessException {
+		List<Account> accounts = new ArrayList<>();
+		
+		try (Connection connection = OracleConnection.getConnection()) {
+			String sql = "SELECT a.account_number, bu.first_name, bu.last_name, a.creation_date, a.status "
+					+ "FROM account a "
+					+ "INNER JOIN bank_user bu "
+					+ "ON a.user_id = bu.user_id "
+					+ "WHERE a.status = ?";
+			PreparedStatement ps = connection.prepareStatement(sql);
+			ps.setInt(1, status);
+			ResultSet rs = ps.executeQuery();
+			
+			while (rs.next()) {
+				accounts.add(new Account(
+						rs.getInt(1),
+						rs.getString(2),
+						rs.getString(3),
+						rs.getDate(4),
+						rs.getInt(5)
+						));
+			}
+			
+			return accounts;
+		} catch (ClassNotFoundException | SQLException e) {
+			throw new BusinessException("Internal error: " + e);
+		}
 	}
 
 	@Override
