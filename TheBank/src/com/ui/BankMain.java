@@ -6,31 +6,33 @@ import com.bank.exception.BusinessException;
 import com.bank.to.User;
 import com.userBO.UserBO;
 import com.userBO.UserBoImp;
+import org.apache.log4j.Logger;
+
 
 public class BankMain {
 	public static User user = new User();
+	private static Logger log = Logger.getLogger(BankMain.class);
 	static final String linebreak = "------------------------------------------------------------------------------------------------------------";
-	
 	public static void displayTitle() {
-		System.out.println("--------------------------------------------- WELCOME TO: -------------------------------------------------");
-		System.out.println("                  ___           ___                                  ___           ___           ___     ");
-		System.out.println("      ___        /__/\\         /  /\\                  _____         /  /\\         /__/\\         /__/|    ");
-		System.out.println("     /  /\\       \\  \\:\\       /  /:/_                /  /::\\       /  /::\\        \\  \\:\\       |  |:|    ");
-		System.out.println("    /  /:/        \\__\\:\\     /  /:/ /\\              /  /:/\\:\\     /  /:/\\:\\        \\  \\:\\      |  |:|    ");
-		System.out.println("   /  /:/     ___ /  /::\\   /  /:/ /:/_            /  /:/~/::\\   /  /:/~/::\\   _____\\__\\:\\   __|  |:|    ");
-		System.out.println("  /  /::\\    /__/\\  /:/\\:\\ /__/:/ /:/ /\\          /__/:/ /:/\\:| /__/:/ /:/\\:\\ /__/::::::::\\ /__/\\_|:|____");
-		System.out.println(" /__/:/\\:\\   \\  \\:\\/:/__\\/ \\  \\:\\/:/ /:/          \\  \\:\\/:/~/:/ \\  \\:\\/:/__\\/ \\  \\:\\~~\\~~\\/ \\  \\:\\/:::::/");
-		System.out.println(" \\__\\/  \\:\\   \\  \\::/       \\  \\::/ /:/            \\  \\::/ /:/   \\  \\::/       \\  \\:\\  ~~~   \\  \\::/~~~~ ");
-		System.out.println("      \\  \\:\\   \\  \\:\\        \\  \\:\\/:/              \\  \\:\\/:/     \\  \\:\\        \\  \\:\\        \\  \\:\\     ");
-		System.out.println("       \\__\\/    \\  \\:\\        \\  \\::/                \\  \\::/       \\  \\:\\        \\  \\:\\        \\  \\:\\    ");
-		System.out.println("                 \\__\\/         \\__\\/                  \\__\\/         \\__\\/         \\__\\/         \\__\\/ ");
-		System.out.println(linebreak + "\n");
-		System.out.println("If you are an existing user, please sign in. If you are a new customer and would like to apply for a new\naccount, please see one of our make-believe representatives at our make-believe teller stations.\n");
+		log.info("--------------------------------------------- WELCOME TO: -------------------------------------------------");
+		log.info("                  ___           ___                                  ___           ___           ___     ");
+		log.info("      ___        /__/\\         /  /\\                  _____         /  /\\         /__/\\         /__/|    ");
+		log.info("     /  /\\       \\  \\:\\       /  /:/_                /  /::\\       /  /::\\        \\  \\:\\       |  |:|    ");
+		log.info("    /  /:/        \\__\\:\\     /  /:/ /\\              /  /:/\\:\\     /  /:/\\:\\        \\  \\:\\      |  |:|    ");
+		log.info("   /  /:/     ___ /  /::\\   /  /:/ /:/_            /  /:/~/::\\   /  /:/~/::\\   _____\\__\\:\\   __|  |:|    ");
+		log.info("  /  /::\\    /__/\\  /:/\\:\\ /__/:/ /:/ /\\          /__/:/ /:/\\:| /__/:/ /:/\\:\\ /__/::::::::\\ /__/\\_|:|____");
+		log.info(" /__/:/\\:\\   \\  \\:\\/:/__\\/ \\  \\:\\/:/ /:/          \\  \\:\\/:/~/:/ \\  \\:\\/:/__\\/ \\  \\:\\~~\\~~\\/ \\  \\:\\/:::::/");
+		log.info(" \\__\\/  \\:\\   \\  \\::/       \\  \\::/ /:/            \\  \\::/ /:/   \\  \\::/       \\  \\:\\  ~~~   \\  \\::/~~~~ ");
+		log.info("      \\  \\:\\   \\  \\:\\        \\  \\:\\/:/              \\  \\:\\/:/     \\  \\:\\        \\  \\:\\        \\  \\:\\     ");
+		log.info("       \\__\\/    \\  \\:\\        \\  \\::/                \\  \\::/       \\  \\:\\        \\  \\:\\        \\  \\:\\    ");
+		log.info("                 \\__\\/         \\__\\/                  \\__\\/         \\__\\/         \\__\\/         \\__\\/ ");
+		log.info(linebreak + "\n");
+		log.info("If you are an existing user, please sign in. If you are a new customer and would like to apply for a new\naccount, please see one of our make-believe representatives at our make-believe teller stations.\n");
 	}
 
-	public static User getUser(String[] upass) throws BusinessException {
+	public static User getUser(String username, String password) throws BusinessException {
 		UserBO user = new UserBoImp();
-		return user.getUserByCredentials(upass[0], upass[1]);
+		return user.getUserByCredentials(username, password);
 	}
 	
 	public static int getApplyCount() {
@@ -44,71 +46,128 @@ public class BankMain {
 	}
 	
 	public static void displayEmployeeMenu() {
-		int menuSequence = 0;
-		System.out.println("Please select from these available actions:");
-		System.out.println(++menuSequence + ". View pending account applications. (" + getApplyCount() + ")");
-		System.out.println(++menuSequence + ". Retrieve customer account info.");
-		System.out.println(++menuSequence + ". Retrieve transaction log.");
-		System.out.println(++menuSequence + ". Register new user.");
-		System.out.println(++menuSequence + ". Log out.");
-		System.out.println(++menuSequence + ". Exit application.");
+		log.info("\nPlease select from these available actions:");
+		log.info("1. View pending account applications. (" + getApplyCount() + ")");
+		log.info("2. Retrieve customer account info.");
+		log.info("3. Retrieve transaction log.");
+		log.info("4. Register new user.");
+		log.info("5. Sign out.");
+		log.info("6. Exit application.");
 	}
 	
 	public static void displayCustomerMenu() {
-		System.out.println("Please select from these available actions:");
-		System.out.println("1. Apply for a new account.");
-		System.out.println("2. View account balance.");
-		System.out.println("3. Make a withdrawal.");
-		System.out.println("4. Make a deposit");
-		System.out.println("5. Post Money Transfer.");
-		System.out.println("6. Accept/Reject incoming transfers.(" + getPendingTransferCount() + ")");
-		System.out.println("7. Log out.");
-		System.out.println("8. Exit application.");
+		log.info("\nPlease select from these available actions:");
+		log.info("1. Apply for a new account.");
+		log.info("2. View account balance.");
+		log.info("3. Make a withdrawal.");
+		log.info("4. Make a deposit");
+		log.info("5. Post Money Transfer.");
+		log.info("6. Accept/Reject incoming transfers.(" + getPendingTransferCount() + ")");
+		log.info("7. Sign out.");
+		log.info("8. Exit application.");
 	}
 		
 	public static void main(String[] args) {
-		User user;
-		int selection = 0;
 		Scanner scanner = new Scanner(System.in);
+		User user;
+		String username;
+		String password;
+		int selection = 0;
+		boolean runAppLoop = true;
 		
-		displayTitle();
-		System.out.println("Username:");
-		String username = scanner.nextLine();
-		System.out.println("Password: ");
-		String password = scanner.nextLine();
-		String[] userCredentials = {username, password};
-		
-		try {
-			user = getUser(userCredentials);
+		while (runAppLoop) {
+			user = null;
+			username = "";
+			password = "";
+			selection = 0;
+			displayTitle();
 			
-			switch (user.getArchetype()) {
-			case 0:
-				while (selection < 1 || selection > 5) {
-					displayEmployeeMenu();
-					selection = Integer.parseInt(scanner.nextLine());
-					if (selection < 1 && selection > 5) {
-						System.out.println("Please enter a valid number (1-5).");
+			// retrieve user credentials
+			log.info("Username:");
+			username = scanner.nextLine();
+			log.info("Password: ");
+			password = scanner.nextLine();			
+			
+			// Display user main menu
+			try {
+				user = getUser(username, password);
+				
+				switch (user.getArchetype()) {
+				// Employee
+				case 0:
+					while (selection < 1 || selection > 6) {
+						displayEmployeeMenu();
+						selection = Integer.parseInt(scanner.nextLine());
+						if (selection < 1 && selection > 6) {
+							log.info("Please enter a valid number (1-5).");
+						}
 					}
-				}
-				break;
-			case 1:
-				while (selection < 1 || selection > 8) {
-					displayEmployeeMenu();
-					selection = Integer.parseInt(scanner.nextLine());
-					if (selection < 1 && selection > 8) {
-						System.out.println("Please enter a valid number (1-8).");
+					
+					switch (selection) {
+					case 1:		// View pending account applications
+						break;
+					case 2: 	// Retrieve customer account info.
+						break;
+					case 3: 	// Retrieve transaction log.
+						break;
+					case 4:		// Register New User
+						break;
+					case 5:		// Sign out
+						break;
+					case 6:		// exit application
+						runAppLoop = false;
+						log.info("Goodbye.");
+						break;
+					default:
+						
 					}
+					
+					break;
+					
+				// Customer
+				case 1:
+					while (selection < 1 || selection > 8) {
+						displayEmployeeMenu();
+						selection = Integer.parseInt(scanner.nextLine());
+						if (selection < 1 && selection > 8) {
+							log.info("Please enter a valid number (1-8).");
+						}
+						
+						switch (selection) {
+						case 1:		// Apply for new account
+							break;
+						case 2: 	// View Account Balance
+							break;
+						case 3: 	// Make Withdrawal
+							break;
+						case 4:		// Make deposit
+							break;
+						case 5: 	// Post money transfer
+							break;
+						case 6:		// Accept / Reject incoming transfers
+							break;
+						case 7: 	// Sign out
+							break;
+						case 8:		// Exit application
+							runAppLoop = false;
+							log.info("Goodbye.");
+							break;
+						default:
+							
+						}
+					}
+					break;
+				default:
+					log.info("User type error.");
 				}
-				break;
-			default:
-				System.out.println("User type error.");
-			}		
-		} catch (BusinessException e) {
-			System.out.println(e.getMessage());
+			} catch (BusinessException e) {
+				log.info(e.getMessage());
+			}
+			
 		}
 		
-		System.out.println("You selected: " + selection + ".\nGoodbye.");
-		scanner.close();
+		log.info("You selected: " + selection + ".\nGoodbye.");
+//		scanner.close();
 	}
 
 }

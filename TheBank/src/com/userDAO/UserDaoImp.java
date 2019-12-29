@@ -4,7 +4,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Date;
 import java.util.List;
 
 import com.bank.exception.BusinessException;
@@ -14,7 +13,6 @@ import com.dbutil.OracleConnection;
 public class UserDaoImp implements UserDAO {
 	@Override
 	public User getUserByCredentials(String username, String password) throws BusinessException {
-		System.out.println("HOHO");
 		try (Connection connection = OracleConnection.getConnection()){
 			String sql = "SELECT first_name, last_name, archetype, ssn, "
 						+ " home_phone, mobile_phone, email, street_address, "
@@ -23,7 +21,7 @@ public class UserDaoImp implements UserDAO {
 						+ " WHERE username = ? AND password = ?";
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
 			preparedStatement.setString(1, username);
-			preparedStatement.setString(2,  username);
+			preparedStatement.setString(2,  password);
 			ResultSet result = preparedStatement.executeQuery();
 			
 			if (result.next()) {
@@ -45,10 +43,10 @@ public class UserDaoImp implements UserDAO {
 						result.getDate("date_created"));
 				return user;
 			} else {
-				throw new BusinessException("User / password combination not found.");
+				throw new BusinessException("Sign-in failed: User / password combination not found."
+						+ "\nIf you believe this has occurred by mistake, please contact an employee.\n\n");
 			}
 		} catch (ClassNotFoundException | SQLException e) {
-			System.out.println(e);
 			throw new BusinessException("Internal error occured... \n" + e);
 		}
 	}
