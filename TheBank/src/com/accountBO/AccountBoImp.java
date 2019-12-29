@@ -3,6 +3,9 @@ package com.accountBO;
 import java.util.Date;
 import java.util.List;
 
+import com.accountDAO.AccountDAO;
+import com.accountDAO.AccountDaoImp;
+import com.bank.exception.BusinessException;
 import com.bank.to.Account;
 
 public class AccountBoImp implements AccountBO {
@@ -17,6 +20,12 @@ public class AccountBoImp implements AccountBO {
 	public Account getAccountByUserId(int userId) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+	
+	@Override
+	public int getPendingApprovalCount() throws BusinessException {
+		AccountDAO act = new AccountDaoImp();
+		return act.getPendingApprovalCount();
 	}
 
 	@Override

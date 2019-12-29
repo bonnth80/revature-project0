@@ -1,9 +1,15 @@
 package com.accountDAO;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Date;
 import java.util.List;
 
+import com.bank.exception.BusinessException;
 import com.bank.to.Account;
+import com.dbutil.OracleConnection;
 
 public class AccountDaoImp implements AccountDAO {
 
@@ -17,6 +23,24 @@ public class AccountDaoImp implements AccountDAO {
 	public Account getAccountByUserId(int userId) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+	
+	@Override
+	public int getPendingApprovalCount() throws BusinessException {
+		int count = 0;
+		
+		try (Connection connection = OracleConnection.getConnection()) {
+			String sql = "SELECT COUNT(*) FROM account "
+					+ "WHERE status = 0";
+			PreparedStatement ps = connection.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			rs.next();
+			count = rs.getInt(1);			
+			
+		} catch (ClassNotFoundException | SQLException e) {
+			throw new BusinessException("Internal error: " + e);
+		}
+		return count;
 	}
 
 	@Override

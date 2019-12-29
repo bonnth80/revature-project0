@@ -2,18 +2,25 @@ package com.ui;
 
 import java.util.Scanner;
 
+import org.apache.log4j.Logger;
+
+import com.accountBO.AccountBO;
+import com.accountBO.AccountBoImp;
 import com.bank.exception.BusinessException;
 import com.bank.to.User;
+import com.transferBO.TransferBO;
+import com.transferBO.TransferBoImp;
 import com.userBO.UserBO;
 import com.userBO.UserBoImp;
-import org.apache.log4j.Logger;
 
 
 public class BankMain {
-	public static User user = new User();
+	private static User user = new User();
 	private static Logger log = Logger.getLogger(BankMain.class);
-	static final String linebreak = "------------------------------------------------------------------------------------------------------------";
-	public static void displayTitle() {
+	private static final String linebreak = "------------------------------------------------------------------------------------------------------------";
+	
+	// Main methods
+	private static void displayTitle() {
 		log.info("--------------------------------------------- WELCOME TO: -------------------------------------------------");
 		log.info("                  ___           ___                                  ___           ___           ___     ");
 		log.info("      ___        /__/\\         /  /\\                  _____         /  /\\         /__/\\         /__/|    ");
@@ -30,41 +37,45 @@ public class BankMain {
 		log.info("If you are an existing user, please sign in. If you are a new customer and would like to apply for a new\naccount, please see one of our make-believe representatives at our make-believe teller stations.\n");
 	}
 
-	public static User getUser(String username, String password) throws BusinessException {
+	private static User getUser(String username, String password) throws BusinessException {
 		UserBO user = new UserBoImp();
 		return user.getUserByCredentials(username, password);
 	}
 	
-	public static int getApplyCount() {
-		//stub
-		return 2;
+	private static int getApplyCount() throws BusinessException {
+		AccountBO acct = new AccountBoImp();
+		return acct.getPendingApprovalCount();
 	}	
 	
-	public static int getPendingTransferCount() {
-		//stub
-		return 2;
+	private static int getPendingTransferCount(int accountId) throws BusinessException {
+		TransferBO transfer = new TransferBoImp();
+		return transfer.getTransferCount(accountId);
 	}
 	
-	public static void displayEmployeeMenu() {
-		log.info("\nPlease select from these available actions:");
-		log.info("1. View pending account applications. (" + getApplyCount() + ")");
-		log.info("2. Retrieve customer account info.");
-		log.info("3. Retrieve transaction log.");
-		log.info("4. Register new user.");
-		log.info("5. Sign out.");
-		log.info("6. Exit application.");
+	private static void displayEmployeeMenu() {
+		try {
+			log.info("\nPlease select from these available actions:");
+			log.info("1. View pending account applications. (" + getApplyCount() + ")");
+			log.info("2. Retrieve customer account info.");
+			log.info("3. Retrieve transaction log.");
+			log.info("4. Register new user.");
+			log.info("5. Sign out.");
+			log.info("6. Exit application.");
+			
+		} catch (BusinessException e) {
+			log.info(e);
+		}
 	}
 	
-	public static void displayCustomerMenu() {
+	private static void displayCustomerMenu() {
 		log.info("\nPlease select from these available actions:");
 		log.info("1. Apply for a new account.");
 		log.info("2. View account balance.");
 		log.info("3. Make a withdrawal.");
 		log.info("4. Make a deposit");
 		log.info("5. Post Money Transfer.");
-		log.info("6. Accept/Reject incoming transfers.(" + getPendingTransferCount() + ")");
-		log.info("7. Sign out.");
-		log.info("8. Exit application.");
+		log.info("6. Sign out.");
+		log.info("7. Exit application.");
 	}
 		
 	public static void main(String[] args) {
@@ -93,7 +104,7 @@ public class BankMain {
 				user = getUser(username, password);
 				
 				switch (user.getArchetype()) {
-				// Employee
+				// Employee Menu
 				case 0:
 					while (selection < 1 || selection > 6) {
 						displayEmployeeMenu();
@@ -105,6 +116,7 @@ public class BankMain {
 					
 					switch (selection) {
 					case 1:		// View pending account applications
+						
 						break;
 					case 2: 	// Retrieve customer account info.
 						break;
@@ -124,13 +136,13 @@ public class BankMain {
 					
 					break;
 					
-				// Customer
+				// Customer Menu
 				case 1:
-					while (selection < 1 || selection > 8) {
+					while (selection < 1 || selection > 7) {
 						displayEmployeeMenu();
 						selection = Integer.parseInt(scanner.nextLine());
-						if (selection < 1 && selection > 8) {
-							log.info("Please enter a valid number (1-8).");
+						if (selection < 1 && selection > 7) {
+							log.info("Please enter a valid number (1-7).");
 						}
 						
 						switch (selection) {
@@ -144,11 +156,9 @@ public class BankMain {
 							break;
 						case 5: 	// Post money transfer
 							break;
-						case 6:		// Accept / Reject incoming transfers
+						case 6: 	// Sign out
 							break;
-						case 7: 	// Sign out
-							break;
-						case 8:		// Exit application
+						case 7:		// Exit application
 							runAppLoop = false;
 							log.info("Goodbye.");
 							break;
@@ -167,7 +177,6 @@ public class BankMain {
 		}
 		
 		log.info("You selected: " + selection + ".\nGoodbye.");
-//		scanner.close();
 	}
 
 }

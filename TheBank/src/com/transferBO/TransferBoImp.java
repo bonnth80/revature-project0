@@ -3,7 +3,10 @@ package com.transferBO;
 import java.util.Date;
 import java.util.List;
 
+import com.bank.exception.BusinessException;
 import com.bank.to.Transfer;
+import com.transferDAO.TransferDAO;
+import com.transferDAO.TransferDaoImp;
 
 public class TransferBoImp implements TransferBO {
 
@@ -12,7 +15,13 @@ public class TransferBoImp implements TransferBO {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+	
+	@Override
+	public int getTransferCount(int accountId) throws BusinessException {
+		TransferDAO dao = new TransferDaoImp();
+		return dao.getTransferCount(accountId);
+	}
+	
 	@Override
 	public List<Transfer> getTransfersBySourceAccount(int accountId) {
 		// TODO Auto-generated method stub

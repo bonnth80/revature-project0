@@ -484,3 +484,63 @@ Please select from these available actions:
 2019-12-29 15:33:11 INFO  BankMain:119 - Goodbye.
 2019-12-29 15:33:11 INFO  BankMain:169 - You selected: 6.
 Goodbye.
+2019-12-29 16:14:09 INFO  BankMain:22 - --------------------------------------------- WELCOME TO: -------------------------------------------------
+2019-12-29 16:14:09 INFO  BankMain:23 -                   ___           ___                                  ___           ___           ___     
+2019-12-29 16:14:09 INFO  BankMain:24 -       ___        /__/\         /  /\                  _____         /  /\         /__/\         /__/|    
+2019-12-29 16:14:09 INFO  BankMain:25 -      /  /\       \  \:\       /  /:/_                /  /::\       /  /::\        \  \:\       |  |:|    
+2019-12-29 16:14:09 INFO  BankMain:26 -     /  /:/        \__\:\     /  /:/ /\              /  /:/\:\     /  /:/\:\        \  \:\      |  |:|    
+2019-12-29 16:14:09 INFO  BankMain:27 -    /  /:/     ___ /  /::\   /  /:/ /:/_            /  /:/~/::\   /  /:/~/::\   _____\__\:\   __|  |:|    
+2019-12-29 16:14:09 INFO  BankMain:28 -   /  /::\    /__/\  /:/\:\ /__/:/ /:/ /\          /__/:/ /:/\:| /__/:/ /:/\:\ /__/::::::::\ /__/\_|:|____
+2019-12-29 16:14:09 INFO  BankMain:29 -  /__/:/\:\   \  \:\/:/__\/ \  \:\/:/ /:/          \  \:\/:/~/:/ \  \:\/:/__\/ \  \:\~~\~~\/ \  \:\/:::::/
+2019-12-29 16:14:09 INFO  BankMain:30 -  \__\/  \:\   \  \::/       \  \::/ /:/            \  \::/ /:/   \  \::/       \  \:\  ~~~   \  \::/~~~~ 
+2019-12-29 16:14:09 INFO  BankMain:31 -       \  \:\   \  \:\        \  \:\/:/              \  \:\/:/     \  \:\        \  \:\        \  \:\     
+2019-12-29 16:14:09 INFO  BankMain:32 -        \__\/    \  \:\        \  \::/                \  \::/       \  \:\        \  \:\        \  \:\    
+2019-12-29 16:14:09 INFO  BankMain:33 -                  \__\/         \__\/                  \__\/         \__\/         \__\/         \__\/ 
+2019-12-29 16:14:09 INFO  BankMain:34 - ------------------------------------------------------------------------------------------------------------
+
+2019-12-29 16:14:09 INFO  BankMain:35 - If you are an existing user, please sign in. If you are a new customer and would like to apply for a new
+account, please see one of our make-believe representatives at our make-believe teller stations.
+
+2019-12-29 16:14:09 INFO  BankMain:95 - Username:
+2019-12-29 16:14:11 INFO  BankMain:97 - Password: 
+2019-12-29 16:14:12 INFO  BankMain:55 - 
+Please select from these available actions:
+2019-12-29 16:14:12 INFO  BankMain:56 - 1. View pending account applications. (4)
+2019-12-29 16:14:12 INFO  BankMain:57 - 2. Retrieve customer account info.
+2019-12-29 16:14:12 INFO  BankMain:58 - 3. Retrieve transaction log.
+2019-12-29 16:14:12 INFO  BankMain:59 - 4. Register new user.
+2019-12-29 16:14:12 INFO  BankMain:60 - 5. Sign out.
+2019-12-29 16:14:12 INFO  BankMain:61 - 6. Exit application.
+2019-12-29 16:14:22 INFO  BankMain:128 - Goodbye.
+2019-12-29 16:14:22 INFO  BankMain:176 - You selected: 6.
+Goodbye.
+2019-12-29 16:15:23 INFO  BankMain:22 - --------------------------------------------- WELCOME TO: -------------------------------------------------
+2019-12-29 16:15:23 INFO  BankMain:23 -                   ___           ___                                  ___           ___           ___     
+2019-12-29 16:15:23 INFO  BankMain:24 -       ___        /__/\         /  /\                  _____         /  /\         /__/\         /__/|    
+2019-12-29 16:15:23 INFO  BankMain:25 -      /  /\       \  \:\       /  /:/_                /  /::\       /  /::\        \  \:\       |  |:|    
+2019-12-29 16:15:23 INFO  BankMain:26 -     /  /:/        \__\:\     /  /:/ /\              /  /:/\:\     /  /:/\:\        \  \:\      |  |:|    
+2019-12-29 16:15:23 INFO  BankMain:27 -    /  /:/     ___ /  /::\   /  /:/ /:/_            /  /:/~/::\   /  /:/~/::\   _____\__\:\   __|  |:|    
+2019-12-29 16:15:23 INFO  BankMain:28 -   /  /::\    /__/\  /:/\:\ /__/:/ /:/ /\          /__/:/ /:/\:| /__/:/ /:/\:\ /__/::::::::\ /__/\_|:|____
+2019-12-29 16:15:23 INFO  BankMain:29 -  /__/:/\:\   \  \:\/:/__\/ \  \:\/:/ /:/          \  \:\/:/~/:/ \  \:\/:/__\/ \  \:\~~\~~\/ \  \:\/:::::/
+2019-12-29 16:15:23 INFO  BankMain:30 -  \__\/  \:\   \  \::/       \  \::/ /:/            \  \::/ /:/   \  \::/       \  \:\  ~~~   \  \::/~~~~ 
+2019-12-29 16:15:23 INFO  BankMain:31 -       \  \:\   \  \:\        \  \:\/:/              \  \:\/:/     \  \:\        \  \:\        \  \:\     
+2019-12-29 16:15:23 INFO  BankMain:32 -        \__\/    \  \:\        \  \::/                \  \::/       \  \:\        \  \:\        \  \:\    
+2019-12-29 16:15:23 INFO  BankMain:33 -                  \__\/         \__\/                  \__\/         \__\/         \__\/         \__\/ 
+2019-12-29 16:15:23 INFO  BankMain:34 - ------------------------------------------------------------------------------------------------------------
+
+2019-12-29 16:15:23 INFO  BankMain:35 - If you are an existing user, please sign in. If you are a new customer and would like to apply for a new
+account, please see one of our make-believe representatives at our make-believe teller stations.
+
+2019-12-29 16:15:23 INFO  BankMain:95 - Username:
+2019-12-29 16:15:25 INFO  BankMain:97 - Password: 
+2019-12-29 16:15:26 INFO  BankMain:55 - 
+Please select from these available actions:
+2019-12-29 16:15:26 INFO  BankMain:56 - 1. View pending account applications. (4)
+2019-12-29 16:15:26 INFO  BankMain:57 - 2. Retrieve customer account info.
+2019-12-29 16:15:26 INFO  BankMain:58 - 3. Retrieve transaction log.
+2019-12-29 16:15:26 INFO  BankMain:59 - 4. Register new user.
+2019-12-29 16:15:26 INFO  BankMain:60 - 5. Sign out.
+2019-12-29 16:15:26 INFO  BankMain:61 - 6. Exit application.
+2019-12-29 16:15:28 INFO  BankMain:129 - Goodbye.
+2019-12-29 16:15:28 INFO  BankMain:177 - You selected: 6.
+Goodbye.
