@@ -1,8 +1,8 @@
-package business;
+package com.bank.to;
 
 import java.util.Date;
 
-public abstract class User {
+public class User {
 	private String firstName;
 	private String lastName;
 	private int archetype;
@@ -18,6 +18,50 @@ public abstract class User {
 	private String userName;
 	private String password;
 	private Date dateCreated;
+	
+	// Consructors
+	public User() {
+		
+	};
+	
+	public User (String firstName,
+			String lastName,
+			int archetype,
+			String ssn,
+			String homePhone,
+			String mobilePhone,
+			String email,
+			String streetAddress,
+			String city,
+			String state,
+			String country,
+			String zip,
+			String userName,
+			String password,
+			Date dateCreated) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.archetype = archetype;
+		this.ssn = ssn;
+		this.homePhone = homePhone;
+		this.mobilePhone = mobilePhone;
+		this.email = email;
+		this.streetAddress = streetAddress;
+		this.city = city;
+		this.state = state;
+		this.country = country;
+		this.zip = zip;
+		this.userName = userName;
+		this.password = password;
+		this.dateCreated = dateCreated;
+	}
+	
+	// Overrides
+	@Override
+	public String toString() {
+		
+		return "Username: " + getUserName() + "\nType: " + getArchetype();
+	}
 	
 	// Mutators and Accessors
 	public String getFirstName() {
