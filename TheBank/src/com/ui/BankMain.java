@@ -1,11 +1,11 @@
 package com.ui;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Scanner;
 
 import com.bank.exception.BusinessException;
 import com.bank.to.User;
+import com.userBO.UserBO;
+import com.userBO.UserBoImp;
 
 public class BankMain {
 	public static User user = new User();
@@ -29,29 +29,8 @@ public class BankMain {
 	}
 
 	public static User getUser(String[] upass) throws BusinessException {
-		// stub
-		SimpleDateFormat sdf = new SimpleDateFormat("MM//dd//yyyy");
-		sdf.setLenient(false);
-		String creationDate = "12//12//2019";
-		try {
-			return new User("John",
-					"Doe",
-					0,
-					"1112223333",
-					"5551234567",
-					"6661234567",
-					"jdoe@email.com",
-					"10 Street Dr",
-					"Knowhere",
-					"TX",
-					"USA",
-					"38381",
-					upass[0],
-					upass[1],
-					sdf.parse(creationDate));
-		} catch (ParseException e) {
-			throw new BusinessException("Creation date: " + creationDate + " is invalid.");
-		}
+		UserBO user = new UserBoImp();
+		return user.getUserByCredentials(upass[0], upass[1]);
 	}
 	
 	public static int getApplyCount() {
@@ -65,12 +44,14 @@ public class BankMain {
 	}
 	
 	public static void displayEmployeeMenu() {
+		int menuSequence = 0;
 		System.out.println("Please select from these available actions:");
-		System.out.println("1. View pending account applications. (" + getApplyCount() + ")");
-		System.out.println("2. Retrieve customer account info.");
-		System.out.println("3. Retrieve transaction log.");
-		System.out.println("4. Log out.");
-		System.out.println("5. Exit application.");
+		System.out.println(++menuSequence + ". View pending account applications. (" + getApplyCount() + ")");
+		System.out.println(++menuSequence + ". Retrieve customer account info.");
+		System.out.println(++menuSequence + ". Retrieve transaction log.");
+		System.out.println(++menuSequence + ". Register new user.");
+		System.out.println(++menuSequence + ". Log out.");
+		System.out.println(++menuSequence + ". Exit application.");
 	}
 	
 	public static void displayCustomerMenu() {

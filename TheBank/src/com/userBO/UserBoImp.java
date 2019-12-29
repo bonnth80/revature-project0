@@ -1,14 +1,18 @@
 package com.userBO;
 
 import java.util.List;
-
+import com.bank.exception.BusinessException;
 import com.bank.to.User;
+import com.userDAO.UserDAO;
+import com.userDAO.UserDaoImp;
 
 public class UserBoImp implements UserBO {
 	@Override
-	public User getUserByCredentials(String username, String password) {
-		// TODO Auto-generated method stub
-		return null;
+	public User getUserByCredentials(String username, String password) throws BusinessException {
+		UserDAO dao = new UserDaoImp();
+
+		
+		return dao.getUserByCredentials(username, password);
 	}
 
 	@Override

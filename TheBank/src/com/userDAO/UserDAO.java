@@ -2,10 +2,11 @@ package com.userDAO;
 
 import java.util.List;
 
+import com.bank.exception.BusinessException;
 import com.bank.to.User;
 
 public interface UserDAO {
-	User getUserByCredentials(String username, String password);
+	User getUserByCredentials(String username, String password) throws BusinessException;
 	User getUserById(int id);
 	List<User> getUsersByFullName(String firstName, String lastName);
 	List<User> getUsersByArchetype(int archetype);

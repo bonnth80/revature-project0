@@ -1,14 +1,56 @@
 package com.userDAO;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Date;
 import java.util.List;
 
+import com.bank.exception.BusinessException;
 import com.bank.to.User;
+import com.dbutil.OracleConnection;
 
 public class UserDaoImp implements UserDAO {
 	@Override
-	public User getUserByCredentials(String username, String password) {
-		// TODO Auto-generated method stub
-		return null;
+	public User getUserByCredentials(String username, String password) throws BusinessException {
+		System.out.println("HOHO");
+		try (Connection connection = OracleConnection.getConnection()){
+			String sql = "SELECT first_name, last_name, archetype, ssn, "
+						+ " home_phone, mobile_phone, email, street_address, "
+						+ "city, state, country, zip, username, password, date_created"
+						+ " FROM bank_user"
+						+ " WHERE username = ? AND password = ?";
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setString(1, username);
+			preparedStatement.setString(2,  username);
+			ResultSet result = preparedStatement.executeQuery();
+			
+			if (result.next()) {
+				User user = new User(
+						result.getString("first_name"),
+						result.getString("last_name"),
+						result.getInt("archetype"),
+						result.getString("ssn"),
+						result.getString("home_phone"),
+						result.getString("mobile_phone"),
+						result.getString("email"),
+						result.getString("street_address"),
+						result.getString("city"),
+						result.getString("state"),
+						result.getString("country"),
+						result.getString("zip"),
+						username,
+						password,
+						result.getDate("date_created"));
+				return user;
+			} else {
+				throw new BusinessException("User / password combination not found.");
+			}
+		} catch (ClassNotFoundException | SQLException e) {
+			System.out.println(e);
+			throw new BusinessException("Internal error occured... \n" + e);
+		}
 	}
 	
 	@Override
