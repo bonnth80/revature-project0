@@ -5,6 +5,11 @@ import java.util.List;
 import com.bank.to.User;
 
 public class UserBoImp implements UserBO {
+	@Override
+	public User getUserByCredentials(String username, String password) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 	@Override
 	public User getUserById(int id) {

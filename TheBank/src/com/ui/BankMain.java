@@ -25,7 +25,7 @@ public class BankMain {
 		System.out.println("       \\__\\/    \\  \\:\\        \\  \\::/                \\  \\::/       \\  \\:\\        \\  \\:\\        \\  \\:\\    ");
 		System.out.println("                 \\__\\/         \\__\\/                  \\__\\/         \\__\\/         \\__\\/         \\__\\/ ");
 		System.out.println(linebreak + "\n");
-		System.out.println("Please enter your username and password to begin.\n");		
+		System.out.println("If you are an existing user, please sign in. If you are a new customer and would like to apply for a new\naccount, please see one of our make-believe representatives at our make-believe teller stations.\n");
 	}
 
 	public static User getUser(String[] upass) throws BusinessException {
@@ -52,7 +52,6 @@ public class BankMain {
 		} catch (ParseException e) {
 			throw new BusinessException("Creation date: " + creationDate + " is invalid.");
 		}
-
 	}
 	
 	public static int getApplyCount() {

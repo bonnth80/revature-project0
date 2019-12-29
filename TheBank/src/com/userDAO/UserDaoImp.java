@@ -5,7 +5,12 @@ import java.util.List;
 import com.bank.to.User;
 
 public class UserDaoImp implements UserDAO {
-
+	@Override
+	public User getUserByCredentials(String username, String password) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
 	@Override
 	public User getUserById(int id) {
 		// TODO Auto-generated method stub
