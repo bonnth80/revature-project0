@@ -21,7 +21,7 @@
 ## User Stories
 Total Points: 23 points
 
-* As a user, I can login.
+* As a user, I can login. (DONE)
 	* 2 points
 * As a customer, I can apply for a new bank account with a starting balance.
 	* 3 points
@@ -38,7 +38,7 @@ Total Points: 23 points
 	* 2 points
 * As an employee, I can view a customer's bank accounts.
 	* 1 point
-* As a user, I can register for a customer account.
+* As a user, I can register for a customer account. (DONE)
 	* 3 points
 * As a customer, I can post a money transfer to another account.
 	* 3 points

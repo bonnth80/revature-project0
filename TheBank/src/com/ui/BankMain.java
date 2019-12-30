@@ -14,12 +14,11 @@ import com.bank.to.Account;
 import com.bank.to.User;
 import com.transferBO.TransferBO;
 import com.transferBO.TransferBoImp;
-import com.userBO.UserBO;
 import com.userBO.UserBoImp;
 
 
 public class BankMain {
-	private static User user = new User();
+	//private static User user;
 	private static Logger log = Logger.getLogger(BankMain.class);
 	private static final String linebreak = "------------------------------------------------------------------------------------------------------------";
 	
@@ -119,7 +118,7 @@ public class BankMain {
 				// Display user main menu
 				try {
 					user = new UserBoImp().getUserByCredentials(username, password);
-					System.out.println("Current user is: " + (
+					log.info("\nCurrent user is: " + (
 							(user.getArchetype() == 0) ? ("Employee") : ("Customer")
 									)
 							);
@@ -186,6 +185,72 @@ public class BankMain {
 							case 3: 	// Retrieve transaction log.
 								break;
 							case 4:		// Register New User
+								log.info("Welcome to New User creation. Please enter the information as follows.");				
+								String firstName;
+								String lastName;
+								int archetype;
+								String ssn;
+								String homePhone;
+								String mobilePhone;
+								String email;
+								String streetAddress;
+								String city;
+								String state;
+								String country;
+								String zip;
+								String newUserName;
+								String newPassword;
+								Date dateCreated = new Date();
+								
+								log.info("\nFirst Name:");
+								firstName = scanner.nextLine();
+								log.info("\nLast Name: ");
+								lastName = scanner.nextLine();
+								log.info("\nEmployee(0) or Customer(1)?");
+								archetype = Integer.parseInt(scanner.nextLine());
+								log.info("\nSocial Security Number:");
+								ssn = scanner.nextLine();
+								log.info("\nHome phone numbe:");
+								homePhone = scanner.nextLine();
+								log.info("\nMobile phone number:");
+								mobilePhone = scanner.nextLine();
+								log.info("\nEmail address:");
+								email = scanner.nextLine();
+								log.info("\nStreet address:");
+								streetAddress = scanner.nextLine();
+								log.info("\nCity:");
+								city = scanner.nextLine();
+								log.info("\nState:");
+								state = scanner.nextLine();
+								log.info("\nCountry:");
+								country = scanner.nextLine();
+								log.info("\nZip Code:");
+								zip = scanner.nextLine();
+								log.info("\nUsername:");
+								newUserName = scanner.nextLine();
+								log.info("\nPassword:");
+								newPassword = scanner.nextLine();
+								
+								try {
+									new UserBoImp().addNewUser(new User(
+											firstName,
+											lastName,
+											archetype,
+											ssn,
+											homePhone,
+											mobilePhone,
+											email,
+											streetAddress,
+											city,
+											state,
+											country,
+											zip,
+											newUserName,
+											newPassword,
+											dateCreated));
+								} catch (BusinessException e) {
+									log.error(e.getMessage());
+								}
 								break;
 							case 5:		// Sign out
 								runUserLoop = false;
@@ -243,7 +308,7 @@ public class BankMain {
 				log.info("Welcome to New User creation. Please enter the information as follows.");				
 				String firstName;
 				String lastName;
-//				int archetype;  archteype from create out of employee can only be customer (0)
+//				int archetype;  archteype when created by customer can only be customer (0)
 				String ssn;
 				String homePhone;
 				String mobilePhone;

@@ -148,7 +148,6 @@ public class UserDaoImp implements UserDAO {
 		try (Connection connection = OracleConnection.getConnection()) {
 			String sql = "INSERT INTO bank_user "
 					+ "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,"
-					//TO_DATE(?, 'MM-dd-yyyy')
 					+ "?)";
 			
 			PreparedStatement ps = connection.prepareStatement(sql);

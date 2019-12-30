@@ -35676,3 +35676,57 @@ Please select from these available actions:
 2019-12-29 20:35:25 INFO  BankMain:310 - 
 Goodbye.
 
+2019-12-29 21:14:15 INFO  BankMain:53 - Please make a selection:
+	1. Existing User Sign-in
+	2. New User Sign-up
+
+2019-12-29 21:14:17 INFO  BankMain:113 - Username:
+2019-12-29 21:14:20 INFO  BankMain:115 - Password: 
+2019-12-29 21:14:21 INFO  BankMain:58 - 
+Please select from these available actions:
+2019-12-29 21:14:21 INFO  BankMain:59 - 	1. View pending account applications. (0)
+2019-12-29 21:14:21 INFO  BankMain:60 - 	2. Retrieve customer account info.
+2019-12-29 21:14:21 INFO  BankMain:61 - 	3. Retrieve transaction log.
+2019-12-29 21:14:21 INFO  BankMain:62 - 	4. Register new user.
+2019-12-29 21:14:21 INFO  BankMain:63 - 	5. Sign out.
+2019-12-29 21:14:21 INFO  BankMain:64 - 	6. Exit application.
+2019-12-29 21:15:59 INFO  BankMain:188 - Welcome to New User creation. Please enter the information as follows.
+2019-12-29 21:15:59 INFO  BankMain:205 - 
+First Name:
+2019-12-29 21:16:05 INFO  BankMain:207 - 
+Last Name: 
+2019-12-29 21:16:07 INFO  BankMain:209 - 
+Employee(0) or Customer(1)?
+2019-12-29 21:16:11 INFO  BankMain:211 - 
+Social Security Number:
+2019-12-29 21:16:34 INFO  BankMain:213 - 
+Home phone numbe:
+2019-12-29 21:16:46 INFO  BankMain:215 - 
+Mobile phone number:
+2019-12-29 21:16:49 INFO  BankMain:217 - 
+Email address:
+2019-12-29 21:17:03 INFO  BankMain:219 - 
+Street address:
+2019-12-29 21:17:06 INFO  BankMain:221 - 
+City:
+2019-12-29 21:17:07 INFO  BankMain:223 - 
+State:
+2019-12-29 21:17:12 INFO  BankMain:225 - 
+Country:
+2019-12-29 21:17:15 INFO  BankMain:227 - 
+Zip Code:
+2019-12-29 21:17:19 INFO  BankMain:229 - 
+Username:
+2019-12-29 21:17:22 INFO  BankMain:231 - 
+Password:
+2019-12-29 21:17:28 INFO  BankMain:58 - 
+Please select from these available actions:
+2019-12-29 21:17:28 INFO  BankMain:59 - 	1. View pending account applications. (0)
+2019-12-29 21:17:28 INFO  BankMain:60 - 	2. Retrieve customer account info.
+2019-12-29 21:17:28 INFO  BankMain:61 - 	3. Retrieve transaction log.
+2019-12-29 21:17:28 INFO  BankMain:62 - 	4. Register new user.
+2019-12-29 21:17:28 INFO  BankMain:63 - 	5. Sign out.
+2019-12-29 21:17:28 INFO  BankMain:64 - 	6. Exit application.
+2019-12-29 21:17:39 INFO  BankMain:375 - 
+Goodbye.
+
