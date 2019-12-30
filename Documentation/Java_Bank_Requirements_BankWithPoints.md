@@ -3,7 +3,7 @@
 ## Description
 
    The Bank app is a console-based application that simulates banking operations. A customer can apply for an account, view their balance, and make withdrawals and deposits. An employee can aprove or deny accounts and view account balances for their customers.
-	
+
 ## Purpose
 
    We want to see that you can meet deadlines and that you can code. You are expected to complete the following requirements and give a 5 minute presentation of your project to our QC team.
@@ -34,7 +34,7 @@ Total Points: 23 points
 		* A withdrawal that would result in a negative balance.
 		* A deposit or withdrawal of negative money.
 	* 2 points
-* As an employee, I can approve or reject an account.
+* As an employee, I can approve or reject an account. (DONE)
 	* 2 points
 * As an employee, I can view a customer's bank accounts.
 	* 1 point

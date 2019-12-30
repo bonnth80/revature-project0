@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Date;
 import java.util.List;
 
 import com.bank.exception.BusinessException;
@@ -55,6 +57,18 @@ public class UserDaoImp implements UserDAO {
 	public User getUserById(int id) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+	
+	@Override
+	public int getMaxIdUsed() throws BusinessException {
+		try (Connection connection = OracleConnection.getConnection()) {
+			Statement statement = connection.createStatement();
+			ResultSet rs = statement.executeQuery("SELECT MAX(user_id) FROM bank_user");
+			rs.next();
+			return rs.getInt(1);
+		} catch (ClassNotFoundException | SQLException e) {
+			throw new BusinessException("Internal error occured... \n" + e);
+		}
 	}
 
 	@Override
@@ -127,6 +141,42 @@ public class UserDaoImp implements UserDAO {
 	public List<User> getUsersByDateCreated() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+	
+	@Override
+	public boolean addNewUser(User user) throws BusinessException {
+		try (Connection connection = OracleConnection.getConnection()) {
+			String sql = "INSERT INTO bank_user "
+					+ "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,"
+					//TO_DATE(?, 'MM-dd-yyyy')
+					+ "?)";
+			
+			PreparedStatement ps = connection.prepareStatement(sql);
+			int maxId = getMaxIdUsed();
+			ps.setInt(1, maxId + 1);	// id
+			ps.setString(2, user.getFirstName());
+			ps.setString(3, user.getLastName());
+			ps.setInt(4, user.getArchetype());
+			ps.setString(5,  user.getSsn());
+			ps.setString(6,  user.getHomePhone());
+			ps.setString(7, user.getMobilePhone());
+			ps.setString(8,  user.getEmail());
+			ps.setString(9, user.getStreetAddress());
+			ps.setString(10, user.getCity());
+			ps.setString(11,  user.getState());
+			ps.setString(12,  user.getCountry());
+			ps.setString(13, user.getZip());
+			ps.setString(14, user.getUserName());
+			ps.setString(15, user.getPassword());
+			Date today = user.getDateCreated();
+			ps.setDate(16,  new java.sql.Date(today.getTime()));
+			
+			boolean x = ps.execute();
+
+			return x;
+		} catch (ClassNotFoundException | SQLException e) {
+			throw new BusinessException("Internal Error: " + e);
+		}
 	}
 
 }

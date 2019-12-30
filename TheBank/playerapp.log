@@ -35245,3 +35245,434 @@ Please select from these available actions:
 2019-12-29 18:03:29 INFO  BankMain:233 - 
 Goodbye.
 
+2019-12-29 19:49:58 INFO  BankMain:59 - Please make a selection:
+	1. Existing User Sign-in
+	2. New User Sign-up
+
+2019-12-29 19:50:04 INFO  BankMain:245 - Welcome to New User creation. Please enter the information as follows.
+2019-12-29 19:50:04 INFO  BankMain:262 - 
+First Name:
+2019-12-29 19:51:07 INFO  BankMain:264 - 
+Last Name: 
+2019-12-29 19:51:11 INFO  BankMain:266 - 
+Social Security Number:
+2019-12-29 19:51:21 INFO  BankMain:268 - 
+Home phone numbe:
+2019-12-29 19:51:26 INFO  BankMain:270 - 
+Mobile phone number:
+2019-12-29 19:51:30 INFO  BankMain:272 - Email address:
+2019-12-29 19:51:42 INFO  BankMain:274 - Street address:
+2019-12-29 19:52:10 INFO  BankMain:276 - City:
+2019-12-29 19:52:17 INFO  BankMain:278 - State:
+2019-12-29 19:52:19 INFO  BankMain:280 - Country:
+2019-12-29 19:52:21 INFO  BankMain:282 - Zip Code:
+2019-12-29 19:52:25 INFO  BankMain:284 - Username:
+2019-12-29 19:52:30 INFO  BankMain:286 - Password:
+2019-12-29 19:52:34 INFO  BankMain:59 - Please make a selection:
+	1. Existing User Sign-in
+	2. New User Sign-up
+
+2019-12-29 19:54:57 INFO  BankMain:59 - Please make a selection:
+	1. Existing User Sign-in
+	2. New User Sign-up
+
+2019-12-29 19:54:59 INFO  BankMain:245 - Welcome to New User creation. Please enter the information as follows.
+2019-12-29 19:54:59 INFO  BankMain:262 - 
+First Name:
+2019-12-29 19:55:01 INFO  BankMain:264 - 
+Last Name: 
+2019-12-29 19:55:04 INFO  BankMain:266 - 
+Social Security Number:
+2019-12-29 19:55:20 INFO  BankMain:268 - 
+Home phone numbe:
+2019-12-29 19:55:25 INFO  BankMain:270 - 
+Mobile phone number:
+2019-12-29 19:55:29 INFO  BankMain:272 - 
+Email address:
+2019-12-29 19:55:36 INFO  BankMain:274 - 
+Street address:
+2019-12-29 19:55:41 INFO  BankMain:276 - 
+City:
+2019-12-29 19:55:43 INFO  BankMain:278 - 
+State:
+2019-12-29 19:55:44 INFO  BankMain:280 - 
+Country:
+2019-12-29 19:55:47 INFO  BankMain:282 - 
+Zip Code:
+2019-12-29 19:55:50 INFO  BankMain:284 - 
+Username:
+2019-12-29 19:55:53 INFO  BankMain:286 - 
+Password:
+2019-12-29 19:55:56 ERROR BankMain:307 - Internal Error: java.sql.SQLSyntaxErrorException: ORA-00917: missing comma
+
+2019-12-29 19:55:56 INFO  BankMain:59 - Please make a selection:
+	1. Existing User Sign-in
+	2. New User Sign-up
+
+2019-12-29 19:58:12 INFO  BankMain:59 - Please make a selection:
+	1. Existing User Sign-in
+	2. New User Sign-up
+
+2019-12-29 19:58:14 INFO  BankMain:245 - Welcome to New User creation. Please enter the information as follows.
+2019-12-29 19:58:14 INFO  BankMain:262 - 
+First Name:
+2019-12-29 19:58:18 INFO  BankMain:264 - 
+Last Name: 
+2019-12-29 19:58:20 INFO  BankMain:266 - 
+Social Security Number:
+2019-12-29 19:58:25 INFO  BankMain:268 - 
+Home phone numbe:
+2019-12-29 19:58:38 INFO  BankMain:270 - 
+Mobile phone number:
+2019-12-29 19:58:41 INFO  BankMain:272 - 
+Email address:
+2019-12-29 19:58:48 INFO  BankMain:274 - 
+Street address:
+2019-12-29 19:58:59 INFO  BankMain:276 - 
+City:
+2019-12-29 19:59:03 INFO  BankMain:278 - 
+State:
+2019-12-29 19:59:07 INFO  BankMain:280 - 
+Country:
+2019-12-29 19:59:10 INFO  BankMain:282 - 
+Zip Code:
+2019-12-29 19:59:14 INFO  BankMain:284 - 
+Username:
+2019-12-29 19:59:20 INFO  BankMain:286 - 
+Password:
+2019-12-29 19:59:23 ERROR BankMain:307 - Internal Error: java.sql.SQLException: ORA-12899: value too large for column "BONNTH"."BANK_USER"."SSN" (actual: 10, maximum: 9)
+
+2019-12-29 19:59:23 INFO  BankMain:59 - Please make a selection:
+	1. Existing User Sign-in
+	2. New User Sign-up
+
+2019-12-29 19:59:43 INFO  BankMain:245 - Welcome to New User creation. Please enter the information as follows.
+2019-12-29 19:59:43 INFO  BankMain:262 - 
+First Name:
+2019-12-29 19:59:48 INFO  BankMain:264 - 
+Last Name: 
+2019-12-29 19:59:50 INFO  BankMain:266 - 
+Social Security Number:
+2019-12-29 19:59:59 INFO  BankMain:268 - 
+Home phone numbe:
+2019-12-29 20:00:06 INFO  BankMain:270 - 
+Mobile phone number:
+2019-12-29 20:00:10 INFO  BankMain:272 - 
+Email address:
+2019-12-29 20:00:24 INFO  BankMain:274 - 
+Street address:
+2019-12-29 20:00:37 INFO  BankMain:276 - 
+City:
+2019-12-29 20:00:41 INFO  BankMain:278 - 
+State:
+2019-12-29 20:00:44 INFO  BankMain:280 - 
+Country:
+2019-12-29 20:00:49 INFO  BankMain:282 - 
+Zip Code:
+2019-12-29 20:00:52 INFO  BankMain:284 - 
+Username:
+2019-12-29 20:00:55 INFO  BankMain:286 - 
+Password:
+2019-12-29 20:00:56 ERROR BankMain:307 - Internal Error: java.sql.SQLException: ORA-12899: value too large for column "BONNTH"."BANK_USER"."STATE" (actual: 3, maximum: 2)
+
+2019-12-29 20:00:56 INFO  BankMain:59 - Please make a selection:
+	1. Existing User Sign-in
+	2. New User Sign-up
+
+2019-12-29 20:01:02 INFO  BankMain:245 - Welcome to New User creation. Please enter the information as follows.
+2019-12-29 20:01:02 INFO  BankMain:262 - 
+First Name:
+2019-12-29 20:01:06 INFO  BankMain:264 - 
+Last Name: 
+2019-12-29 20:01:08 INFO  BankMain:266 - 
+Social Security Number:
+2019-12-29 20:01:19 INFO  BankMain:268 - 
+Home phone numbe:
+2019-12-29 20:01:25 INFO  BankMain:270 - 
+Mobile phone number:
+2019-12-29 20:01:27 INFO  BankMain:272 - 
+Email address:
+2019-12-29 20:01:36 INFO  BankMain:274 - 
+Street address:
+2019-12-29 20:01:42 INFO  BankMain:276 - 
+City:
+2019-12-29 20:01:45 INFO  BankMain:278 - 
+State:
+2019-12-29 20:01:49 INFO  BankMain:280 - 
+Country:
+2019-12-29 20:01:50 INFO  BankMain:282 - 
+Zip Code:
+2019-12-29 20:01:53 INFO  BankMain:284 - 
+Username:
+2019-12-29 20:01:57 INFO  BankMain:286 - 
+Password:
+2019-12-29 20:01:59 ERROR BankMain:307 - Internal Error: java.sql.SQLDataException: ORA-01843: not a valid month
+
+2019-12-29 20:01:59 INFO  BankMain:59 - Please make a selection:
+	1. Existing User Sign-in
+	2. New User Sign-up
+
+2019-12-29 20:02:52 INFO  BankMain:59 - Please make a selection:
+	1. Existing User Sign-in
+	2. New User Sign-up
+
+2019-12-29 20:02:54 INFO  BankMain:245 - Welcome to New User creation. Please enter the information as follows.
+2019-12-29 20:02:54 INFO  BankMain:262 - 
+First Name:
+2019-12-29 20:02:57 INFO  BankMain:264 - 
+Last Name: 
+2019-12-29 20:03:03 INFO  BankMain:266 - 
+Social Security Number:
+2019-12-29 20:03:07 INFO  BankMain:268 - 
+Home phone numbe:
+2019-12-29 20:03:17 INFO  BankMain:270 - 
+Mobile phone number:
+2019-12-29 20:03:20 INFO  BankMain:272 - 
+Email address:
+2019-12-29 20:03:26 INFO  BankMain:274 - 
+Street address:
+2019-12-29 20:03:32 INFO  BankMain:276 - 
+City:
+2019-12-29 20:03:35 INFO  BankMain:278 - 
+State:
+2019-12-29 20:03:40 INFO  BankMain:280 - 
+Country:
+2019-12-29 20:03:46 INFO  BankMain:282 - 
+Zip Code:
+2019-12-29 20:03:48 INFO  BankMain:284 - 
+Username:
+2019-12-29 20:03:55 INFO  BankMain:286 - 
+Password:
+2019-12-29 20:03:57 ERROR BankMain:307 - Internal Error: java.sql.SQLSyntaxErrorException: ORA-00917: missing comma
+
+2019-12-29 20:03:57 INFO  BankMain:59 - Please make a selection:
+	1. Existing User Sign-in
+	2. New User Sign-up
+
+2019-12-29 20:04:08 INFO  BankMain:59 - Please make a selection:
+	1. Existing User Sign-in
+	2. New User Sign-up
+
+2019-12-29 20:04:10 INFO  BankMain:245 - Welcome to New User creation. Please enter the information as follows.
+2019-12-29 20:04:10 INFO  BankMain:262 - 
+First Name:
+2019-12-29 20:04:12 INFO  BankMain:264 - 
+Last Name: 
+2019-12-29 20:04:13 INFO  BankMain:266 - 
+Social Security Number:
+2019-12-29 20:04:27 INFO  BankMain:268 - 
+Home phone numbe:
+2019-12-29 20:04:31 INFO  BankMain:270 - 
+Mobile phone number:
+2019-12-29 20:04:34 INFO  BankMain:272 - 
+Email address:
+2019-12-29 20:04:39 INFO  BankMain:274 - 
+Street address:
+2019-12-29 20:04:45 INFO  BankMain:276 - 
+City:
+2019-12-29 20:04:50 INFO  BankMain:278 - 
+State:
+2019-12-29 20:04:51 INFO  BankMain:280 - 
+Country:
+2019-12-29 20:04:53 INFO  BankMain:282 - 
+Zip Code:
+2019-12-29 20:04:57 INFO  BankMain:284 - 
+Username:
+2019-12-29 20:05:00 INFO  BankMain:286 - 
+Password:
+2019-12-29 20:06:58 INFO  BankMain:59 - Please make a selection:
+	1. Existing User Sign-in
+	2. New User Sign-up
+
+2019-12-29 20:07:00 INFO  BankMain:245 - Welcome to New User creation. Please enter the information as follows.
+2019-12-29 20:07:00 INFO  BankMain:262 - 
+First Name:
+2019-12-29 20:07:03 INFO  BankMain:264 - 
+Last Name: 
+2019-12-29 20:07:07 INFO  BankMain:266 - 
+Social Security Number:
+2019-12-29 20:08:51 INFO  BankMain:59 - Please make a selection:
+	1. Existing User Sign-in
+	2. New User Sign-up
+
+2019-12-29 20:08:52 INFO  BankMain:245 - Welcome to New User creation. Please enter the information as follows.
+2019-12-29 20:08:52 INFO  BankMain:262 - 
+First Name:
+2019-12-29 20:08:56 INFO  BankMain:264 - 
+Last Name: 
+2019-12-29 20:08:58 INFO  BankMain:266 - 
+Social Security Number:
+2019-12-29 20:09:05 INFO  BankMain:268 - 
+Home phone numbe:
+2019-12-29 20:09:13 INFO  BankMain:270 - 
+Mobile phone number:
+2019-12-29 20:09:17 INFO  BankMain:272 - 
+Email address:
+2019-12-29 20:09:25 INFO  BankMain:274 - 
+Street address:
+2019-12-29 20:09:30 INFO  BankMain:276 - 
+City:
+2019-12-29 20:09:33 INFO  BankMain:278 - 
+State:
+2019-12-29 20:09:36 INFO  BankMain:280 - 
+Country:
+2019-12-29 20:09:37 INFO  BankMain:282 - 
+Zip Code:
+2019-12-29 20:09:40 INFO  BankMain:284 - 
+Username:
+2019-12-29 20:09:45 INFO  BankMain:286 - 
+Password:
+2019-12-29 20:12:42 ERROR BankMain:307 - Internal Error: java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint (BONNTH.BANK_USER_PK) violated
+
+2019-12-29 20:12:42 INFO  BankMain:59 - Please make a selection:
+	1. Existing User Sign-in
+	2. New User Sign-up
+
+2019-12-29 20:22:55 INFO  BankMain:59 - Please make a selection:
+	1. Existing User Sign-in
+	2. New User Sign-up
+
+2019-12-29 20:22:58 INFO  BankMain:245 - Welcome to New User creation. Please enter the information as follows.
+2019-12-29 20:22:58 INFO  BankMain:262 - 
+First Name:
+2019-12-29 20:23:00 INFO  BankMain:264 - 
+Last Name: 
+2019-12-29 20:23:02 INFO  BankMain:266 - 
+Social Security Number:
+2019-12-29 20:23:20 INFO  BankMain:268 - 
+Home phone numbe:
+2019-12-29 20:23:27 INFO  BankMain:270 - 
+Mobile phone number:
+2019-12-29 20:23:29 INFO  BankMain:272 - 
+Email address:
+2019-12-29 20:23:37 INFO  BankMain:274 - 
+Street address:
+2019-12-29 20:23:39 INFO  BankMain:276 - 
+City:
+2019-12-29 20:23:41 INFO  BankMain:278 - 
+State:
+2019-12-29 20:23:43 INFO  BankMain:280 - 
+Country:
+2019-12-29 20:23:44 INFO  BankMain:282 - 
+Zip Code:
+2019-12-29 20:23:46 INFO  BankMain:284 - 
+Username:
+2019-12-29 20:23:50 INFO  BankMain:286 - 
+Password:
+2019-12-29 20:23:58 ERROR BankMain:307 - Internal Error: java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint (BONNTH.BANK_USER_PK) violated
+
+2019-12-29 20:23:58 INFO  BankMain:59 - Please make a selection:
+	1. Existing User Sign-in
+	2. New User Sign-up
+
+2019-12-29 20:27:21 INFO  BankMain:59 - Please make a selection:
+	1. Existing User Sign-in
+	2. New User Sign-up
+
+2019-12-29 20:27:24 INFO  BankMain:245 - Welcome to New User creation. Please enter the information as follows.
+2019-12-29 20:27:24 INFO  BankMain:262 - 
+First Name:
+2019-12-29 20:27:35 INFO  BankMain:264 - 
+Last Name: 
+2019-12-29 20:27:40 INFO  BankMain:266 - 
+Social Security Number:
+2019-12-29 20:27:45 INFO  BankMain:268 - 
+Home phone numbe:
+2019-12-29 20:27:50 INFO  BankMain:270 - 
+Mobile phone number:
+2019-12-29 20:27:53 INFO  BankMain:272 - 
+Email address:
+2019-12-29 20:28:02 INFO  BankMain:274 - 
+Street address:
+2019-12-29 20:28:06 INFO  BankMain:276 - 
+City:
+2019-12-29 20:28:07 INFO  BankMain:278 - 
+State:
+2019-12-29 20:28:09 INFO  BankMain:280 - 
+Country:
+2019-12-29 20:28:10 INFO  BankMain:282 - 
+Zip Code:
+2019-12-29 20:28:14 INFO  BankMain:284 - 
+Username:
+2019-12-29 20:28:20 INFO  BankMain:286 - 
+Password:
+2019-12-29 20:28:24 INFO  BankMain:59 - Please make a selection:
+	1. Existing User Sign-in
+	2. New User Sign-up
+
+2019-12-29 20:29:16 INFO  BankMain:119 - Username:
+2019-12-29 20:29:23 INFO  BankMain:121 - Password: 
+2019-12-29 20:29:25 INFO  BankMain:64 - 
+Please select from these available actions:
+2019-12-29 20:29:25 INFO  BankMain:65 - 	1. View pending account applications. (0)
+2019-12-29 20:29:25 INFO  BankMain:66 - 	2. Retrieve customer account info.
+2019-12-29 20:29:25 INFO  BankMain:67 - 	3. Retrieve transaction log.
+2019-12-29 20:29:25 INFO  BankMain:68 - 	4. Register new user.
+2019-12-29 20:29:25 INFO  BankMain:69 - 	5. Sign out.
+2019-12-29 20:29:25 INFO  BankMain:70 - 	6. Exit application.
+2019-12-29 20:29:29 INFO  BankMain:59 - Please make a selection:
+	1. Existing User Sign-in
+	2. New User Sign-up
+
+2019-12-29 20:29:38 INFO  BankMain:119 - Username:
+2019-12-29 20:29:39 INFO  BankMain:121 - Password: 
+2019-12-29 20:29:42 INFO  BankMain:64 - 
+Please select from these available actions:
+2019-12-29 20:29:42 INFO  BankMain:65 - 	1. View pending account applications. (0)
+2019-12-29 20:29:42 INFO  BankMain:66 - 	2. Retrieve customer account info.
+2019-12-29 20:29:42 INFO  BankMain:67 - 	3. Retrieve transaction log.
+2019-12-29 20:29:42 INFO  BankMain:68 - 	4. Register new user.
+2019-12-29 20:29:42 INFO  BankMain:69 - 	5. Sign out.
+2019-12-29 20:29:42 INFO  BankMain:70 - 	6. Exit application.
+2019-12-29 20:30:01 INFO  BankMain:313 - 
+Goodbye.
+
+2019-12-29 20:34:23 INFO  BankMain:54 - Please make a selection:
+	1. Existing User Sign-in
+	2. New User Sign-up
+
+2019-12-29 20:34:26 INFO  BankMain:114 - Username:
+2019-12-29 20:34:33 INFO  BankMain:116 - Password: 
+2019-12-29 20:34:36 INFO  BankMain:59 - 
+Please select from these available actions:
+2019-12-29 20:34:36 INFO  BankMain:60 - 	1. View pending account applications. (0)
+2019-12-29 20:34:36 INFO  BankMain:61 - 	2. Retrieve customer account info.
+2019-12-29 20:34:36 INFO  BankMain:62 - 	3. Retrieve transaction log.
+2019-12-29 20:34:36 INFO  BankMain:63 - 	4. Register new user.
+2019-12-29 20:34:36 INFO  BankMain:64 - 	5. Sign out.
+2019-12-29 20:34:36 INFO  BankMain:65 - 	6. Exit application.
+2019-12-29 20:34:52 INFO  BankMain:54 - Please make a selection:
+	1. Existing User Sign-in
+	2. New User Sign-up
+
+2019-12-29 20:34:57 INFO  BankMain:114 - Username:
+2019-12-29 20:35:00 INFO  BankMain:116 - Password: 
+2019-12-29 20:35:00 INFO  BankMain:59 - 
+Please select from these available actions:
+2019-12-29 20:35:00 INFO  BankMain:60 - 	1. View pending account applications. (0)
+2019-12-29 20:35:00 INFO  BankMain:61 - 	2. Retrieve customer account info.
+2019-12-29 20:35:00 INFO  BankMain:62 - 	3. Retrieve transaction log.
+2019-12-29 20:35:00 INFO  BankMain:63 - 	4. Register new user.
+2019-12-29 20:35:00 INFO  BankMain:64 - 	5. Sign out.
+2019-12-29 20:35:00 INFO  BankMain:65 - 	6. Exit application.
+2019-12-29 20:35:02 INFO  BankMain:310 - 
+Goodbye.
+
+2019-12-29 20:35:13 INFO  BankMain:54 - Please make a selection:
+	1. Existing User Sign-in
+	2. New User Sign-up
+
+2019-12-29 20:35:15 INFO  BankMain:114 - Username:
+2019-12-29 20:35:19 INFO  BankMain:116 - Password: 
+2019-12-29 20:35:21 INFO  BankMain:73 - 
+Please select from these available actions:
+2019-12-29 20:35:21 INFO  BankMain:74 - 	1. Apply for a new account.
+2019-12-29 20:35:21 INFO  BankMain:75 - 	2. View account balance.
+2019-12-29 20:35:21 INFO  BankMain:76 - 	3. Make a withdrawal.
+2019-12-29 20:35:21 INFO  BankMain:77 - 	4. Make a deposit
+2019-12-29 20:35:21 INFO  BankMain:78 - 	5. Post Money Transfer.
+2019-12-29 20:35:21 INFO  BankMain:79 - 	6. Sign out.
+2019-12-29 20:35:21 INFO  BankMain:80 - 	7. Exit application.
+2019-12-29 20:35:25 INFO  BankMain:310 - 
+Goodbye.
+

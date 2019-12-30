@@ -1,6 +1,7 @@
 package com.userBO;
 
 import java.util.List;
+
 import com.bank.exception.BusinessException;
 import com.bank.to.User;
 import com.userDAO.UserDAO;
@@ -19,6 +20,12 @@ public class UserBoImp implements UserBO {
 	public User getUserById(int id) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+	
+	@Override
+	public int getMaxIdUsed() throws BusinessException {
+		UserDAO ud = new UserDaoImp();
+		return ud.getMaxIdUsed();
 	}
 
 	@Override
@@ -91,6 +98,13 @@ public class UserBoImp implements UserBO {
 	public List<User> getUsersByDateCreated() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+	
+	@Override
+	public boolean addNewUser(User user) throws BusinessException {
+		UserDAO ud = new UserDaoImp();
+		boolean x = ud.addNewUser(user);
+		return x;
 	}
 
 }
