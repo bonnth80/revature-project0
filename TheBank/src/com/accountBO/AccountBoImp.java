@@ -11,9 +11,10 @@ import com.bank.to.Account;
 public class AccountBoImp implements AccountBO {
 
 	@Override
-	public Account getAccountById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+	public Account getAccountById(int id) throws BusinessException {
+		AccountDAO ad = new AccountDaoImp();
+		
+		return ad.getAccountById(id);
 	}
 
 	@Override
@@ -48,9 +49,9 @@ public class AccountBoImp implements AccountBO {
 	}
 
 	@Override
-	public boolean updateAccountStatus(Account account, int status) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean updateAccountStatus(Account account, int status) throws BusinessException {
+		AccountDAO ad = new AccountDaoImp();
+		return ad.updateAccountStatus(account, status);
 	}
 
 }

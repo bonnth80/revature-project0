@@ -34918,3 +34918,330 @@ Please select from these available actions:
 2019-12-29 17:15:35 INFO  BankMain:204 - 
 Goodbye.
 
+2019-12-29 17:48:12 INFO  BankMain:40 - If you are an existing user, please sign in. If you are a new customer and would like to apply for a new
+account, please see one of our make-believe representatives at our make-believe teller stations.
+
+2019-12-29 17:48:12 INFO  BankMain:106 - Username:
+2019-12-29 17:48:15 INFO  BankMain:108 - Password: 
+2019-12-29 17:48:17 INFO  BankMain:60 - 
+Please select from these available actions:
+2019-12-29 17:48:17 INFO  BankMain:61 - 1. View pending account applications. (4)
+2019-12-29 17:48:17 INFO  BankMain:62 - 2. Retrieve customer account info.
+2019-12-29 17:48:17 INFO  BankMain:63 - 3. Retrieve transaction log.
+2019-12-29 17:48:17 INFO  BankMain:64 - 4. Register new user.
+2019-12-29 17:48:17 INFO  BankMain:65 - 5. Sign out.
+2019-12-29 17:48:17 INFO  BankMain:66 - 6. Exit application.
+2019-12-29 17:48:18 INFO  BankMain:85 - Account #		User Name			Creation Date		Status
+2019-12-29 17:48:18 INFO  BankMain:86 - ------------------------------------------------------------------------------------------------------------
+2019-12-29 17:48:18 INFO  BankMain:142 - 0			Default Default			2019-12-29		PENDING APPROVAL
+2019-12-29 17:48:18 INFO  BankMain:142 - 1			Default Default			2019-12-23		PENDING APPROVAL
+2019-12-29 17:48:18 INFO  BankMain:142 - 2			Default Default			2019-12-17		PENDING APPROVAL
+2019-12-29 17:48:18 INFO  BankMain:142 - 4			Default Default			2019-10-15		PENDING APPROVAL
+2019-12-29 17:48:18 INFO  BankMain:145 - Choose an account number or type -1 to return to the employee menu
+2019-12-29 17:48:26 INFO  BankMain:172 - This is not a valid account number.
+2019-12-29 17:48:26 INFO  BankMain:145 - Choose an account number or type -1 to return to the employee menu
+2019-12-29 17:48:30 INFO  BankMain:60 - 
+Please select from these available actions:
+2019-12-29 17:48:30 INFO  BankMain:61 - 1. View pending account applications. (4)
+2019-12-29 17:48:30 INFO  BankMain:62 - 2. Retrieve customer account info.
+2019-12-29 17:48:30 INFO  BankMain:63 - 3. Retrieve transaction log.
+2019-12-29 17:48:30 INFO  BankMain:64 - 4. Register new user.
+2019-12-29 17:48:30 INFO  BankMain:65 - 5. Sign out.
+2019-12-29 17:48:30 INFO  BankMain:66 - 6. Exit application.
+2019-12-29 17:48:31 INFO  BankMain:85 - Account #		User Name			Creation Date		Status
+2019-12-29 17:48:31 INFO  BankMain:86 - ------------------------------------------------------------------------------------------------------------
+2019-12-29 17:48:31 INFO  BankMain:142 - 0			Default Default			2019-12-29		PENDING APPROVAL
+2019-12-29 17:48:31 INFO  BankMain:142 - 1			Default Default			2019-12-23		PENDING APPROVAL
+2019-12-29 17:48:31 INFO  BankMain:142 - 2			Default Default			2019-12-17		PENDING APPROVAL
+2019-12-29 17:48:31 INFO  BankMain:142 - 4			Default Default			2019-10-15		PENDING APPROVAL
+2019-12-29 17:48:31 INFO  BankMain:145 - Choose an account number or type -1 to return to the employee menu
+2019-12-29 17:48:36 INFO  BankMain:232 - Internal error: java.sql.SQLSyntaxErrorException: ORA-00904: "A"."ID": invalid identifier
+
+2019-12-29 17:48:36 INFO  BankMain:40 - If you are an existing user, please sign in. If you are a new customer and would like to apply for a new
+account, please see one of our make-believe representatives at our make-believe teller stations.
+
+2019-12-29 17:48:36 INFO  BankMain:106 - Username:
+2019-12-29 17:50:35 INFO  BankMain:40 - If you are an existing user, please sign in. If you are a new customer and would like to apply for a new
+account, please see one of our make-believe representatives at our make-believe teller stations.
+
+2019-12-29 17:50:35 INFO  BankMain:106 - Username:
+2019-12-29 17:50:38 INFO  BankMain:108 - Password: 
+2019-12-29 17:50:39 INFO  BankMain:60 - 
+Please select from these available actions:
+2019-12-29 17:50:39 INFO  BankMain:61 - 1. View pending account applications. (4)
+2019-12-29 17:50:39 INFO  BankMain:62 - 2. Retrieve customer account info.
+2019-12-29 17:50:39 INFO  BankMain:63 - 3. Retrieve transaction log.
+2019-12-29 17:50:39 INFO  BankMain:64 - 4. Register new user.
+2019-12-29 17:50:39 INFO  BankMain:65 - 5. Sign out.
+2019-12-29 17:50:39 INFO  BankMain:66 - 6. Exit application.
+2019-12-29 17:50:40 INFO  BankMain:85 - Account #		User Name			Creation Date		Status
+2019-12-29 17:50:40 INFO  BankMain:86 - ------------------------------------------------------------------------------------------------------------
+2019-12-29 17:50:40 INFO  BankMain:142 - 0			Default Default			2019-12-29		PENDING APPROVAL
+2019-12-29 17:50:40 INFO  BankMain:142 - 1			Default Default			2019-12-23		PENDING APPROVAL
+2019-12-29 17:50:40 INFO  BankMain:142 - 2			Default Default			2019-12-17		PENDING APPROVAL
+2019-12-29 17:50:40 INFO  BankMain:142 - 4			Default Default			2019-10-15		PENDING APPROVAL
+2019-12-29 17:50:40 INFO  BankMain:145 - Choose an account number or type -1 to return to the employee menu
+2019-12-29 17:50:46 INFO  BankMain:232 - Internal error: java.sql.SQLSyntaxErrorException: ORA-00904: "A"."ID": invalid identifier
+
+2019-12-29 17:50:46 INFO  BankMain:40 - If you are an existing user, please sign in. If you are a new customer and would like to apply for a new
+account, please see one of our make-believe representatives at our make-believe teller stations.
+
+2019-12-29 17:50:46 INFO  BankMain:106 - Username:
+2019-12-29 17:51:30 INFO  BankMain:40 - If you are an existing user, please sign in. If you are a new customer and would like to apply for a new
+account, please see one of our make-believe representatives at our make-believe teller stations.
+
+2019-12-29 17:51:30 INFO  BankMain:106 - Username:
+2019-12-29 17:51:35 INFO  BankMain:108 - Password: 
+2019-12-29 17:51:36 INFO  BankMain:60 - 
+Please select from these available actions:
+2019-12-29 17:51:36 INFO  BankMain:61 - 1. View pending account applications. (4)
+2019-12-29 17:51:36 INFO  BankMain:62 - 2. Retrieve customer account info.
+2019-12-29 17:51:36 INFO  BankMain:63 - 3. Retrieve transaction log.
+2019-12-29 17:51:36 INFO  BankMain:64 - 4. Register new user.
+2019-12-29 17:51:36 INFO  BankMain:65 - 5. Sign out.
+2019-12-29 17:51:36 INFO  BankMain:66 - 6. Exit application.
+2019-12-29 17:51:38 INFO  BankMain:85 - Account #		User Name			Creation Date		Status
+2019-12-29 17:51:38 INFO  BankMain:86 - ------------------------------------------------------------------------------------------------------------
+2019-12-29 17:51:38 INFO  BankMain:142 - 0			Default Default			2019-12-29		PENDING APPROVAL
+2019-12-29 17:51:38 INFO  BankMain:142 - 1			Default Default			2019-12-23		PENDING APPROVAL
+2019-12-29 17:51:38 INFO  BankMain:142 - 2			Default Default			2019-12-17		PENDING APPROVAL
+2019-12-29 17:51:38 INFO  BankMain:142 - 4			Default Default			2019-10-15		PENDING APPROVAL
+2019-12-29 17:51:38 INFO  BankMain:145 - Choose an account number or type -1 to return to the employee menu
+2019-12-29 17:51:41 INFO  BankMain:150 - Do you want to approve (0) or reject (1) this account application?
+2019-12-29 17:51:48 INFO  BankMain:60 - 
+Please select from these available actions:
+2019-12-29 17:51:48 INFO  BankMain:61 - 1. View pending account applications. (4)
+2019-12-29 17:51:48 INFO  BankMain:62 - 2. Retrieve customer account info.
+2019-12-29 17:51:48 INFO  BankMain:63 - 3. Retrieve transaction log.
+2019-12-29 17:51:48 INFO  BankMain:64 - 4. Register new user.
+2019-12-29 17:51:48 INFO  BankMain:65 - 5. Sign out.
+2019-12-29 17:51:48 INFO  BankMain:66 - 6. Exit application.
+2019-12-29 17:51:53 INFO  BankMain:85 - Account #		User Name			Creation Date		Status
+2019-12-29 17:51:53 INFO  BankMain:86 - ------------------------------------------------------------------------------------------------------------
+2019-12-29 17:51:53 INFO  BankMain:142 - 0			Default Default			2019-12-29		PENDING APPROVAL
+2019-12-29 17:51:53 INFO  BankMain:142 - 1			Default Default			2019-12-23		PENDING APPROVAL
+2019-12-29 17:51:53 INFO  BankMain:142 - 2			Default Default			2019-12-17		PENDING APPROVAL
+2019-12-29 17:51:53 INFO  BankMain:142 - 4			Default Default			2019-10-15		PENDING APPROVAL
+2019-12-29 17:51:53 INFO  BankMain:145 - Choose an account number or type -1 to return to the employee menu
+2019-12-29 17:52:22 INFO  BankMain:40 - If you are an existing user, please sign in. If you are a new customer and would like to apply for a new
+account, please see one of our make-believe representatives at our make-believe teller stations.
+
+2019-12-29 17:52:22 INFO  BankMain:106 - Username:
+2019-12-29 17:52:24 INFO  BankMain:108 - Password: 
+2019-12-29 17:52:25 INFO  BankMain:60 - 
+Please select from these available actions:
+2019-12-29 17:52:25 INFO  BankMain:61 - 1. View pending account applications. (4)
+2019-12-29 17:52:25 INFO  BankMain:62 - 2. Retrieve customer account info.
+2019-12-29 17:52:25 INFO  BankMain:63 - 3. Retrieve transaction log.
+2019-12-29 17:52:25 INFO  BankMain:64 - 4. Register new user.
+2019-12-29 17:52:25 INFO  BankMain:65 - 5. Sign out.
+2019-12-29 17:52:25 INFO  BankMain:66 - 6. Exit application.
+2019-12-29 17:52:26 INFO  BankMain:85 - Account #		User Name			Creation Date		Status
+2019-12-29 17:52:26 INFO  BankMain:86 - ------------------------------------------------------------------------------------------------------------
+2019-12-29 17:52:26 INFO  BankMain:142 - 0			Default Default			2019-12-29		PENDING APPROVAL
+2019-12-29 17:52:26 INFO  BankMain:142 - 1			Default Default			2019-12-23		PENDING APPROVAL
+2019-12-29 17:52:26 INFO  BankMain:142 - 2			Default Default			2019-12-17		PENDING APPROVAL
+2019-12-29 17:52:26 INFO  BankMain:142 - 4			Default Default			2019-10-15		PENDING APPROVAL
+2019-12-29 17:52:26 INFO  BankMain:145 - Choose an account number or type -1 to return to the employee menu
+2019-12-29 17:52:28 INFO  BankMain:150 - Do you want to approve (1) or reject (2) this account application?
+2019-12-29 17:52:31 INFO  BankMain:157 - Something went wrong during account approval process.
+2019-12-29 17:52:31 INFO  BankMain:60 - 
+Please select from these available actions:
+2019-12-29 17:52:31 INFO  BankMain:61 - 1. View pending account applications. (3)
+2019-12-29 17:52:31 INFO  BankMain:62 - 2. Retrieve customer account info.
+2019-12-29 17:52:31 INFO  BankMain:63 - 3. Retrieve transaction log.
+2019-12-29 17:52:31 INFO  BankMain:64 - 4. Register new user.
+2019-12-29 17:52:31 INFO  BankMain:65 - 5. Sign out.
+2019-12-29 17:52:31 INFO  BankMain:66 - 6. Exit application.
+2019-12-29 17:54:50 INFO  BankMain:40 - If you are an existing user, please sign in. If you are a new customer and would like to apply for a new
+account, please see one of our make-believe representatives at our make-believe teller stations.
+
+2019-12-29 17:54:50 INFO  BankMain:106 - Username:
+2019-12-29 17:54:52 INFO  BankMain:108 - Password: 
+2019-12-29 17:54:54 INFO  BankMain:60 - 
+Please select from these available actions:
+2019-12-29 17:54:54 INFO  BankMain:61 - 1. View pending account applications. (2)
+2019-12-29 17:54:54 INFO  BankMain:62 - 2. Retrieve customer account info.
+2019-12-29 17:54:54 INFO  BankMain:63 - 3. Retrieve transaction log.
+2019-12-29 17:54:54 INFO  BankMain:64 - 4. Register new user.
+2019-12-29 17:54:54 INFO  BankMain:65 - 5. Sign out.
+2019-12-29 17:54:54 INFO  BankMain:66 - 6. Exit application.
+2019-12-29 17:54:57 INFO  BankMain:85 - Account #		User Name			Creation Date		Status
+2019-12-29 17:54:57 INFO  BankMain:86 - ------------------------------------------------------------------------------------------------------------
+2019-12-29 17:54:57 INFO  BankMain:142 - 0			Default Default			2019-12-29		PENDING APPROVAL
+2019-12-29 17:54:57 INFO  BankMain:142 - 2			Default Default			2019-12-17		PENDING APPROVAL
+2019-12-29 17:54:57 INFO  BankMain:145 - Choose an account number or type -1 to return to the employee menu
+2019-12-29 17:55:01 INFO  BankMain:150 - Do you want to approve (1) or reject (2) this account application?
+2019-12-29 17:55:03 INFO  BankMain:157 - Account 2 is now Rejected.
+2019-12-29 17:55:03 INFO  BankMain:150 - Do you want to approve (1) or reject (2) this account application?
+2019-12-29 17:55:09 INFO  BankMain:150 - Do you want to approve (1) or reject (2) this account application?
+2019-12-29 17:56:00 INFO  BankMain:40 - If you are an existing user, please sign in. If you are a new customer and would like to apply for a new
+account, please see one of our make-believe representatives at our make-believe teller stations.
+
+2019-12-29 17:56:00 INFO  BankMain:106 - Username:
+2019-12-29 17:56:03 INFO  BankMain:108 - Password: 
+2019-12-29 17:56:04 INFO  BankMain:60 - 
+Please select from these available actions:
+2019-12-29 17:56:04 INFO  BankMain:61 - 1. View pending account applications. (4)
+2019-12-29 17:56:04 INFO  BankMain:62 - 2. Retrieve customer account info.
+2019-12-29 17:56:04 INFO  BankMain:63 - 3. Retrieve transaction log.
+2019-12-29 17:56:04 INFO  BankMain:64 - 4. Register new user.
+2019-12-29 17:56:04 INFO  BankMain:65 - 5. Sign out.
+2019-12-29 17:56:04 INFO  BankMain:66 - 6. Exit application.
+2019-12-29 17:56:06 INFO  BankMain:85 - Account #		User Name			Creation Date		Status
+2019-12-29 17:56:06 INFO  BankMain:86 - ------------------------------------------------------------------------------------------------------------
+2019-12-29 17:56:06 INFO  BankMain:142 - 0			Default Default			2019-12-29		PENDING APPROVAL
+2019-12-29 17:56:06 INFO  BankMain:142 - 2			Default Default			2019-12-17		PENDING APPROVAL
+2019-12-29 17:56:06 INFO  BankMain:142 - 3			Default Default			2019-07-09		PENDING APPROVAL
+2019-12-29 17:56:06 INFO  BankMain:142 - 4			Default Default			2019-10-15		PENDING APPROVAL
+2019-12-29 17:56:06 INFO  BankMain:145 - Choose an account number or type -1 to return to the employee menu
+2019-12-29 17:56:09 INFO  BankMain:150 - Do you want to approve (1) or reject (2) this account application?
+2019-12-29 17:56:11 INFO  BankMain:154 - Account 0 is now Active.
+2019-12-29 17:56:11 INFO  BankMain:145 - Choose an account number or type -1 to return to the employee menu
+2019-12-29 17:56:15 INFO  BankMain:150 - Do you want to approve (1) or reject (2) this account application?
+2019-12-29 17:56:17 INFO  BankMain:157 - Account 2 is now Rejected.
+2019-12-29 17:56:17 INFO  BankMain:60 - 
+Please select from these available actions:
+2019-12-29 17:56:17 INFO  BankMain:61 - 1. View pending account applications. (2)
+2019-12-29 17:56:17 INFO  BankMain:62 - 2. Retrieve customer account info.
+2019-12-29 17:56:17 INFO  BankMain:63 - 3. Retrieve transaction log.
+2019-12-29 17:56:17 INFO  BankMain:64 - 4. Register new user.
+2019-12-29 17:56:17 INFO  BankMain:65 - 5. Sign out.
+2019-12-29 17:56:17 INFO  BankMain:66 - 6. Exit application.
+2019-12-29 17:57:57 INFO  BankMain:40 - If you are an existing user, please sign in. If you are a new customer and would like to apply for a new
+account, please see one of our make-believe representatives at our make-believe teller stations.
+
+2019-12-29 17:57:57 INFO  BankMain:106 - Username:
+2019-12-29 17:58:00 INFO  BankMain:108 - Password: 
+2019-12-29 17:58:02 INFO  BankMain:60 - 
+Please select from these available actions:
+2019-12-29 17:58:02 INFO  BankMain:61 - 1. View pending account applications. (4)
+2019-12-29 17:58:02 INFO  BankMain:62 - 2. Retrieve customer account info.
+2019-12-29 17:58:02 INFO  BankMain:63 - 3. Retrieve transaction log.
+2019-12-29 17:58:02 INFO  BankMain:64 - 4. Register new user.
+2019-12-29 17:58:02 INFO  BankMain:65 - 5. Sign out.
+2019-12-29 17:58:02 INFO  BankMain:66 - 6. Exit application.
+2019-12-29 17:58:03 INFO  BankMain:85 - Account #		User Name			Creation Date		Status
+2019-12-29 17:58:03 INFO  BankMain:86 - ------------------------------------------------------------------------------------------------------------
+2019-12-29 17:58:03 INFO  BankMain:142 - 0			Default Default			2019-12-29		PENDING APPROVAL
+2019-12-29 17:58:03 INFO  BankMain:142 - 2			Default Default			2019-12-17		PENDING APPROVAL
+2019-12-29 17:58:03 INFO  BankMain:142 - 3			Default Default			2019-07-09		PENDING APPROVAL
+2019-12-29 17:58:03 INFO  BankMain:142 - 4			Default Default			2019-10-15		PENDING APPROVAL
+2019-12-29 17:58:03 INFO  BankMain:145 - Choose an account number or type -1 to return to the employee menu
+2019-12-29 17:58:07 INFO  BankMain:151 - Do you want to approve (1) or reject (2) this account application?
+2019-12-29 17:58:09 INFO  BankMain:158 - Account 0 is now Rejected.
+2019-12-29 17:58:09 INFO  BankMain:60 - 
+Please select from these available actions:
+2019-12-29 17:58:09 INFO  BankMain:61 - 1. View pending account applications. (3)
+2019-12-29 17:58:09 INFO  BankMain:62 - 2. Retrieve customer account info.
+2019-12-29 17:58:09 INFO  BankMain:63 - 3. Retrieve transaction log.
+2019-12-29 17:58:09 INFO  BankMain:64 - 4. Register new user.
+2019-12-29 17:58:09 INFO  BankMain:65 - 5. Sign out.
+2019-12-29 17:58:09 INFO  BankMain:66 - 6. Exit application.
+2019-12-29 17:58:12 INFO  BankMain:85 - Account #		User Name			Creation Date		Status
+2019-12-29 17:58:12 INFO  BankMain:86 - ------------------------------------------------------------------------------------------------------------
+2019-12-29 17:58:12 INFO  BankMain:142 - 2			Default Default			2019-12-17		PENDING APPROVAL
+2019-12-29 17:58:12 INFO  BankMain:142 - 3			Default Default			2019-07-09		PENDING APPROVAL
+2019-12-29 17:58:12 INFO  BankMain:142 - 4			Default Default			2019-10-15		PENDING APPROVAL
+2019-12-29 17:58:12 INFO  BankMain:145 - Choose an account number or type -1 to return to the employee menu
+2019-12-29 17:58:14 INFO  BankMain:151 - Do you want to approve (1) or reject (2) this account application?
+2019-12-29 17:58:17 INFO  BankMain:151 - Do you want to approve (1) or reject (2) this account application?
+2019-12-29 17:58:20 INFO  BankMain:155 - Account 3 is now Active.
+2019-12-29 17:58:20 INFO  BankMain:60 - 
+Please select from these available actions:
+2019-12-29 17:58:20 INFO  BankMain:61 - 1. View pending account applications. (2)
+2019-12-29 17:58:20 INFO  BankMain:62 - 2. Retrieve customer account info.
+2019-12-29 17:58:20 INFO  BankMain:63 - 3. Retrieve transaction log.
+2019-12-29 17:58:20 INFO  BankMain:64 - 4. Register new user.
+2019-12-29 17:58:20 INFO  BankMain:65 - 5. Sign out.
+2019-12-29 17:58:20 INFO  BankMain:66 - 6. Exit application.
+2019-12-29 17:58:26 INFO  BankMain:85 - Account #		User Name			Creation Date		Status
+2019-12-29 17:58:26 INFO  BankMain:86 - ------------------------------------------------------------------------------------------------------------
+2019-12-29 17:58:26 INFO  BankMain:142 - 2			Default Default			2019-12-17		PENDING APPROVAL
+2019-12-29 17:58:26 INFO  BankMain:142 - 4			Default Default			2019-10-15		PENDING APPROVAL
+2019-12-29 17:58:26 INFO  BankMain:145 - Choose an account number or type -1 to return to the employee menu
+2019-12-29 17:58:28 INFO  BankMain:151 - Do you want to approve (1) or reject (2) this account application?
+2019-12-29 17:58:29 INFO  BankMain:155 - Account 2 is now Active.
+2019-12-29 17:58:29 INFO  BankMain:60 - 
+Please select from these available actions:
+2019-12-29 17:58:29 INFO  BankMain:61 - 1. View pending account applications. (1)
+2019-12-29 17:58:29 INFO  BankMain:62 - 2. Retrieve customer account info.
+2019-12-29 17:58:29 INFO  BankMain:63 - 3. Retrieve transaction log.
+2019-12-29 17:58:29 INFO  BankMain:64 - 4. Register new user.
+2019-12-29 17:58:29 INFO  BankMain:65 - 5. Sign out.
+2019-12-29 17:58:29 INFO  BankMain:66 - 6. Exit application.
+2019-12-29 17:58:31 INFO  BankMain:85 - Account #		User Name			Creation Date		Status
+2019-12-29 17:58:31 INFO  BankMain:86 - ------------------------------------------------------------------------------------------------------------
+2019-12-29 17:58:31 INFO  BankMain:142 - 4			Default Default			2019-10-15		PENDING APPROVAL
+2019-12-29 17:58:31 INFO  BankMain:145 - Choose an account number or type -1 to return to the employee menu
+2019-12-29 17:58:33 INFO  BankMain:151 - Do you want to approve (1) or reject (2) this account application?
+2019-12-29 17:58:37 INFO  BankMain:155 - Account 4 is now Active.
+2019-12-29 17:58:37 INFO  BankMain:60 - 
+Please select from these available actions:
+2019-12-29 17:58:37 INFO  BankMain:61 - 1. View pending account applications. (0)
+2019-12-29 17:58:37 INFO  BankMain:62 - 2. Retrieve customer account info.
+2019-12-29 17:58:37 INFO  BankMain:63 - 3. Retrieve transaction log.
+2019-12-29 17:58:37 INFO  BankMain:64 - 4. Register new user.
+2019-12-29 17:58:37 INFO  BankMain:65 - 5. Sign out.
+2019-12-29 17:58:37 INFO  BankMain:66 - 6. Exit application.
+2019-12-29 17:58:40 INFO  BankMain:85 - Account #		User Name			Creation Date		Status
+2019-12-29 17:58:40 INFO  BankMain:86 - ------------------------------------------------------------------------------------------------------------
+2019-12-29 17:58:40 INFO  BankMain:145 - Choose an account number or type -1 to return to the employee menu
+2019-12-29 17:58:42 INFO  BankMain:60 - 
+Please select from these available actions:
+2019-12-29 17:58:42 INFO  BankMain:61 - 1. View pending account applications. (0)
+2019-12-29 17:58:42 INFO  BankMain:62 - 2. Retrieve customer account info.
+2019-12-29 17:58:42 INFO  BankMain:63 - 3. Retrieve transaction log.
+2019-12-29 17:58:42 INFO  BankMain:64 - 4. Register new user.
+2019-12-29 17:58:42 INFO  BankMain:65 - 5. Sign out.
+2019-12-29 17:58:42 INFO  BankMain:66 - 6. Exit application.
+2019-12-29 18:01:49 INFO  BankMain:40 - If you are an existing user, please sign in. If you are a new customer and would like to apply for a new
+account, please see one of our make-believe representatives at our make-believe teller stations.
+
+2019-12-29 18:01:49 INFO  BankMain:106 - Username:
+2019-12-29 18:01:52 INFO  BankMain:108 - Password: 
+2019-12-29 18:01:54 INFO  BankMain:60 - 
+Please select from these available actions:
+2019-12-29 18:01:54 INFO  BankMain:61 - 1. View pending account applications. (0)
+2019-12-29 18:01:54 INFO  BankMain:62 - 2. Retrieve customer account info.
+2019-12-29 18:01:54 INFO  BankMain:63 - 3. Retrieve transaction log.
+2019-12-29 18:01:54 INFO  BankMain:64 - 4. Register new user.
+2019-12-29 18:01:54 INFO  BankMain:65 - 5. Sign out.
+2019-12-29 18:01:54 INFO  BankMain:66 - 6. Exit application.
+2019-12-29 18:01:55 INFO  BankMain:169 - There are no new accounts pending approval. Returning to menu
+2019-12-29 18:01:55 INFO  BankMain:60 - 
+Please select from these available actions:
+2019-12-29 18:01:55 INFO  BankMain:61 - 1. View pending account applications. (0)
+2019-12-29 18:01:55 INFO  BankMain:62 - 2. Retrieve customer account info.
+2019-12-29 18:01:55 INFO  BankMain:63 - 3. Retrieve transaction log.
+2019-12-29 18:01:55 INFO  BankMain:64 - 4. Register new user.
+2019-12-29 18:01:55 INFO  BankMain:65 - 5. Sign out.
+2019-12-29 18:01:55 INFO  BankMain:66 - 6. Exit application.
+2019-12-29 18:03:11 INFO  BankMain:233 - 
+Goodbye.
+
+2019-12-29 18:03:20 INFO  BankMain:40 - If you are an existing user, please sign in. If you are a new customer and would like to apply for a new
+account, please see one of our make-believe representatives at our make-believe teller stations.
+
+2019-12-29 18:03:20 INFO  BankMain:106 - Username:
+2019-12-29 18:03:23 INFO  BankMain:108 - Password: 
+2019-12-29 18:03:24 INFO  BankMain:60 - 
+Please select from these available actions:
+2019-12-29 18:03:24 INFO  BankMain:61 - 	1. View pending account applications. (0)
+2019-12-29 18:03:24 INFO  BankMain:62 - 	2. Retrieve customer account info.
+2019-12-29 18:03:24 INFO  BankMain:63 - 	3. Retrieve transaction log.
+2019-12-29 18:03:24 INFO  BankMain:64 - 	4. Register new user.
+2019-12-29 18:03:24 INFO  BankMain:65 - 	5. Sign out.
+2019-12-29 18:03:24 INFO  BankMain:66 - 	6. Exit application.
+2019-12-29 18:03:27 INFO  BankMain:169 - There are no new accounts pending approval. Returning to menu
+2019-12-29 18:03:27 INFO  BankMain:60 - 
+Please select from these available actions:
+2019-12-29 18:03:27 INFO  BankMain:61 - 	1. View pending account applications. (0)
+2019-12-29 18:03:27 INFO  BankMain:62 - 	2. Retrieve customer account info.
+2019-12-29 18:03:27 INFO  BankMain:63 - 	3. Retrieve transaction log.
+2019-12-29 18:03:27 INFO  BankMain:64 - 	4. Register new user.
+2019-12-29 18:03:27 INFO  BankMain:65 - 	5. Sign out.
+2019-12-29 18:03:27 INFO  BankMain:66 - 	6. Exit application.
+2019-12-29 18:03:29 INFO  BankMain:233 - 
+Goodbye.
+

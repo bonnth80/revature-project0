@@ -15,9 +15,27 @@ import com.dbutil.OracleConnection;
 public class AccountDaoImp implements AccountDAO {
 
 	@Override
-	public Account getAccountById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+	public Account getAccountById(int id) throws BusinessException {
+		try (Connection connection = OracleConnection.getConnection()) {
+			String sql = "SELECT a.account_number, bu.first_name, bu.last_name, a.creation_date, a.status "
+					+ "FROM account a "
+					+ "INNER JOIN bank_user bu "
+					+ "ON a.user_id = bu.user_id "
+					+ "WHERE a.account_number = ?";
+			PreparedStatement ps = connection.prepareStatement(sql);
+			ps.setInt(1, id);
+			ResultSet rs = ps.executeQuery();
+			
+			rs.next();
+			return new Account(
+						rs.getInt(1),
+						rs.getString(2),
+						rs.getString(3),
+						rs.getDate(4),
+						rs.getInt(5));
+		} catch (ClassNotFoundException | SQLException e) {
+			throw new BusinessException("Internal error: " + e);
+		}
 	}
 
 	@Override
@@ -87,9 +105,18 @@ public class AccountDaoImp implements AccountDAO {
 	}
 
 	@Override
-	public boolean updateAccountStatus(Account account, int status) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean updateAccountStatus(Account account, int status) throws BusinessException {
+		try (Connection connection = OracleConnection.getConnection()) {
+			String sql = "UPDATE account "
+					+ "SET status = ? "
+					+ "WHERE account_number = ?";
+			PreparedStatement ps = connection.prepareStatement(sql);
+			ps.setInt(1, status);
+			ps.setInt(2, account.getAccountNumber());
+			return ps.execute();
+		} catch (ClassNotFoundException | SQLException e) {
+			throw new BusinessException("Internal error: " + e);
+		}
 	}
 
 }

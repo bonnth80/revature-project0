@@ -7,11 +7,11 @@ import com.bank.exception.BusinessException;
 import com.bank.to.Account;
 
 public interface AccountBO {
-	Account getAccountById(int id);
+	Account getAccountById(int id) throws BusinessException;
 	Account getAccountByUserId(int userId);
 	public int getPendingApprovalCount() throws BusinessException;
 	List<Account> getAccountsByCreationDate(Date date);
 	List<Account> getAccountsByStatus(int status) throws BusinessException;
 	boolean addNewAccount(Account account);
-	boolean updateAccountStatus(Account account, int status);
+	boolean updateAccountStatus(Account account, int status) throws BusinessException;
 }

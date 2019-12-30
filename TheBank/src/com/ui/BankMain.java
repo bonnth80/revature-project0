@@ -1,6 +1,6 @@
 package com.ui;
 
-import java.util.Iterator;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -58,12 +58,12 @@ public class BankMain {
 	private static void displayEmployeeMenu() {
 		try {
 			log.info("\nPlease select from these available actions:");
-			log.info("1. View pending account applications. (" + getApplyCount() + ")");
-			log.info("2. Retrieve customer account info.");
-			log.info("3. Retrieve transaction log.");
-			log.info("4. Register new user.");
-			log.info("5. Sign out.");
-			log.info("6. Exit application.");
+			log.info("\t1. View pending account applications. (" + getApplyCount() + ")");
+			log.info("\t2. Retrieve customer account info.");
+			log.info("\t3. Retrieve transaction log.");
+			log.info("\t4. Register new user.");
+			log.info("\t5. Sign out.");
+			log.info("\t6. Exit application.");
 			
 		} catch (BusinessException e) {
 			log.info(e);
@@ -72,13 +72,13 @@ public class BankMain {
 	
 	private static void displayCustomerMenu() {
 		log.info("\nPlease select from these available actions:");
-		log.info("1. Apply for a new account.");
-		log.info("2. View account balance.");
-		log.info("3. Make a withdrawal.");
-		log.info("4. Make a deposit");
-		log.info("5. Post Money Transfer.");
-		log.info("6. Sign out.");
-		log.info("7. Exit application.");
+		log.info("\t1. Apply for a new account.");
+		log.info("\t2. View account balance.");
+		log.info("\t3. Make a withdrawal.");
+		log.info("\t4. Make a deposit");
+		log.info("\t5. Post Money Transfer.");
+		log.info("\t6. Sign out.");
+		log.info("\t7. Exit application.");
 	}
 	
 	private static void displayAccountsHeader() {
@@ -129,15 +129,44 @@ public class BankMain {
 						// execute employee selection
 						switch (selection) {
 						case 1:		// View pending account applications
-							AccountBO acct = new AccountBoImp();
-							List<Account> pendingAccounts = acct.getAccountsByStatus(0);
-							displayAccountsHeader();
-							for (Account pa : pendingAccounts) {
-								String acctString = pa.getAccountNumber() + "\t\t\t"
-										+pa.getUserFirstName() + " " + pa.getUserLastName() + "\t\t\t"
-										+pa.getCreationDate() + "\t\t"
-										+"PENDING APPROVAL";
-								log.info(acctString);
+							if (getApplyCount() > 0) {
+								List<Account> pendingAccounts = new AccountBoImp().getAccountsByStatus(0);
+								List<Integer> accountNums = new ArrayList<>();
+								displayAccountsHeader();
+								for (Account pa : pendingAccounts) {
+									accountNums.add(pa.getAccountNumber());
+									String acctString = pa.getAccountNumber() + "\t\t\t"
+											+pa.getUserFirstName() + " " + pa.getUserLastName() + "\t\t\t"
+											+pa.getCreationDate() + "\t\t"
+											+"PENDING APPROVAL";
+									log.info(acctString);
+								}
+								do {
+									log.info("Choose an account number or type -1 to return to the employee menu");
+									selection = Integer.parseInt(scanner.nextLine());
+									if (accountNums.contains(selection)) {
+										Account accountToApprove = new AccountBoImp().getAccountById(selection);
+										int selectionB = -1;
+										do {
+											log.info("Do you want to approve (1) or reject (2) this account application?");
+											selectionB = Integer.parseInt(scanner.nextLine());
+											if (selectionB == 1) {
+												new AccountBoImp().updateAccountStatus(accountToApprove, 1);
+													log.info("Account " + accountToApprove.getAccountNumber() + " is now Active.");
+											} else if (selectionB == 2) {
+												new AccountBoImp().updateAccountStatus(accountToApprove, 2);
+												log.info("Account " + accountToApprove.getAccountNumber() + " is now Rejected.");
+											} else {
+												System.out.println("Invalid Selection.");
+											}									
+										} while (selectionB != 1 && selectionB != 2);
+										
+									} else if (selection != -1) {
+										log.info("This is not a valid account number.");
+									}
+								} while (!(accountNums.contains(selection) || selection == -1));								
+							} else {
+								log.info("There are no new accounts pending approval. Returning to menu.");
 							}
 							break;
 						case 2: 	// Retrieve customer account info.
