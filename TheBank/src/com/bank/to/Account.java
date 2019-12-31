@@ -11,21 +11,25 @@ public class Account {
 	Date creationDate;
 	int status;
 	float startingBalance;
+	float availableBalance;
 	
 	// Constructors
 	public Account() {};
-	public Account(int accountNumber, int userId, Date creationDate, int status, float startingBalance) {
+	
+	public Account(int accountNumber, int userId, Date creationDate, int status, float startingBalance,
+			float availableBalance) {
 		super();
 		this.accountNumber = accountNumber;
 		this.userId = userId;
 		this.creationDate = creationDate;
 		this.status = status;
 		this.startingBalance = startingBalance;
+		this.availableBalance = availableBalance;
 	}
 	
 	// Accessor and Mutators
-	public int getAccountNumber() {
-		return accountNumber;
+	public void setAvailableBalance(float availableBalance) {
+		this.availableBalance = availableBalance;
 	}
 	public void setAccountNumber(int accountNumber) {
 		this.accountNumber = accountNumber;
@@ -53,6 +57,12 @@ public class Account {
 	}
 	public void setStartingBalance(int startingBalance) {
 		this.startingBalance = startingBalance;
+	}
+	public int getAccountNumber() {
+		return accountNumber;
+	}
+	public float getAvailableBalance() {
+		return availableBalance;
 	}
 	
 	// Methods

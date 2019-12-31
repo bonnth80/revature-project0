@@ -80,13 +80,21 @@ public class BankMain {
 		log.info("\t7. Exit application.");
 	}
 	
-	private static void displayAccountsHeader() {
+	private static void displayPendingAccountsHeader() {
 		String accountHeader = padStringRight("Account #", 16);
 		String userNameHeader = padStringRight("User Name", 30);
 		String startBalanceHeader = padStringRight("S. Balance", 20);
 		String creationDateHeader = padStringRight("Creation Date", 22);
 		String statusHeader = padStringRight("Status", 16);
 		log.info(accountHeader + userNameHeader + startBalanceHeader + creationDateHeader + statusHeader);
+		log.info(linebreak);
+	}
+	
+	private static void displayUserActiveAccountsHeader() {
+		String accountHeader = padStringRight("Account #", 25);
+		String balanceHeader = padStringRight("Balance", 25);
+		String creationDateHeader = padStringRight("Creation Date", 25);
+		log.info(accountHeader + balanceHeader + creationDateHeader);
 		log.info(linebreak);
 	}
 	
@@ -161,7 +169,7 @@ public class BankMain {
 								if (getApplyCount() > 0) {
 									List<Account> pendingAccounts = new AccountBoImp().getAccountsByStatus(0);
 									List<Integer> accountNums = new ArrayList<>();
-									displayAccountsHeader();
+									displayPendingAccountsHeader();
 									for (Account pa : pendingAccounts) {
 										accountNums.add(pa.getAccountNumber());
 										String acctString = padStringRight(Integer.toString(pa.getAccountNumber()), 16)
@@ -175,7 +183,7 @@ public class BankMain {
 										log.info("Choose an account number or type -1 to return to the employee menu");
 										selection = Integer.parseInt(scanner.nextLine());
 										if (accountNums.contains(selection)) {
-											Account accountToApprove = new AccountBoImp().getAccountById(selection);
+											Account accountToApprove = new AccountBoImp().getAccountByAccountNumber(selection);
 											int selectionB = -1;
 											do {
 												log.info("Do you want to approve (1) or reject (2) this account application?");
@@ -315,7 +323,7 @@ public class BankMain {
 										log.info("Invalid Ammount");
 									} else if (startingBalance > 0.0F) {
 										int maxAccountNum = new AccountDaoImp().getMaxAccountNumber();
-										Account newAccount = new Account(maxAccountNum + 1, user.getUserId(), new Date(), 0,startingBalance);
+										Account newAccount = new Account(maxAccountNum + 1, user.getUserId(), new Date(), 0,startingBalance, startingBalance);
 										new AccountBoImp().addNewAccount(newAccount);
 										log.info("Application submitted. You will be notified when your account application has been approved.\n"
 												+ "Congratulations on investing in your future, and we look forward to doing business with you.");
@@ -334,6 +342,8 @@ public class BankMain {
 							case 4:		// Make deposit
 								break;
 							case 5: 	// Post money transfer
+								log.info("Enter the account number for which you'd like to transfer money from. If you do not see your\n"
+										+ "account listed here and you believe this is an error, please contact a representative.");
 								break;
 							case 6: 	// Sign out
 								runUserLoop = false;

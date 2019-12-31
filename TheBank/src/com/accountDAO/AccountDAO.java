@@ -7,8 +7,8 @@ import com.bank.exception.BusinessException;
 import com.bank.to.Account;
 
 public interface AccountDAO {
-	Account getAccountById(int id) throws BusinessException;
-	Account getAccountByUserId(int userId);
+	Account getAccountByAccountNumber(int id) throws BusinessException;
+	List<Account> getAccountsByUserId(int userId) throws BusinessException;
 	int getMaxAccountNumber() throws BusinessException;
 	int getPendingApprovalCount() throws BusinessException;
 	List<Account> getAccountsByCreationDate(Date date);

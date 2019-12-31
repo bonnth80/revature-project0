@@ -16,13 +16,21 @@ import com.dbutil.OracleConnection;
 public class AccountDaoImp implements AccountDAO {
 
 	@Override
-	public Account getAccountById(int id) throws BusinessException {
+	public Account getAccountByAccountNumber(int id) throws BusinessException {
 		try (Connection connection = OracleConnection.getConnection()) {
-			String sql = "SELECT a.account_number, bu.user_id, a.creation_date, a.status, a.starting_balance "
+			String sql = "SELECT a.account_number, "
+					+ "        bu.user_id, "
+					+ "        a.creation_date, "
+					+ "        a.status, "
+					+ "        a.starting_balance, "
+					+ "        a.starting_balance + SUM(th.credit) - SUM(th.debit) as avail "
 					+ "FROM account a "
 					+ "INNER JOIN bank_user bu "
 					+ "ON a.user_id = bu.user_id "
-					+ "WHERE a.account_number = ?";
+					+ "INNER JOIN transaction_history th "
+					+ "ON th.account_number = a.account_number "
+					+ "WHERE a.account_number = ? "
+					+ "group by a.account_number, bu.user_id, a.creation_date, a.status, a.starting_balance; ";
 			PreparedStatement ps = connection.prepareStatement(sql);
 			ps.setInt(1, id);
 			ResultSet rs = ps.executeQuery();
@@ -33,7 +41,8 @@ public class AccountDaoImp implements AccountDAO {
 						rs.getInt(2),
 						rs.getDate(3),
 						rs.getInt(4),
-						rs.getFloat(5));
+						rs.getFloat(5),
+						rs.getFloat(6));
 		} catch (ClassNotFoundException | SQLException e) {
 			throw new BusinessException("Internal error: " + e);
 		}
@@ -52,9 +61,42 @@ public class AccountDaoImp implements AccountDAO {
 	}
 	
 	@Override
-	public Account getAccountByUserId(int userId) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Account> getAccountsByUserId(int userId) throws BusinessException {
+		List<Account> accounts = new ArrayList<>();
+		
+		try (Connection connection = OracleConnection.getConnection()) {
+			String sql = "SELECT a.account_number, "
+					+ "        bu.user_id, "
+					+ "        a.creation_date, "
+					+ "        a.status, "
+					+ "        a.starting_balance, "
+					+ "        a.starting_balance + SUM(th.credit) - SUM(th.debit) as avail "
+					+ "FROM account a "
+					+ "INNER JOIN bank_user bu "
+					+ "ON a.user_id = bu.user_id "
+					+ "INNER JOIN transaction_history th "
+					+ "ON th.account_number = a.account_number "
+					+ "WHERE a.user_id = ? "
+					+ "group by a.account_number, bu.user_id, a.creation_date, a.status, a.starting_balance; ";
+			PreparedStatement ps = connection.prepareStatement(sql);
+			ps.setInt(1, userId);
+			ResultSet rs = ps.executeQuery();
+			
+			while (rs.next()) {
+				accounts.add(new Account(
+						rs.getInt(1),
+						rs.getInt(2),
+						rs.getDate(3),
+						rs.getInt(4),
+						rs.getFloat(5),
+						rs.getFloat(6)
+						));
+			}
+			
+			return accounts;
+		} catch (ClassNotFoundException | SQLException e) {
+			throw new BusinessException("Internal error: " + e);
+		}
 	}
 	
 	@Override
@@ -86,11 +128,19 @@ public class AccountDaoImp implements AccountDAO {
 		List<Account> accounts = new ArrayList<>();
 		
 		try (Connection connection = OracleConnection.getConnection()) {
-			String sql = "SELECT a.account_number, bu.user_id, a.creation_date, a.status, a.starting_balance "
+			String sql = "SELECT a.account_number, "
+					+ "        bu.user_id, "
+					+ "        a.creation_date, "
+					+ "        a.status, "
+					+ "        a.starting_balance, "
+					+ "        a.starting_balance + SUM(th.credit) - SUM(th.debit) as avail "
 					+ "FROM account a "
 					+ "INNER JOIN bank_user bu "
 					+ "ON a.user_id = bu.user_id "
-					+ "WHERE a.status = ?";
+					+ "INNER JOIN transaction_history th "
+					+ "ON th.account_number = a.account_number "
+					+ "WHERE a.status = ? "
+					+ "group by a.account_number, bu.user_id, a.creation_date, a.status, a.starting_balance; ";
 			PreparedStatement ps = connection.prepareStatement(sql);
 			ps.setInt(1, status);
 			ResultSet rs = ps.executeQuery();
@@ -101,7 +151,8 @@ public class AccountDaoImp implements AccountDAO {
 						rs.getInt(2),
 						rs.getDate(3),
 						rs.getInt(4),
-						rs.getFloat(5)
+						rs.getFloat(5),
+						rs.getFloat(6)
 						));
 			}
 			
