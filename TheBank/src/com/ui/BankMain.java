@@ -342,8 +342,17 @@ public class BankMain {
 							case 4:		// Make deposit
 								break;
 							case 5: 	// Post money transfer
-								log.info("Enter the account number for which you'd like to transfer money from. If you do not see your\n"
+								List<Account> activeAccounts = new AccountBoImp().getAccountsByUserId(user.getUserId());
+								log.info("\nEnter the account number for which you'd like to transfer money from. If you do not see your\n"
 										+ "account listed here and you believe this is an error, please contact a representative.");
+								displayUserActiveAccountsHeader();
+								for (Account acc : activeAccounts) {
+									log.info(padStringRight(Integer.toString(acc.getAccountNumber()), 25)
+											+padStringRight(Float.toString(acc.getAvailableBalance()),25)
+											+padStringRight(acc.getCreationDate().toString(),25)
+											);
+								}
+								
 								break;
 							case 6: 	// Sign out
 								runUserLoop = false;

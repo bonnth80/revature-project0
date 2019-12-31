@@ -11,10 +11,10 @@ import com.bank.to.Account;
 public class AccountBoImp implements AccountBO {
 
 	@Override
-	public Account getAccountByAccountNumber(int id) throws BusinessException {
+	public Account getAccountByAccountNumber(int accountNumber) throws BusinessException {
 		AccountDAO ad = new AccountDaoImp();
 		
-		return ad.getAccountByAccountNumber(id);
+		return ad.getAccountByAccountNumber(accountNumber);
 	}
 	
 	@Override

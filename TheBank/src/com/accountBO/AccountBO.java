@@ -7,7 +7,7 @@ import com.bank.exception.BusinessException;
 import com.bank.to.Account;
 
 public interface AccountBO {
-	Account getAccountByAccountNumber(int id) throws BusinessException;
+	Account getAccountByAccountNumber(int accountNumber) throws BusinessException;
 	List<Account> getAccountsByUserId(int userId) throws BusinessException;
 	int getMaxAccountNumber() throws BusinessException;
 	public int getPendingApprovalCount() throws BusinessException;

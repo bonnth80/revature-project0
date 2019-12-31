@@ -16,23 +16,22 @@ import com.dbutil.OracleConnection;
 public class AccountDaoImp implements AccountDAO {
 
 	@Override
-	public Account getAccountByAccountNumber(int id) throws BusinessException {
+	public Account getAccountByAccountNumber(int accountNumber) throws BusinessException {
 		try (Connection connection = OracleConnection.getConnection()) {
-			String sql = "SELECT a.account_number, "
-					+ "        bu.user_id, "
-					+ "        a.creation_date, "
-					+ "        a.status, "
-					+ "        a.starting_balance, "
-					+ "        a.starting_balance + SUM(th.credit) - SUM(th.debit) as avail "
-					+ "FROM account a "
-					+ "INNER JOIN bank_user bu "
-					+ "ON a.user_id = bu.user_id "
-					+ "INNER JOIN transaction_history th "
-					+ "ON th.account_number = a.account_number "
-					+ "WHERE a.account_number = ? "
-					+ "group by a.account_number, bu.user_id, a.creation_date, a.status, a.starting_balance; ";
+			String sql = "SELECT v, user_id,creation_date,status,starting_balance, starting_balance + SUM(credit) - SUM(debit) "
+					+ "FROM ( "
+					+ "    SELECT a.account_number AS v, a.user_id AS user_id, "
+					+ "        a.creation_date AS creation_date, a.status AS status, "
+					+ "        a.starting_balance AS starting_balance, th.credit AS credit, "
+					+ "        th.debit AS debit "
+					+ "    FROM account a "
+					+ "    LEFT OUTER JOIN transaction_history th "
+					+ "    ON th.account_number = a.account_number "
+					+ ") "
+					+ "WHERE v = ? "
+					+ "GROUP BY v, user_id, creation_date, status, starting_balance ";
 			PreparedStatement ps = connection.prepareStatement(sql);
-			ps.setInt(1, id);
+			ps.setInt(1, accountNumber);
 			ResultSet rs = ps.executeQuery();
 			
 			rs.next();
@@ -65,19 +64,16 @@ public class AccountDaoImp implements AccountDAO {
 		List<Account> accounts = new ArrayList<>();
 		
 		try (Connection connection = OracleConnection.getConnection()) {
-			String sql = "SELECT a.account_number, "
-					+ "        bu.user_id, "
-					+ "        a.creation_date, "
-					+ "        a.status, "
-					+ "        a.starting_balance, "
-					+ "        a.starting_balance + SUM(th.credit) - SUM(th.debit) as avail "
-					+ "FROM account a "
-					+ "INNER JOIN bank_user bu "
-					+ "ON a.user_id = bu.user_id "
-					+ "INNER JOIN transaction_history th "
-					+ "ON th.account_number = a.account_number "
-					+ "WHERE a.user_id = ? "
-					+ "group by a.account_number, bu.user_id, a.creation_date, a.status, a.starting_balance; ";
+			String sql =  "SELECT v, user_id,creation_date,status,starting_balance, starting_balance + SUM(credit) - SUM(debit) "
+					+ "FROM ( "
+					+ "		SELECT a.account_number AS v, a.user_id AS user_id, a.creation_date AS creation_date,"
+					+ "		a.status AS status,a.starting_balance AS starting_balance, th.credit AS credit, th.debit AS debit "
+					+ "		FROM account a "
+					+ "		LEFT OUTER JOIN transaction_history th "
+					+ "		ON th.account_number = a.account_number "
+					+ ") "
+					+ "WHERE user_id = ? "
+					+ "GROUP BY v, user_id, creation_date, status, starting_balance";
 			PreparedStatement ps = connection.prepareStatement(sql);
 			ps.setInt(1, userId);
 			ResultSet rs = ps.executeQuery();
@@ -128,19 +124,19 @@ public class AccountDaoImp implements AccountDAO {
 		List<Account> accounts = new ArrayList<>();
 		
 		try (Connection connection = OracleConnection.getConnection()) {
-			String sql = "SELECT a.account_number, "
-					+ "        bu.user_id, "
-					+ "        a.creation_date, "
-					+ "        a.status, "
-					+ "        a.starting_balance, "
-					+ "        a.starting_balance + SUM(th.credit) - SUM(th.debit) as avail "
-					+ "FROM account a "
-					+ "INNER JOIN bank_user bu "
-					+ "ON a.user_id = bu.user_id "
-					+ "INNER JOIN transaction_history th "
-					+ "ON th.account_number = a.account_number "
-					+ "WHERE a.status = ? "
-					+ "group by a.account_number, bu.user_id, a.creation_date, a.status, a.starting_balance; ";
+			String sql = "SELECT v, user_id,creation_date,status,starting_balance, starting_balance + SUM(credit) - SUM(debit) "
+					+ "FROM ( "
+					+ "    SELECT a.account_number AS v, a.user_id AS user_id, "
+					+ "        a.creation_date AS creation_date, a.status AS status, "
+					+ "        a.starting_balance AS starting_balance, th.credit AS credit, "
+					+ "        th.debit AS debit "
+					+ "    FROM account a "
+					+ "    LEFT OUTER JOIN transaction_history th "
+					+ "    ON th.account_number = a.account_number "
+					+ ") "
+					+ "WHERE status = ? "
+					+ "GROUP BY v, user_id, creation_date, status, starting_balance "
+					+ "ORDER BY v";
 			PreparedStatement ps = connection.prepareStatement(sql);
 			ps.setInt(1, status);
 			ResultSet rs = ps.executeQuery();

@@ -36252,3 +36252,183 @@ Please select from these available actions:
 2019-12-30 20:43:18 INFO  BankMain:433 - 
 Goodbye.
 
+2019-12-31 16:37:13 INFO  BankMain:54 - Please make a selection:
+	1. Existing User Sign-in
+	2. New User Sign-up
+
+2019-12-31 16:37:16 INFO  BankMain:140 - Username:
+2019-12-31 16:37:45 INFO  BankMain:142 - Password: 
+2019-12-31 16:37:48 INFO  BankMain:148 - 
+Current user is: Customer
+2019-12-31 16:37:48 INFO  BankMain:73 - 
+Please select from these available actions:
+2019-12-31 16:37:48 INFO  BankMain:74 - 	1. Apply for a new account.
+2019-12-31 16:37:48 INFO  BankMain:75 - 	2. View account balance.
+2019-12-31 16:37:48 INFO  BankMain:76 - 	3. Make a withdrawal.
+2019-12-31 16:37:48 INFO  BankMain:77 - 	4. Make a deposit
+2019-12-31 16:37:48 INFO  BankMain:78 - 	5. Post Money Transfer.
+2019-12-31 16:37:48 INFO  BankMain:79 - 	6. Sign out.
+2019-12-31 16:37:48 INFO  BankMain:80 - 	7. Exit application.
+2019-12-31 16:37:52 ERROR BankMain:372 - Internal error: java.sql.SQLSyntaxErrorException: ORA-00911: invalid character
+
+2019-12-31 16:37:52 INFO  BankMain:54 - Please make a selection:
+	1. Existing User Sign-in
+	2. New User Sign-up
+
+2019-12-31 16:38:11 INFO  BankMain:140 - Username:
+2019-12-31 16:38:12 INFO  BankMain:142 - Password: 
+2019-12-31 16:38:13 INFO  BankMain:148 - 
+Current user is: Employee
+2019-12-31 16:38:13 INFO  BankMain:59 - 
+Please select from these available actions:
+2019-12-31 16:38:13 INFO  BankMain:60 - 	1. View pending account applications. (3)
+2019-12-31 16:38:13 INFO  BankMain:61 - 	2. Retrieve customer account info.
+2019-12-31 16:38:13 INFO  BankMain:62 - 	3. Retrieve transaction log.
+2019-12-31 16:38:13 INFO  BankMain:63 - 	4. Register new user.
+2019-12-31 16:38:13 INFO  BankMain:64 - 	5. Sign out.
+2019-12-31 16:38:13 INFO  BankMain:65 - 	6. Exit application.
+2019-12-31 16:38:14 ERROR BankMain:372 - Internal error: java.sql.SQLSyntaxErrorException: ORA-00911: invalid character
+
+2019-12-31 16:38:14 INFO  BankMain:54 - Please make a selection:
+	1. Existing User Sign-in
+	2. New User Sign-up
+
+2019-12-31 16:39:02 INFO  BankMain:54 - Please make a selection:
+	1. Existing User Sign-in
+	2. New User Sign-up
+
+2019-12-31 16:39:05 INFO  BankMain:140 - Username:
+2019-12-31 16:39:06 INFO  BankMain:142 - Password: 
+2019-12-31 16:39:07 INFO  BankMain:148 - 
+Current user is: Employee
+2019-12-31 16:39:07 INFO  BankMain:59 - 
+Please select from these available actions:
+2019-12-31 16:39:07 INFO  BankMain:60 - 	1. View pending account applications. (3)
+2019-12-31 16:39:07 INFO  BankMain:61 - 	2. Retrieve customer account info.
+2019-12-31 16:39:07 INFO  BankMain:62 - 	3. Retrieve transaction log.
+2019-12-31 16:39:07 INFO  BankMain:63 - 	4. Register new user.
+2019-12-31 16:39:07 INFO  BankMain:64 - 	5. Sign out.
+2019-12-31 16:39:07 INFO  BankMain:65 - 	6. Exit application.
+2019-12-31 16:39:22 INFO  BankMain:89 - Account #       User Name                     S. Balance          Creation Date         Status          
+2019-12-31 16:39:22 INFO  BankMain:90 - ------------------------------------------------------------------------------------------------------------
+2019-12-31 16:39:22 INFO  BankMain:183 - Choose an account number or type -1 to return to the employee menu
+2019-12-31 16:39:38 INFO  BankMain:54 - Please make a selection:
+	1. Existing User Sign-in
+	2. New User Sign-up
+
+2019-12-31 16:39:39 INFO  BankMain:140 - Username:
+2019-12-31 16:39:40 INFO  BankMain:142 - Password: 
+2019-12-31 16:39:42 INFO  BankMain:148 - 
+Current user is: Employee
+2019-12-31 16:39:42 INFO  BankMain:59 - 
+Please select from these available actions:
+2019-12-31 16:39:42 INFO  BankMain:60 - 	1. View pending account applications. (3)
+2019-12-31 16:39:42 INFO  BankMain:61 - 	2. Retrieve customer account info.
+2019-12-31 16:39:42 INFO  BankMain:62 - 	3. Retrieve transaction log.
+2019-12-31 16:39:42 INFO  BankMain:63 - 	4. Register new user.
+2019-12-31 16:39:42 INFO  BankMain:64 - 	5. Sign out.
+2019-12-31 16:39:42 INFO  BankMain:65 - 	6. Exit application.
+2019-12-31 16:39:43 INFO  BankMain:89 - Account #       User Name                     S. Balance          Creation Date         Status          
+2019-12-31 16:39:43 INFO  BankMain:90 - ------------------------------------------------------------------------------------------------------------
+2019-12-31 16:39:43 INFO  BankMain:183 - Choose an account number or type -1 to return to the employee menu
+2019-12-31 16:39:46 INFO  BankMain:59 - 
+Please select from these available actions:
+2019-12-31 16:39:46 INFO  BankMain:60 - 	1. View pending account applications. (3)
+2019-12-31 16:39:46 INFO  BankMain:61 - 	2. Retrieve customer account info.
+2019-12-31 16:39:46 INFO  BankMain:62 - 	3. Retrieve transaction log.
+2019-12-31 16:39:46 INFO  BankMain:63 - 	4. Register new user.
+2019-12-31 16:39:46 INFO  BankMain:64 - 	5. Sign out.
+2019-12-31 16:39:46 INFO  BankMain:65 - 	6. Exit application.
+2019-12-31 17:36:55 INFO  BankMain:54 - Please make a selection:
+	1. Existing User Sign-in
+	2. New User Sign-up
+
+2019-12-31 17:36:57 INFO  BankMain:140 - Username:
+2019-12-31 17:36:59 INFO  BankMain:142 - Password: 
+2019-12-31 17:37:01 INFO  BankMain:148 - 
+Current user is: Employee
+2019-12-31 17:37:01 INFO  BankMain:59 - 
+Please select from these available actions:
+2019-12-31 17:37:01 INFO  BankMain:60 - 	1. View pending account applications. (3)
+2019-12-31 17:37:01 INFO  BankMain:61 - 	2. Retrieve customer account info.
+2019-12-31 17:37:01 INFO  BankMain:62 - 	3. Retrieve transaction log.
+2019-12-31 17:37:01 INFO  BankMain:63 - 	4. Register new user.
+2019-12-31 17:37:01 INFO  BankMain:64 - 	5. Sign out.
+2019-12-31 17:37:01 INFO  BankMain:65 - 	6. Exit application.
+2019-12-31 17:37:02 INFO  BankMain:89 - Account #       User Name                     S. Balance          Creation Date         Status          
+2019-12-31 17:37:02 INFO  BankMain:90 - ------------------------------------------------------------------------------------------------------------
+2019-12-31 17:37:02 INFO  BankMain:180 - 0               Default Default               250.0               2019-12-29            PENDING APPROVAL
+2019-12-31 17:37:02 INFO  BankMain:180 - 3               Default Default               640.0               2019-07-09            PENDING APPROVAL
+2019-12-31 17:37:02 INFO  BankMain:180 - 5               Default Default               1200.0              2019-08-08            PENDING APPROVAL
+2019-12-31 17:37:02 INFO  BankMain:183 - Choose an account number or type -1 to return to the employee menu
+2019-12-31 17:37:18 INFO  BankMain:59 - 
+Please select from these available actions:
+2019-12-31 17:37:18 INFO  BankMain:60 - 	1. View pending account applications. (3)
+2019-12-31 17:37:18 INFO  BankMain:61 - 	2. Retrieve customer account info.
+2019-12-31 17:37:18 INFO  BankMain:62 - 	3. Retrieve transaction log.
+2019-12-31 17:37:18 INFO  BankMain:63 - 	4. Register new user.
+2019-12-31 17:37:18 INFO  BankMain:64 - 	5. Sign out.
+2019-12-31 17:37:18 INFO  BankMain:65 - 	6. Exit application.
+2019-12-31 17:37:22 INFO  BankMain:54 - Please make a selection:
+	1. Existing User Sign-in
+	2. New User Sign-up
+
+2019-12-31 17:37:23 INFO  BankMain:375 - Welcome to New User creation. Please enter the information as follows.
+2019-12-31 17:37:23 INFO  BankMain:397 - 
+First Name:
+2019-12-31 17:37:33 INFO  BankMain:54 - Please make a selection:
+	1. Existing User Sign-in
+	2. New User Sign-up
+
+2019-12-31 17:37:35 INFO  BankMain:140 - Username:
+2019-12-31 17:37:37 INFO  BankMain:142 - Password: 
+2019-12-31 17:37:38 INFO  BankMain:148 - 
+Current user is: Customer
+2019-12-31 17:37:38 INFO  BankMain:73 - 
+Please select from these available actions:
+2019-12-31 17:37:38 INFO  BankMain:74 - 	1. Apply for a new account.
+2019-12-31 17:37:38 INFO  BankMain:75 - 	2. View account balance.
+2019-12-31 17:37:38 INFO  BankMain:76 - 	3. Make a withdrawal.
+2019-12-31 17:37:38 INFO  BankMain:77 - 	4. Make a deposit
+2019-12-31 17:37:38 INFO  BankMain:78 - 	5. Post Money Transfer.
+2019-12-31 17:37:38 INFO  BankMain:79 - 	6. Sign out.
+2019-12-31 17:37:38 INFO  BankMain:80 - 	7. Exit application.
+2019-12-31 17:37:47 ERROR BankMain:372 - Internal error: java.sql.SQLSyntaxErrorException: ORA-00911: invalid character
+
+2019-12-31 17:37:47 INFO  BankMain:54 - Please make a selection:
+	1. Existing User Sign-in
+	2. New User Sign-up
+
+2019-12-31 17:38:06 INFO  BankMain:54 - Please make a selection:
+	1. Existing User Sign-in
+	2. New User Sign-up
+
+2019-12-31 17:38:08 INFO  BankMain:140 - Username:
+2019-12-31 17:38:10 INFO  BankMain:142 - Password: 
+2019-12-31 17:38:12 INFO  BankMain:148 - 
+Current user is: Customer
+2019-12-31 17:38:12 INFO  BankMain:73 - 
+Please select from these available actions:
+2019-12-31 17:38:12 INFO  BankMain:74 - 	1. Apply for a new account.
+2019-12-31 17:38:12 INFO  BankMain:75 - 	2. View account balance.
+2019-12-31 17:38:12 INFO  BankMain:76 - 	3. Make a withdrawal.
+2019-12-31 17:38:12 INFO  BankMain:77 - 	4. Make a deposit
+2019-12-31 17:38:12 INFO  BankMain:78 - 	5. Post Money Transfer.
+2019-12-31 17:38:12 INFO  BankMain:79 - 	6. Sign out.
+2019-12-31 17:38:12 INFO  BankMain:80 - 	7. Exit application.
+2019-12-31 17:38:14 INFO  BankMain:346 - 
+Enter the account number for which you'd like to transfer money from. If you do not see your
+account listed here and you believe this is an error, please contact a representative.
+2019-12-31 17:38:14 INFO  BankMain:97 - Account #                Balance                  Creation Date            
+2019-12-31 17:38:14 INFO  BankMain:98 - ------------------------------------------------------------------------------------------------------------
+2019-12-31 17:38:14 INFO  BankMain:350 - 6                        350.0                    2019-12-30               
+2019-12-31 17:38:14 INFO  BankMain:350 - 7                        1500.0                   2019-12-31               
+2019-12-31 17:38:14 INFO  BankMain:73 - 
+Please select from these available actions:
+2019-12-31 17:38:14 INFO  BankMain:74 - 	1. Apply for a new account.
+2019-12-31 17:38:14 INFO  BankMain:75 - 	2. View account balance.
+2019-12-31 17:38:14 INFO  BankMain:76 - 	3. Make a withdrawal.
+2019-12-31 17:38:14 INFO  BankMain:77 - 	4. Make a deposit
+2019-12-31 17:38:14 INFO  BankMain:78 - 	5. Post Money Transfer.
+2019-12-31 17:38:14 INFO  BankMain:79 - 	6. Sign out.
+2019-12-31 17:38:14 INFO  BankMain:80 - 	7. Exit application.
