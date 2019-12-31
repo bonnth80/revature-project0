@@ -36432,3 +36432,73 @@ Please select from these available actions:
 2019-12-31 17:38:14 INFO  BankMain:78 - 	5. Post Money Transfer.
 2019-12-31 17:38:14 INFO  BankMain:79 - 	6. Sign out.
 2019-12-31 17:38:14 INFO  BankMain:80 - 	7. Exit application.
+2019-12-31 17:46:38 INFO  BankMain:54 - Please make a selection:
+	1. Existing User Sign-in
+	2. New User Sign-up
+
+2019-12-31 17:46:40 INFO  BankMain:140 - Username:
+2019-12-31 17:46:43 INFO  BankMain:142 - Password: 
+2019-12-31 17:46:45 INFO  BankMain:148 - 
+Current user is: Customer
+2019-12-31 17:46:45 INFO  BankMain:73 - 
+Please select from these available actions:
+2019-12-31 17:46:45 INFO  BankMain:74 - 	1. Apply for a new account.
+2019-12-31 17:46:45 INFO  BankMain:75 - 	2. View account balance.
+2019-12-31 17:46:45 INFO  BankMain:76 - 	3. Make a withdrawal.
+2019-12-31 17:46:45 INFO  BankMain:77 - 	4. Make a deposit
+2019-12-31 17:46:45 INFO  BankMain:78 - 	5. Post Money Transfer.
+2019-12-31 17:46:45 INFO  BankMain:79 - 	6. Sign out.
+2019-12-31 17:46:45 INFO  BankMain:80 - 	7. Exit application.
+2019-12-31 17:46:48 INFO  BankMain:346 - 
+Enter the account number for which you'd like to transfer money from. If you do not see your
+account listed here and you believe this is in error, please contact a representative.
+
+2019-12-31 17:46:48 INFO  BankMain:97 - Account #                Balance                  Creation Date            
+2019-12-31 17:46:48 INFO  BankMain:98 - ------------------------------------------------------------------------------------------------------------
+2019-12-31 17:46:48 INFO  BankMain:350 - 8                        0.0                      2019-12-31               
+2019-12-31 17:46:48 INFO  BankMain:350 - 6                        350.0                    2019-12-30               
+2019-12-31 17:46:48 INFO  BankMain:350 - 7                        1500.0                   2019-12-31               
+2019-12-31 17:46:48 INFO  BankMain:73 - 
+Please select from these available actions:
+2019-12-31 17:46:48 INFO  BankMain:74 - 	1. Apply for a new account.
+2019-12-31 17:46:48 INFO  BankMain:75 - 	2. View account balance.
+2019-12-31 17:46:48 INFO  BankMain:76 - 	3. Make a withdrawal.
+2019-12-31 17:46:48 INFO  BankMain:77 - 	4. Make a deposit
+2019-12-31 17:46:48 INFO  BankMain:78 - 	5. Post Money Transfer.
+2019-12-31 17:46:48 INFO  BankMain:79 - 	6. Sign out.
+2019-12-31 17:46:48 INFO  BankMain:80 - 	7. Exit application.
+2019-12-31 17:58:42 INFO  BankMain:54 - Please make a selection:
+	1. Existing User Sign-in
+	2. New User Sign-up
+
+2019-12-31 17:58:44 INFO  BankMain:140 - Username:
+2019-12-31 17:58:46 INFO  BankMain:142 - Password: 
+2019-12-31 17:58:49 INFO  BankMain:148 - 
+Current user is: Customer
+2019-12-31 17:58:49 INFO  BankMain:73 - 
+Please select from these available actions:
+2019-12-31 17:58:49 INFO  BankMain:74 - 	1. Apply for a new account.
+2019-12-31 17:58:49 INFO  BankMain:75 - 	2. View account balance.
+2019-12-31 17:58:49 INFO  BankMain:76 - 	3. Make a withdrawal.
+2019-12-31 17:58:49 INFO  BankMain:77 - 	4. Make a deposit
+2019-12-31 17:58:49 INFO  BankMain:78 - 	5. Post Money Transfer.
+2019-12-31 17:58:49 INFO  BankMain:79 - 	6. Sign out.
+2019-12-31 17:58:49 INFO  BankMain:80 - 	7. Exit application.
+2019-12-31 17:58:51 INFO  BankMain:346 - 
+Enter the account number for which you'd like to transfer money from. If you do not see your
+account listed here and you believe this is in error, please contact a representative.
+
+2019-12-31 17:58:51 INFO  BankMain:97 - Account #                Balance                  Creation Date            
+2019-12-31 17:58:51 INFO  BankMain:98 - ------------------------------------------------------------------------------------------------------------
+2019-12-31 17:58:51 INFO  BankMain:350 - 8                        200.0                    2019-12-31               
+2019-12-31 17:58:51 INFO  BankMain:350 - 6                        350.0                    2019-12-30               
+2019-12-31 17:58:51 INFO  BankMain:350 - 7                        1500.0                   2019-12-31               
+2019-12-31 17:58:51 INFO  BankMain:73 - 
+Please select from these available actions:
+2019-12-31 17:58:51 INFO  BankMain:74 - 	1. Apply for a new account.
+2019-12-31 17:58:51 INFO  BankMain:75 - 	2. View account balance.
+2019-12-31 17:58:51 INFO  BankMain:76 - 	3. Make a withdrawal.
+2019-12-31 17:58:51 INFO  BankMain:77 - 	4. Make a deposit
+2019-12-31 17:58:51 INFO  BankMain:78 - 	5. Post Money Transfer.
+2019-12-31 17:58:51 INFO  BankMain:79 - 	6. Sign out.
+2019-12-31 17:58:51 INFO  BankMain:80 - 	7. Exit application.

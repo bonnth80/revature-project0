@@ -18,7 +18,7 @@ public class AccountDaoImp implements AccountDAO {
 	@Override
 	public Account getAccountByAccountNumber(int accountNumber) throws BusinessException {
 		try (Connection connection = OracleConnection.getConnection()) {
-			String sql = "SELECT v, user_id,creation_date,status,starting_balance, starting_balance + SUM(credit) - SUM(debit) "
+			String sql = "SELECT v, user_id,creation_date,status,starting_balance, NVL(starting_balance + SUM(credit) - SUM(debit), starting_balance) "
 					+ "FROM ( "
 					+ "    SELECT a.account_number AS v, a.user_id AS user_id, "
 					+ "        a.creation_date AS creation_date, a.status AS status, "
@@ -64,7 +64,7 @@ public class AccountDaoImp implements AccountDAO {
 		List<Account> accounts = new ArrayList<>();
 		
 		try (Connection connection = OracleConnection.getConnection()) {
-			String sql =  "SELECT v, user_id,creation_date,status,starting_balance, starting_balance + SUM(credit) - SUM(debit) "
+			String sql =  "SELECT v, user_id,creation_date,status,starting_balance, NVL(starting_balance + SUM(credit) - SUM(debit), starting_balance) "
 					+ "FROM ( "
 					+ "		SELECT a.account_number AS v, a.user_id AS user_id, a.creation_date AS creation_date,"
 					+ "		a.status AS status,a.starting_balance AS starting_balance, th.credit AS credit, th.debit AS debit "
@@ -124,7 +124,7 @@ public class AccountDaoImp implements AccountDAO {
 		List<Account> accounts = new ArrayList<>();
 		
 		try (Connection connection = OracleConnection.getConnection()) {
-			String sql = "SELECT v, user_id,creation_date,status,starting_balance, starting_balance + SUM(credit) - SUM(debit) "
+			String sql = "SELECT v, user_id,creation_date,status,starting_balance, NVL(starting_balance + SUM(credit) - SUM(debit), starting_balance) "
 					+ "FROM ( "
 					+ "    SELECT a.account_number AS v, a.user_id AS user_id, "
 					+ "        a.creation_date AS creation_date, a.status AS status, "

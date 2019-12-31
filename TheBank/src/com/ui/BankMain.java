@@ -344,7 +344,7 @@ public class BankMain {
 							case 5: 	// Post money transfer
 								List<Account> activeAccounts = new AccountBoImp().getAccountsByUserId(user.getUserId());
 								log.info("\nEnter the account number for which you'd like to transfer money from. If you do not see your\n"
-										+ "account listed here and you believe this is an error, please contact a representative.");
+										+ "account listed here and you believe this is in error, please contact a representative.\n");
 								displayUserActiveAccountsHeader();
 								for (Account acc : activeAccounts) {
 									log.info(padStringRight(Integer.toString(acc.getAccountNumber()), 25)
@@ -352,6 +352,8 @@ public class BankMain {
 											+padStringRight(acc.getCreationDate().toString(),25)
 											);
 								}
+								
+								
 								
 								break;
 							case 6: 	// Sign out
