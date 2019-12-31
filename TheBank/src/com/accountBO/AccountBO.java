@@ -13,6 +13,6 @@ public interface AccountBO {
 	public int getPendingApprovalCount() throws BusinessException;
 	List<Account> getAccountsByCreationDate(Date date);
 	List<Account> getAccountsByStatus(int status) throws BusinessException;
-	boolean addNewAccount(Account account);
+	boolean addNewAccount(Account account) throws BusinessException;
 	boolean updateAccountStatus(Account account, int status) throws BusinessException;
 }

@@ -48,9 +48,8 @@ public class AccountBoImp implements AccountBO {
 	}
 
 	@Override
-	public boolean addNewAccount(Account account) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean addNewAccount(Account account) throws BusinessException {
+		return new AccountDaoImp().addNewAccount(account);
 	}
 
 	@Override

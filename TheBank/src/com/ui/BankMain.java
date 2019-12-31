@@ -313,14 +313,15 @@ public class BankMain {
 								Float startingBalance = -1.0F;
 								
 								do {
-									log.info("How much would you like to deposit for your starting balance? (0 to cancel");								
+									log.info("How much would you like to deposit for your starting balance? (0 to cancel)");								
 									startingBalance = Float.parseFloat(scanner.nextLine());
 									
 									if (startingBalance < 0.0F) {
 										log.info("Invalid Ammount");
 									} else if (startingBalance > 0.0F) {
 										int maxAccountNum = new AccountDaoImp().getMaxAccountNumber();
-										Account account = new Account(maxAccountNum + 1, user.getUserId(), new Date(), 0,startingBalance);
+										Account newAccount = new Account(maxAccountNum + 1, user.getUserId(), new Date(), 0,startingBalance);
+										new AccountBoImp().addNewAccount(newAccount);
 										log.info("Application submitted. You will be notified when your account application has been approved.\n"
 												+ "Congratulations on investing in your future, and we look forward to doing business with you.");
 									} else {

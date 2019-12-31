@@ -112,9 +112,20 @@ public class AccountDaoImp implements AccountDAO {
 	}
 
 	@Override
-	public boolean addNewAccount(Account account) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean addNewAccount(Account account) throws BusinessException {
+		try (Connection connection = OracleConnection.getConnection()) {
+			String sql = "INSERT INTO account "
+					+ "VALUES (?,?,?,?,?)";
+			PreparedStatement ps = connection.prepareStatement(sql);
+			ps.setInt(1, account.getAccountNumber());
+			ps.setInt(2, account.getUserId());
+			ps.setDate(3, new java.sql.Date(account.getCreationDate().getTime()));
+			ps.setInt(4, account.getStatus());
+			ps.setFloat(5, account.getStartingBalance());
+			return ps.execute();
+		} catch (ClassNotFoundException | SQLException e) {
+			throw new BusinessException("Internal error: " + e);
+		}
 	}
 
 	@Override
