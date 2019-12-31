@@ -16,7 +16,7 @@ public class UserDaoImp implements UserDAO {
 	@Override
 	public User getUserByCredentials(String username, String password) throws BusinessException {
 		try (Connection connection = OracleConnection.getConnection()){
-			String sql = "SELECT first_name, last_name, archetype, ssn, "
+			String sql = "SELECT user_id, first_name, last_name, archetype, ssn, "
 						+ " home_phone, mobile_phone, email, street_address, "
 						+ "city, state, country, zip, username, password, date_created"
 						+ " FROM bank_user"
@@ -28,6 +28,7 @@ public class UserDaoImp implements UserDAO {
 			
 			if (result.next()) {
 				User user = new User(
+						result.getInt("user_id"),
 						result.getString("first_name"),
 						result.getString("last_name"),
 						result.getInt("archetype"),
@@ -151,8 +152,7 @@ public class UserDaoImp implements UserDAO {
 					+ "?)";
 			
 			PreparedStatement ps = connection.prepareStatement(sql);
-			int maxId = getMaxIdUsed();
-			ps.setInt(1, maxId + 1);	// id
+			ps.setInt(1, user.getUserId());	// id
 			ps.setString(2, user.getFirstName());
 			ps.setString(3, user.getLastName());
 			ps.setInt(4, user.getArchetype());

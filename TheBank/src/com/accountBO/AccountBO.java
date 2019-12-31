@@ -9,6 +9,7 @@ import com.bank.to.Account;
 public interface AccountBO {
 	Account getAccountById(int id) throws BusinessException;
 	Account getAccountByUserId(int userId);
+	int getMaxAccountNumber() throws BusinessException;
 	public int getPendingApprovalCount() throws BusinessException;
 	List<Account> getAccountsByCreationDate(Date date);
 	List<Account> getAccountsByStatus(int status) throws BusinessException;

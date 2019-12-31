@@ -2,22 +2,25 @@ package com.bank.to;
 
 import java.util.Date;
 
+import com.accountBO.AccountBoImp;
+import com.bank.exception.BusinessException;
+
 public class Account {
 	int accountNumber;
-	String userFirstName;
-	String userLastName;
+	int userId;
 	Date creationDate;
 	int status;
+	float startingBalance;
 	
 	// Constructors
 	public Account() {};
-	public Account(int accountNumber, String userFirstName, String userLastName, Date creationDate, int status) {
+	public Account(int accountNumber, int userId, Date creationDate, int status, float startingBalance) {
 		super();
 		this.accountNumber = accountNumber;
-		this.userFirstName = userFirstName;
-		this.userLastName = userLastName;
+		this.userId = userId;
 		this.creationDate = creationDate;
 		this.status = status;
+		this.startingBalance = startingBalance;
 	}
 	
 	// Accessor and Mutators
@@ -27,17 +30,11 @@ public class Account {
 	public void setAccountNumber(int accountNumber) {
 		this.accountNumber = accountNumber;
 	}
-	public String getUserFirstName() {
-		return userFirstName;
+	public int getUserId() {
+		return userId;
 	}
-	public void setUserFirstName(String userFirstName) {
-		this.userFirstName = userFirstName;
-	}
-	public String getUserLastName() {
-		return userLastName;
-	}
-	public void setUserLastName(String userLastName) {
-		this.userLastName = userLastName;
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
 	public Date getCreationDate() {
 		return creationDate;
@@ -51,6 +48,20 @@ public class Account {
 	public void setStatus(int status) {
 		this.status = status;
 	}
+	public float getStartingBalance() {
+		return startingBalance;
+	}
+	public void setStartingBalance(int startingBalance) {
+		this.startingBalance = startingBalance;
+	}
 	
+	// Methods
+	public String getUserFirstName() throws BusinessException {
+		return new AccountBoImp().getUserFirstName(this);
+	}
+	
+	public String getUserLastName() throws BusinessException {
+		return new AccountBoImp().getUserLastName(this);
+	}
 	
 }

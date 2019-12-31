@@ -16,6 +16,11 @@ public class AccountBoImp implements AccountBO {
 		
 		return ad.getAccountById(id);
 	}
+	
+	@Override
+	public int getMaxAccountNumber() throws BusinessException {		
+		return new AccountDaoImp().getMaxAccountNumber();
+	}
 
 	@Override
 	public Account getAccountByUserId(int userId) {
@@ -53,5 +58,15 @@ public class AccountBoImp implements AccountBO {
 		AccountDAO ad = new AccountDaoImp();
 		return ad.updateAccountStatus(account, status);
 	}
+	
+	//Methods
+	public String getUserFirstName(Account account) throws BusinessException {
+		return new AccountDaoImp().getUserFirstName(account);
+	}
+
+	public String getUserLastName(Account account) throws BusinessException {
+		return new AccountDaoImp().getUserLastName(account);
+	}
+
 
 }

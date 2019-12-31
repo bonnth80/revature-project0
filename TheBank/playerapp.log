@@ -35730,3 +35730,350 @@ Please select from these available actions:
 2019-12-29 21:17:39 INFO  BankMain:375 - 
 Goodbye.
 
+2019-12-30 09:31:41 INFO  BankMain:53 - Please make a selection:
+	1. Existing User Sign-in
+	2. New User Sign-up
+
+2019-12-30 09:31:44 INFO  BankMain:113 - Username:
+2019-12-30 09:31:45 INFO  BankMain:115 - Password: 
+2019-12-30 09:31:47 INFO  BankMain:121 - 
+Current user is: Employee
+2019-12-30 09:31:47 INFO  BankMain:58 - 
+Please select from these available actions:
+2019-12-30 09:31:47 INFO  BankMain:59 - 	1. View pending account applications. (0)
+2019-12-30 09:31:47 INFO  BankMain:60 - 	2. Retrieve customer account info.
+2019-12-30 09:31:47 INFO  BankMain:61 - 	3. Retrieve transaction log.
+2019-12-30 09:31:47 INFO  BankMain:62 - 	4. Register new user.
+2019-12-30 09:31:47 INFO  BankMain:63 - 	5. Sign out.
+2019-12-30 09:31:47 INFO  BankMain:64 - 	6. Exit application.
+2019-12-30 09:31:50 INFO  BankMain:180 - There are no new accounts pending approval. Returning to menu.
+2019-12-30 09:31:50 INFO  BankMain:58 - 
+Please select from these available actions:
+2019-12-30 09:31:50 INFO  BankMain:59 - 	1. View pending account applications. (0)
+2019-12-30 09:31:50 INFO  BankMain:60 - 	2. Retrieve customer account info.
+2019-12-30 09:31:50 INFO  BankMain:61 - 	3. Retrieve transaction log.
+2019-12-30 09:31:50 INFO  BankMain:62 - 	4. Register new user.
+2019-12-30 09:31:50 INFO  BankMain:63 - 	5. Sign out.
+2019-12-30 09:31:50 INFO  BankMain:64 - 	6. Exit application.
+2019-12-30 09:31:53 INFO  BankMain:397 - 
+Goodbye.
+
+2019-12-30 09:33:16 INFO  BankMain:53 - Please make a selection:
+	1. Existing User Sign-in
+	2. New User Sign-up
+
+2019-12-30 09:33:18 INFO  BankMain:113 - Username:
+2019-12-30 09:33:20 INFO  BankMain:115 - Password: 
+2019-12-30 09:33:21 INFO  BankMain:121 - 
+Current user is: Employee
+2019-12-30 09:33:21 INFO  BankMain:58 - 
+Please select from these available actions:
+2019-12-30 09:33:21 INFO  BankMain:59 - 	1. View pending account applications. (3)
+2019-12-30 09:33:21 INFO  BankMain:60 - 	2. Retrieve customer account info.
+2019-12-30 09:33:21 INFO  BankMain:61 - 	3. Retrieve transaction log.
+2019-12-30 09:33:21 INFO  BankMain:62 - 	4. Register new user.
+2019-12-30 09:33:21 INFO  BankMain:63 - 	5. Sign out.
+2019-12-30 09:33:21 INFO  BankMain:64 - 	6. Exit application.
+2019-12-30 09:33:23 INFO  BankMain:83 - Account #		User Name		Starting Balance		Creation Date		Status
+2019-12-30 09:33:23 INFO  BankMain:84 - ------------------------------------------------------------------------------------------------------------
+2019-12-30 09:33:23 INFO  BankMain:153 - 0		Default Default		250.0		2019-12-29		PENDING APPROVAL
+2019-12-30 09:33:23 INFO  BankMain:153 - 3		Default Default		640.0		2019-07-09		PENDING APPROVAL
+2019-12-30 09:33:23 INFO  BankMain:153 - 5		Default Default		1200.0		2019-08-08		PENDING APPROVAL
+2019-12-30 09:33:23 INFO  BankMain:156 - Choose an account number or type -1 to return to the employee menu
+2019-12-30 09:34:00 INFO  BankMain:53 - Please make a selection:
+	1. Existing User Sign-in
+	2. New User Sign-up
+
+2019-12-30 09:34:06 INFO  BankMain:113 - Username:
+2019-12-30 09:34:07 INFO  BankMain:115 - Password: 
+2019-12-30 09:34:09 INFO  BankMain:121 - 
+Current user is: Employee
+2019-12-30 09:34:09 INFO  BankMain:58 - 
+Please select from these available actions:
+2019-12-30 09:34:09 INFO  BankMain:59 - 	1. View pending account applications. (3)
+2019-12-30 09:34:09 INFO  BankMain:60 - 	2. Retrieve customer account info.
+2019-12-30 09:34:09 INFO  BankMain:61 - 	3. Retrieve transaction log.
+2019-12-30 09:34:09 INFO  BankMain:62 - 	4. Register new user.
+2019-12-30 09:34:09 INFO  BankMain:63 - 	5. Sign out.
+2019-12-30 09:34:09 INFO  BankMain:64 - 	6. Exit application.
+2019-12-30 09:34:13 INFO  BankMain:83 - Account #	User Name		Starting Balance		Creation Date		Status
+2019-12-30 09:34:13 INFO  BankMain:84 - ------------------------------------------------------------------------------------------------------------
+2019-12-30 09:34:13 INFO  BankMain:153 - 0		Default Default		250.0		2019-12-29		PENDING APPROVAL
+2019-12-30 09:34:13 INFO  BankMain:153 - 3		Default Default		640.0		2019-07-09		PENDING APPROVAL
+2019-12-30 09:34:13 INFO  BankMain:153 - 5		Default Default		1200.0		2019-08-08		PENDING APPROVAL
+2019-12-30 09:34:13 INFO  BankMain:156 - Choose an account number or type -1 to return to the employee menu
+2019-12-30 09:35:15 INFO  BankMain:53 - Please make a selection:
+	1. Existing User Sign-in
+	2. New User Sign-up
+
+2019-12-30 09:35:17 INFO  BankMain:113 - Username:
+2019-12-30 09:35:18 INFO  BankMain:115 - Password: 
+2019-12-30 09:35:20 INFO  BankMain:121 - 
+Current user is: Employee
+2019-12-30 09:35:20 INFO  BankMain:58 - 
+Please select from these available actions:
+2019-12-30 09:35:20 INFO  BankMain:59 - 	1. View pending account applications. (3)
+2019-12-30 09:35:20 INFO  BankMain:60 - 	2. Retrieve customer account info.
+2019-12-30 09:35:20 INFO  BankMain:61 - 	3. Retrieve transaction log.
+2019-12-30 09:35:20 INFO  BankMain:62 - 	4. Register new user.
+2019-12-30 09:35:20 INFO  BankMain:63 - 	5. Sign out.
+2019-12-30 09:35:20 INFO  BankMain:64 - 	6. Exit application.
+2019-12-30 09:35:21 INFO  BankMain:83 - Account #	User Name		Starting Balance		Creation Date		Status
+2019-12-30 09:35:21 INFO  BankMain:84 - ------------------------------------------------------------------------------------------------------------
+2019-12-30 09:35:21 INFO  BankMain:153 - 0		Default Default		250.0			2019-12-29		PENDING APPROVAL
+2019-12-30 09:35:21 INFO  BankMain:153 - 3		Default Default		640.0			2019-07-09		PENDING APPROVAL
+2019-12-30 09:35:21 INFO  BankMain:153 - 5		Default Default		1200.0			2019-08-08		PENDING APPROVAL
+2019-12-30 09:35:21 INFO  BankMain:156 - Choose an account number or type -1 to return to the employee menu
+2019-12-30 09:35:38 INFO  BankMain:53 - Please make a selection:
+	1. Existing User Sign-in
+	2. New User Sign-up
+
+2019-12-30 09:35:39 INFO  BankMain:113 - Username:
+2019-12-30 09:35:41 INFO  BankMain:115 - Password: 
+2019-12-30 09:35:43 INFO  BankMain:121 - 
+Current user is: Employee
+2019-12-30 09:35:43 INFO  BankMain:58 - 
+Please select from these available actions:
+2019-12-30 09:35:43 INFO  BankMain:59 - 	1. View pending account applications. (3)
+2019-12-30 09:35:43 INFO  BankMain:60 - 	2. Retrieve customer account info.
+2019-12-30 09:35:43 INFO  BankMain:61 - 	3. Retrieve transaction log.
+2019-12-30 09:35:43 INFO  BankMain:62 - 	4. Register new user.
+2019-12-30 09:35:43 INFO  BankMain:63 - 	5. Sign out.
+2019-12-30 09:35:43 INFO  BankMain:64 - 	6. Exit application.
+2019-12-30 09:35:45 INFO  BankMain:83 - Account #	User Name		Starting Balance		Creation Date		Status
+2019-12-30 09:35:45 INFO  BankMain:84 - ------------------------------------------------------------------------------------------------------------
+2019-12-30 09:35:45 INFO  BankMain:153 - 0		Default Default		250.0		2019-12-29		PENDING APPROVAL
+2019-12-30 09:35:45 INFO  BankMain:153 - 3		Default Default		640.0		2019-07-09		PENDING APPROVAL
+2019-12-30 09:35:45 INFO  BankMain:153 - 5		Default Default		1200.0		2019-08-08		PENDING APPROVAL
+2019-12-30 09:35:45 INFO  BankMain:156 - Choose an account number or type -1 to return to the employee menu
+2019-12-30 09:36:07 INFO  BankMain:53 - Please make a selection:
+	1. Existing User Sign-in
+	2. New User Sign-up
+
+2019-12-30 09:36:08 INFO  BankMain:113 - Username:
+2019-12-30 09:36:10 INFO  BankMain:115 - Password: 
+2019-12-30 09:36:12 INFO  BankMain:121 - 
+Current user is: Employee
+2019-12-30 09:36:12 INFO  BankMain:58 - 
+Please select from these available actions:
+2019-12-30 09:36:12 INFO  BankMain:59 - 	1. View pending account applications. (3)
+2019-12-30 09:36:12 INFO  BankMain:60 - 	2. Retrieve customer account info.
+2019-12-30 09:36:12 INFO  BankMain:61 - 	3. Retrieve transaction log.
+2019-12-30 09:36:12 INFO  BankMain:62 - 	4. Register new user.
+2019-12-30 09:36:12 INFO  BankMain:63 - 	5. Sign out.
+2019-12-30 09:36:12 INFO  BankMain:64 - 	6. Exit application.
+2019-12-30 09:36:14 INFO  BankMain:83 - Account #	User Name		Starting Balance		Creation Date		Status
+2019-12-30 09:36:14 INFO  BankMain:84 - ------------------------------------------------------------------------------------------------------------
+2019-12-30 09:36:14 INFO  BankMain:153 - 0		Default Default		250.0			2019-12-29		PENDING APPROVAL
+2019-12-30 09:36:14 INFO  BankMain:153 - 3		Default Default		640.0			2019-07-09		PENDING APPROVAL
+2019-12-30 09:36:14 INFO  BankMain:153 - 5		Default Default		1200.0			2019-08-08		PENDING APPROVAL
+2019-12-30 09:36:14 INFO  BankMain:156 - Choose an account number or type -1 to return to the employee menu
+2019-12-30 09:36:32 INFO  BankMain:53 - Please make a selection:
+	1. Existing User Sign-in
+	2. New User Sign-up
+
+2019-12-30 09:36:34 INFO  BankMain:113 - Username:
+2019-12-30 09:36:35 INFO  BankMain:115 - Password: 
+2019-12-30 09:36:36 INFO  BankMain:121 - 
+Current user is: Employee
+2019-12-30 09:36:36 INFO  BankMain:58 - 
+Please select from these available actions:
+2019-12-30 09:36:36 INFO  BankMain:59 - 	1. View pending account applications. (3)
+2019-12-30 09:36:36 INFO  BankMain:60 - 	2. Retrieve customer account info.
+2019-12-30 09:36:36 INFO  BankMain:61 - 	3. Retrieve transaction log.
+2019-12-30 09:36:36 INFO  BankMain:62 - 	4. Register new user.
+2019-12-30 09:36:36 INFO  BankMain:63 - 	5. Sign out.
+2019-12-30 09:36:36 INFO  BankMain:64 - 	6. Exit application.
+2019-12-30 09:36:38 INFO  BankMain:83 - Account #	User Name		Starting Balance	tCreation Date		Status
+2019-12-30 09:36:38 INFO  BankMain:84 - ------------------------------------------------------------------------------------------------------------
+2019-12-30 09:36:38 INFO  BankMain:153 - 0		Default Default		250.0			2019-12-29		PENDING APPROVAL
+2019-12-30 09:36:38 INFO  BankMain:153 - 3		Default Default		640.0			2019-07-09		PENDING APPROVAL
+2019-12-30 09:36:38 INFO  BankMain:153 - 5		Default Default		1200.0			2019-08-08		PENDING APPROVAL
+2019-12-30 09:36:38 INFO  BankMain:156 - Choose an account number or type -1 to return to the employee menu
+2019-12-30 09:37:06 INFO  BankMain:58 - 
+Please select from these available actions:
+2019-12-30 09:37:06 INFO  BankMain:59 - 	1. View pending account applications. (3)
+2019-12-30 09:37:06 INFO  BankMain:60 - 	2. Retrieve customer account info.
+2019-12-30 09:37:06 INFO  BankMain:61 - 	3. Retrieve transaction log.
+2019-12-30 09:37:06 INFO  BankMain:62 - 	4. Register new user.
+2019-12-30 09:37:06 INFO  BankMain:63 - 	5. Sign out.
+2019-12-30 09:37:06 INFO  BankMain:64 - 	6. Exit application.
+2019-12-30 09:37:08 INFO  BankMain:397 - 
+Goodbye.
+
+2019-12-30 19:36:27 INFO  BankMain:54 - Please make a selection:
+	1. Existing User Sign-in
+	2. New User Sign-up
+
+2019-12-30 19:36:31 INFO  BankMain:114 - Username:
+2019-12-30 19:36:31 INFO  BankMain:116 - Password: 
+2019-12-30 19:36:33 INFO  BankMain:122 - 
+Current user is: Employee
+2019-12-30 19:36:33 INFO  BankMain:59 - 
+Please select from these available actions:
+2019-12-30 19:36:33 INFO  BankMain:60 - 	1. View pending account applications. (3)
+2019-12-30 19:36:33 INFO  BankMain:61 - 	2. Retrieve customer account info.
+2019-12-30 19:36:33 INFO  BankMain:62 - 	3. Retrieve transaction log.
+2019-12-30 19:36:33 INFO  BankMain:63 - 	4. Register new user.
+2019-12-30 19:36:33 INFO  BankMain:64 - 	5. Sign out.
+2019-12-30 19:36:33 INFO  BankMain:65 - 	6. Exit application.
+2019-12-30 19:36:35 INFO  BankMain:84 - Account #	User Name		Starting Balance	Creation Date		Status
+2019-12-30 19:36:35 INFO  BankMain:85 - ------------------------------------------------------------------------------------------------------------
+2019-12-30 19:36:35 INFO  BankMain:154 - 0		firstNameTest lastnameTest		250.0			2019-12-29		PENDING APPROVAL
+2019-12-30 19:36:35 INFO  BankMain:154 - 3		firstNameTest lastnameTest		640.0			2019-07-09		PENDING APPROVAL
+2019-12-30 19:36:35 INFO  BankMain:154 - 5		firstNameTest lastnameTest		1200.0			2019-08-08		PENDING APPROVAL
+2019-12-30 19:36:35 INFO  BankMain:157 - Choose an account number or type -1 to return to the employee menu
+2019-12-30 19:38:11 INFO  BankMain:54 - Please make a selection:
+	1. Existing User Sign-in
+	2. New User Sign-up
+
+2019-12-30 19:38:13 INFO  BankMain:114 - Username:
+2019-12-30 19:38:14 INFO  BankMain:116 - Password: 
+2019-12-30 19:38:16 INFO  BankMain:122 - 
+Current user is: Employee
+2019-12-30 19:38:16 INFO  BankMain:59 - 
+Please select from these available actions:
+2019-12-30 19:38:16 INFO  BankMain:60 - 	1. View pending account applications. (3)
+2019-12-30 19:38:16 INFO  BankMain:61 - 	2. Retrieve customer account info.
+2019-12-30 19:38:16 INFO  BankMain:62 - 	3. Retrieve transaction log.
+2019-12-30 19:38:16 INFO  BankMain:63 - 	4. Register new user.
+2019-12-30 19:38:16 INFO  BankMain:64 - 	5. Sign out.
+2019-12-30 19:38:16 INFO  BankMain:65 - 	6. Exit application.
+2019-12-30 19:38:17 INFO  BankMain:84 - Account #	User Name			Start Balance	Creation Date		Status
+2019-12-30 19:38:17 INFO  BankMain:85 - ------------------------------------------------------------------------------------------------------------
+2019-12-30 19:38:17 INFO  BankMain:154 - 0		firstNameTest lastnameTest			250.0		2019-12-29		PENDING APPROVAL
+2019-12-30 19:38:17 INFO  BankMain:154 - 3		firstNameTest lastnameTest			640.0		2019-07-09		PENDING APPROVAL
+2019-12-30 19:38:17 INFO  BankMain:154 - 5		firstNameTest lastnameTest			1200.0		2019-08-08		PENDING APPROVAL
+2019-12-30 19:38:17 INFO  BankMain:157 - Choose an account number or type -1 to return to the employee menu
+2019-12-30 19:57:28 INFO  BankMain:54 - Please make a selection:
+	1. Existing User Sign-in
+	2. New User Sign-up
+
+2019-12-30 19:57:31 INFO  BankMain:132 - Username:
+2019-12-30 19:57:32 INFO  BankMain:134 - Password: 
+2019-12-30 19:57:33 INFO  BankMain:140 - 
+Current user is: Employee
+2019-12-30 19:57:33 INFO  BankMain:59 - 
+Please select from these available actions:
+2019-12-30 19:57:33 INFO  BankMain:60 - 	1. View pending account applications. (3)
+2019-12-30 19:57:33 INFO  BankMain:61 - 	2. Retrieve customer account info.
+2019-12-30 19:57:33 INFO  BankMain:62 - 	3. Retrieve transaction log.
+2019-12-30 19:57:33 INFO  BankMain:63 - 	4. Register new user.
+2019-12-30 19:57:33 INFO  BankMain:64 - 	5. Sign out.
+2019-12-30 19:57:33 INFO  BankMain:65 - 	6. Exit application.
+2019-12-30 19:57:34 INFO  BankMain:89 - Account #   User Name         S. Balance  Creation ...Status          
+2019-12-30 19:57:34 INFO  BankMain:90 - ------------------------------------------------------------------------------------------------------------
+2019-12-30 19:57:34 INFO  BankMain:172 - 0		firstNameTest lastnameTest		250.0		2019-12-29		PENDING APPROVAL
+2019-12-30 19:57:34 INFO  BankMain:172 - 3		firstNameTest lastnameTest		640.0		2019-07-09		PENDING APPROVAL
+2019-12-30 19:57:34 INFO  BankMain:172 - 5		firstNameTest lastnameTest		1200.0		2019-08-08		PENDING APPROVAL
+2019-12-30 19:57:34 INFO  BankMain:175 - Choose an account number or type -1 to return to the employee menu
+2019-12-30 19:58:33 INFO  BankMain:54 - Please make a selection:
+	1. Existing User Sign-in
+	2. New User Sign-up
+
+2019-12-30 19:58:35 INFO  BankMain:132 - Username:
+2019-12-30 19:58:36 INFO  BankMain:134 - Password: 
+2019-12-30 19:58:37 INFO  BankMain:140 - 
+Current user is: Employee
+2019-12-30 19:58:37 INFO  BankMain:59 - 
+Please select from these available actions:
+2019-12-30 19:58:37 INFO  BankMain:60 - 	1. View pending account applications. (3)
+2019-12-30 19:58:37 INFO  BankMain:61 - 	2. Retrieve customer account info.
+2019-12-30 19:58:37 INFO  BankMain:62 - 	3. Retrieve transaction log.
+2019-12-30 19:58:37 INFO  BankMain:63 - 	4. Register new user.
+2019-12-30 19:58:37 INFO  BankMain:64 - 	5. Sign out.
+2019-12-30 19:58:37 INFO  BankMain:65 - 	6. Exit application.
+2019-12-30 19:58:38 INFO  BankMain:89 - Account #     User Name               S. Balance    Creation Date   Status          
+2019-12-30 19:58:38 INFO  BankMain:90 - ------------------------------------------------------------------------------------------------------------
+2019-12-30 19:58:38 INFO  BankMain:172 - 0		firstNameTest lastnameTest		250.0		2019-12-29		PENDING APPROVAL
+2019-12-30 19:58:38 INFO  BankMain:172 - 3		firstNameTest lastnameTest		640.0		2019-07-09		PENDING APPROVAL
+2019-12-30 19:58:38 INFO  BankMain:172 - 5		firstNameTest lastnameTest		1200.0		2019-08-08		PENDING APPROVAL
+2019-12-30 19:58:38 INFO  BankMain:175 - Choose an account number or type -1 to return to the employee menu
+2019-12-30 19:59:33 INFO  BankMain:54 - Please make a selection:
+	1. Existing User Sign-in
+	2. New User Sign-up
+
+2019-12-30 19:59:34 INFO  BankMain:132 - Username:
+2019-12-30 19:59:35 INFO  BankMain:134 - Password: 
+2019-12-30 19:59:37 INFO  BankMain:140 - 
+Current user is: Employee
+2019-12-30 19:59:37 INFO  BankMain:59 - 
+Please select from these available actions:
+2019-12-30 19:59:37 INFO  BankMain:60 - 	1. View pending account applications. (3)
+2019-12-30 19:59:37 INFO  BankMain:61 - 	2. Retrieve customer account info.
+2019-12-30 19:59:37 INFO  BankMain:62 - 	3. Retrieve transaction log.
+2019-12-30 19:59:37 INFO  BankMain:63 - 	4. Register new user.
+2019-12-30 19:59:37 INFO  BankMain:64 - 	5. Sign out.
+2019-12-30 19:59:37 INFO  BankMain:65 - 	6. Exit application.
+2019-12-30 19:59:38 INFO  BankMain:89 - Account #       User Name                     S. Balance              Creation Date           Status          
+2019-12-30 19:59:38 INFO  BankMain:90 - ------------------------------------------------------------------------------------------------------------
+2019-12-30 19:59:38 INFO  BankMain:172 - 0		firstNameTest lastnameTest		250.0		2019-12-29		PENDING APPROVAL
+2019-12-30 19:59:38 INFO  BankMain:172 - 3		firstNameTest lastnameTest		640.0		2019-07-09		PENDING APPROVAL
+2019-12-30 19:59:38 INFO  BankMain:172 - 5		firstNameTest lastnameTest		1200.0		2019-08-08		PENDING APPROVAL
+2019-12-30 19:59:38 INFO  BankMain:175 - Choose an account number or type -1 to return to the employee menu
+2019-12-30 20:00:01 INFO  BankMain:54 - Please make a selection:
+	1. Existing User Sign-in
+	2. New User Sign-up
+
+2019-12-30 20:00:03 INFO  BankMain:132 - Username:
+2019-12-30 20:00:04 INFO  BankMain:134 - Password: 
+2019-12-30 20:00:06 INFO  BankMain:140 - 
+Current user is: Employee
+2019-12-30 20:00:06 INFO  BankMain:59 - 
+Please select from these available actions:
+2019-12-30 20:00:06 INFO  BankMain:60 - 	1. View pending account applications. (3)
+2019-12-30 20:00:06 INFO  BankMain:61 - 	2. Retrieve customer account info.
+2019-12-30 20:00:06 INFO  BankMain:62 - 	3. Retrieve transaction log.
+2019-12-30 20:00:06 INFO  BankMain:63 - 	4. Register new user.
+2019-12-30 20:00:06 INFO  BankMain:64 - 	5. Sign out.
+2019-12-30 20:00:06 INFO  BankMain:65 - 	6. Exit application.
+2019-12-30 20:00:07 INFO  BankMain:89 - Account #       User Name                     S. Balance          Creation Date         Status          
+2019-12-30 20:00:07 INFO  BankMain:90 - ------------------------------------------------------------------------------------------------------------
+2019-12-30 20:00:07 INFO  BankMain:172 - 0		firstNameTest lastnameTest		250.0		2019-12-29		PENDING APPROVAL
+2019-12-30 20:00:07 INFO  BankMain:172 - 3		firstNameTest lastnameTest		640.0		2019-07-09		PENDING APPROVAL
+2019-12-30 20:00:07 INFO  BankMain:172 - 5		firstNameTest lastnameTest		1200.0		2019-08-08		PENDING APPROVAL
+2019-12-30 20:00:07 INFO  BankMain:175 - Choose an account number or type -1 to return to the employee menu
+2019-12-30 20:04:52 INFO  BankMain:54 - Please make a selection:
+	1. Existing User Sign-in
+	2. New User Sign-up
+
+2019-12-30 20:04:54 INFO  BankMain:132 - Username:
+2019-12-30 20:04:55 INFO  BankMain:134 - Password: 
+2019-12-30 20:04:57 INFO  BankMain:140 - 
+Current user is: Employee
+2019-12-30 20:04:57 INFO  BankMain:59 - 
+Please select from these available actions:
+2019-12-30 20:04:57 INFO  BankMain:60 - 	1. View pending account applications. (3)
+2019-12-30 20:04:57 INFO  BankMain:61 - 	2. Retrieve customer account info.
+2019-12-30 20:04:57 INFO  BankMain:62 - 	3. Retrieve transaction log.
+2019-12-30 20:04:57 INFO  BankMain:63 - 	4. Register new user.
+2019-12-30 20:04:57 INFO  BankMain:64 - 	5. Sign out.
+2019-12-30 20:04:57 INFO  BankMain:65 - 	6. Exit application.
+2019-12-30 20:04:57 INFO  BankMain:89 - Account #       User Name                     S. Balance          Creation Date         Status          
+2019-12-30 20:04:57 INFO  BankMain:90 - ------------------------------------------------------------------------------------------------------------
+2019-12-30 20:04:57 INFO  BankMain:177 - 0               firstNameTest lastnameTest    250.0               2019-12-29      PENDING APPROVAL
+2019-12-30 20:04:57 INFO  BankMain:177 - 3               firstNameTest lastnameTest    640.0               2019-07-09      PENDING APPROVAL
+2019-12-30 20:04:57 INFO  BankMain:177 - 5               firstNameTest lastnameTest    1200.0              2019-08-08      PENDING APPROVAL
+2019-12-30 20:04:57 INFO  BankMain:180 - Choose an account number or type -1 to return to the employee menu
+2019-12-30 20:05:20 INFO  BankMain:54 - Please make a selection:
+	1. Existing User Sign-in
+	2. New User Sign-up
+
+2019-12-30 20:05:22 INFO  BankMain:132 - Username:
+2019-12-30 20:05:25 INFO  BankMain:134 - Password: 
+2019-12-30 20:05:26 INFO  BankMain:140 - 
+Current user is: Employee
+2019-12-30 20:05:26 INFO  BankMain:59 - 
+Please select from these available actions:
+2019-12-30 20:05:26 INFO  BankMain:60 - 	1. View pending account applications. (3)
+2019-12-30 20:05:26 INFO  BankMain:61 - 	2. Retrieve customer account info.
+2019-12-30 20:05:26 INFO  BankMain:62 - 	3. Retrieve transaction log.
+2019-12-30 20:05:26 INFO  BankMain:63 - 	4. Register new user.
+2019-12-30 20:05:26 INFO  BankMain:64 - 	5. Sign out.
+2019-12-30 20:05:26 INFO  BankMain:65 - 	6. Exit application.
+2019-12-30 20:05:27 INFO  BankMain:89 - Account #       User Name                     S. Balance          Creation Date         Status          
+2019-12-30 20:05:27 INFO  BankMain:90 - ------------------------------------------------------------------------------------------------------------
+2019-12-30 20:05:27 INFO  BankMain:177 - 0               firstNameTest lastnameTest    250.0               2019-12-29            PENDING APPROVAL
+2019-12-30 20:05:27 INFO  BankMain:177 - 3               firstNameTest lastnameTest    640.0               2019-07-09            PENDING APPROVAL
+2019-12-30 20:05:27 INFO  BankMain:177 - 5               firstNameTest lastnameTest    1200.0              2019-08-08            PENDING APPROVAL
+2019-12-30 20:05:27 INFO  BankMain:180 - Choose an account number or type -1 to return to the employee menu
