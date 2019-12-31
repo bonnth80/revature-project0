@@ -163,11 +163,6 @@ public class BankMain {
 									List<Integer> accountNums = new ArrayList<>();
 									displayAccountsHeader();
 									for (Account pa : pendingAccounts) {
-//										String accountHeader = padStringRight("Account #", 16);
-//										String userNameHeader = padStringRight("User Name", 30);
-//										String startBalanceHeader = padStringRight("S. Balance", 20);
-//										String creationDateHeader = padStringRight("Creation Date", 22);
-//										String statusHeader = padStringRight("Status", 16);
 										accountNums.add(pa.getAccountNumber());
 										String acctString = padStringRight(Integer.toString(pa.getAccountNumber()), 16)
 												+ padStringRight(pa.getUserFirstName() + " " + pa.getUserLastName(), 30)
