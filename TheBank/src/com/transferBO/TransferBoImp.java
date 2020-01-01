@@ -17,14 +17,13 @@ public class TransferBoImp implements TransferBO {
 	}
 
 	@Override
-	public int getMaxTriggerId() throws BusinessException {
-		return new TransferDaoImp().getMaxTriggerId();
+	public int getMaxTransferId() throws BusinessException {
+		return new TransferDaoImp().getMaxTransferId();
 	}
 	
 	@Override
 	public int getTransferCountByUserId(int userId) throws BusinessException {
-		TransferDAO dao = new TransferDaoImp();
-		return dao.getTransferCountByUserId(userId);
+		return  new TransferDaoImp().getTransferCountByUserId(userId);
 	}
 	
 	@Override
@@ -61,6 +60,17 @@ public class TransferBoImp implements TransferBO {
 	public boolean addNewTransfer(Transfer transfer) throws BusinessException {
 		
 		return new TransferDaoImp().addNewTransfer(transfer);
+	}
+
+	@Override
+	public List<Transfer> getTransfersByUserId(int userId) throws BusinessException {
+		return new TransferDaoImp().getTransfersByUserId(userId);
+	}
+
+	@Override
+	public boolean updateTransferStatus(Transfer transfer, int status) throws BusinessException {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 }

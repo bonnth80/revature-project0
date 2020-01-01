@@ -16,6 +16,7 @@ import com.bank.to.Transfer;
 import com.bank.to.User;
 import com.transferBO.TransferBO;
 import com.transferBO.TransferBoImp;
+import com.transferDAO.TransferDaoImp;
 import com.userBO.UserBoImp;
 
 
@@ -97,6 +98,16 @@ public class BankMain {
 		String balanceHeader = padStringRight("Balance", 25);
 		String creationDateHeader = padStringRight("Creation Date", 25);
 		log.info(accountHeader + balanceHeader + creationDateHeader);
+		log.info(linebreak);
+	}
+
+	private static void displayPendingTransfersHeader() {
+		String transferHeader = padStringRight("Transfer Number", 20);
+		String sourceHeader = padStringRight("Source Account", 25);
+		String destinationHeader = padStringRight("Destination Account", 25);
+		String amountHeader = padStringRight("Transfer Amount", 25);
+		String dateHeader = padStringRight("Date posted", 25);
+		log.info(transferHeader + sourceHeader + destinationHeader + amountHeader + dateHeader);
 		log.info(linebreak);
 	}
 	
@@ -378,7 +389,7 @@ public class BankMain {
 												} while (selectionAmount <= 0.0F || selectionAmount > sourceAccount.getAvailableBalance());
 												
 												Transfer transfer = new Transfer(
-															new TransferBoImp().getMaxTriggerId() +1,
+															new TransferBoImp().getMaxTransferId() +1,
 															selectionAmount,
 															selection,
 															selectionB,
@@ -403,6 +414,46 @@ public class BankMain {
 								
 								break;
 							case 6:		// View incumbent transfers
+								displayPendingTransfersHeader();
+								List<Transfer> transfers = new TransferBoImp().getTransfersByUserId(user.getUserId());
+								List<Integer> validTransfers = new ArrayList<>();
+								if (!transfers.isEmpty()) {
+									for (Transfer t : transfers) {
+										validTransfers.add(t.getTransferId());
+										log.info(padStringRight(Integer.toString(t.getTransferId()),20)
+												+padStringRight(Integer.toString(t.getSource()),25)
+												+padStringRight(Integer.toString(t.getDestination()),25)
+												+padStringRight(Float.toString(t.getAmount()),25)
+												+padStringRight(t.getRequestDate().toString(),25)
+												);
+									}
+									log.info("Select a transfer request number.");
+								} else {
+									log.info("Your accounts show no pending transfers. Returning to menu...\n");
+								}
+								
+								selection = Integer.parseInt(scanner.nextLine());
+								
+								if (validTransfers.contains(selection)) {
+									Transfer transfer = null;
+									
+									for (Transfer t : transfers) {
+										if (t.getTransferId() == selection) {
+											transfer = t;
+										}
+									}
+									log.info("Do you wish to Approve (1) or Reject (0) this transfer request?");
+									int selectionB = Integer.parseInt(scanner.nextLine());
+									if (selectionB == 0) {
+										log.info("Transfer request rejected. Returning to menu.\n");
+										new TransferDaoImp().updateTransferStatus(transfer, 2);
+									} else if (selectionB == 1) {
+										log.info("Transfer request approved. Transaction complete. Returning to menu.\n");
+										new TransferDaoImp().updateTransferStatus(transfer, 1);
+									}
+								} else {
+									log.info("You have no transfers with that transfer number. Returning to menu.\n");
+								}
 								break;
 							case 7: 	// Sign out
 								runUserLoop = false;

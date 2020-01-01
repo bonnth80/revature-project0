@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -21,7 +22,7 @@ public class TransferDaoImp implements TransferDAO {
 	}
 
 	@Override
-	public int getMaxTriggerId() throws BusinessException {
+	public int getMaxTransferId() throws BusinessException {
 		try (Connection connection = OracleConnection.getConnection()) {
 			Statement statement = connection.createStatement();
 			ResultSet rs = statement.executeQuery("SELECT MAX(transfer_id) FROM transfer_request");
@@ -40,7 +41,7 @@ public class TransferDaoImp implements TransferDAO {
 					+ "FROM transfer_request tr "
 					+ "INNER JOIN account a "
 					+ "ON a.account_number = tr.destination_account "
-					+ "WHERE a.user_id = ? "
+					+ "WHERE a.user_id = ? AND tr.status = 0"
 					+ "ORDER BY tr.transfer_id";
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
 			preparedStatement.setInt(1, userId);
@@ -52,6 +53,37 @@ public class TransferDaoImp implements TransferDAO {
 			throw new BusinessException("Internal error: " + e);
 		}
 	};
+
+	@Override
+	public List<Transfer> getTransfersByUserId(int userId) throws BusinessException {
+		List<Transfer> transfers = new ArrayList<>();
+		try (Connection connection = OracleConnection.getConnection()) {
+			String sql =  "SELECT tr.transfer_id, tr.amount, tr.source_account, tr.destination_account, tr.status, tr.request_Date, tr.response_date "
+					+ "FROM transfer_request tr "
+					+ "INNER JOIN account a "
+					+ "ON a.account_number = tr.destination_account "
+					+ "WHERE a.user_id = ? "
+					+ "ORDER BY tr.transfer_id";
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setInt(1, userId);
+			ResultSet rs = preparedStatement.executeQuery();
+			while (rs.next()) {
+				transfers.add(new Transfer(
+						rs.getInt(1),
+						rs.getFloat(2),
+						rs.getInt(3),
+						rs.getInt(4),
+						rs.getInt(5),
+						rs.getDate(6),
+						rs.getDate(6)
+						));
+			}
+			
+			return transfers;
+		} catch (ClassNotFoundException | SQLException e) {
+			throw new BusinessException("Internal error: " + e);
+		}
+	}
 
 	@Override
 	public List<Transfer> getTransfersBySourceAccount(int accountId) {
@@ -101,6 +133,70 @@ public class TransferDaoImp implements TransferDAO {
 		} catch (ClassNotFoundException | SQLException e) {
 			throw new BusinessException("Internal error: " + e);
 		}
+	}
+
+	@Override
+	public boolean updateTransferStatus(Transfer transfer, int status) throws BusinessException {
+		boolean execute;
+		try (Connection connection = OracleConnection.getConnection()) {
+			String sql = "UPDATE transfer_request "
+					+ "SET status = ? "
+					+ "WHERE transfer_id = ?";
+			PreparedStatement ps = connection.prepareStatement(sql);
+			ps.setInt(1, status);
+			ps.setInt(2, transfer.getTransferId());
+			execute = ps.execute();			
+		} catch (ClassNotFoundException | SQLException e) {
+			throw new BusinessException("Internal error: " + e);
+		}
+		
+		if (status == 1 ) { // Only add a new set of debit / credit transactions if status is approved
+		
+			int maxTransactionId = 0;
+		
+			try (Connection connection = OracleConnection.getConnection()) {
+				Statement statement = connection.createStatement();
+				ResultSet rs = statement.executeQuery("SELECT MAX(transaction_id) FROM transaction_history");
+				rs.next();
+				maxTransactionId = rs.getInt(1);
+			} catch (ClassNotFoundException | SQLException e) {
+				throw new BusinessException("Internal error: " + e);
+			}
+			
+			try (Connection connection = OracleConnection.getConnection()) {
+				String sql = "INSERT INTO transaction_history "
+						+ "VALUES (?,?,?,?,?,?,?)";
+				PreparedStatement ps = connection.prepareStatement(sql);
+				ps.setInt(1, maxTransactionId + 1);
+				ps.setInt(2, transfer.getDestination());
+				ps.setString(3, "The Bank");
+				ps.setFloat(4, transfer.getAmount());
+				ps.setFloat(5,  0.0F);
+				ps.setDate(6, new java.sql.Date(new Date().getTime()));
+				ps.setInt(7, transfer.getTransferId());
+				ps.execute();			
+			} catch (ClassNotFoundException | SQLException e) {
+				throw new BusinessException("Internal error: " + e);
+			}
+			
+			try (Connection connection = OracleConnection.getConnection()) {
+				String sql = "INSERT INTO transaction_history "
+						+ "VALUES (?,?,?,?,?,?,?)";
+				PreparedStatement ps = connection.prepareStatement(sql);
+				ps.setInt(1, maxTransactionId + 2);
+				ps.setInt(2, transfer.getSource());
+				ps.setString(3, "The Bank");
+				ps.setFloat(4, 0.0F);
+				ps.setFloat(5,  transfer.getAmount());
+				ps.setDate(6, new java.sql.Date(new Date().getTime()));
+				ps.setInt(7, transfer.getTransferId());
+				ps.execute();			
+			} catch (ClassNotFoundException | SQLException e) {
+				throw new BusinessException("Internal error: " + e);
+			}
+		}
+		
+		return execute;
 	}
 	
 }
