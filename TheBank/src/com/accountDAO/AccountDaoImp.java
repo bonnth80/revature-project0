@@ -48,6 +48,21 @@ public class AccountDaoImp implements AccountDAO {
 	}
 	
 	@Override
+	public boolean accountExists(int accountNumber) throws BusinessException {
+		try (Connection connection = OracleConnection.getConnection()) {
+			String sql = "SELECT COUNT(*) FROM account "
+					+ "WHERE account_number = ?";
+			PreparedStatement ps = connection.prepareStatement(sql);
+			ps.setInt(1, accountNumber);
+			ResultSet rs = ps.executeQuery();
+			rs.next();
+			return rs.getBoolean(1);
+		} catch (ClassNotFoundException | SQLException e) {
+			throw new BusinessException("Internal error: " + e);
+		}
+	}
+	
+	@Override
 	public int getMaxAccountNumber() throws BusinessException {
 		try (Connection connection = OracleConnection.getConnection()) {
 			Statement statement = connection.createStatement();
@@ -73,7 +88,8 @@ public class AccountDaoImp implements AccountDAO {
 					+ "		ON th.account_number = a.account_number "
 					+ ") "
 					+ "WHERE user_id = ? "
-					+ "GROUP BY v, user_id, creation_date, status, starting_balance";
+					+ "GROUP BY v, user_id, creation_date, status, starting_balance "
+					+ "ORDER BY v";
 			PreparedStatement ps = connection.prepareStatement(sql);
 			ps.setInt(1, userId);
 			ResultSet rs = ps.executeQuery();

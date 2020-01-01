@@ -15,6 +15,11 @@ public class TransferBoImp implements TransferBO {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	@Override
+	public int getMaxTriggerId() throws BusinessException {
+		return new TransferDaoImp().getMaxTriggerId();
+	}
 	
 	@Override
 	public int getTransferCount(int accountId) throws BusinessException {
@@ -50,6 +55,12 @@ public class TransferBoImp implements TransferBO {
 	public List<Transfer> getTransfersByApprovalDate(Date date) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public boolean addNewTransfer(Transfer transfer) throws BusinessException {
+		
+		return new TransferDaoImp().addNewTransfer(transfer);
 	}
 
 }

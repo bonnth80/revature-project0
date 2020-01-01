@@ -18,6 +18,11 @@ public class AccountBoImp implements AccountBO {
 	}
 	
 	@Override
+	public boolean accountExists(int accountNumber) throws BusinessException {
+		return new AccountDaoImp().accountExists(accountNumber);
+	}
+	
+	@Override
 	public int getMaxAccountNumber() throws BusinessException {		
 		return new AccountDaoImp().getMaxAccountNumber();
 	}

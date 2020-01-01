@@ -15,4 +15,5 @@ public interface AccountDAO {
 	List<Account> getAccountsByStatus(int status) throws BusinessException;
 	boolean addNewAccount(Account account) throws BusinessException;
 	boolean updateAccountStatus(Account account, int status) throws BusinessException;
+	boolean accountExists(int accountNumber) throws BusinessException;
 }

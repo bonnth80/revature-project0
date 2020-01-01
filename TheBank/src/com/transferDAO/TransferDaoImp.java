@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Date;
 import java.util.List;
 
@@ -18,6 +19,18 @@ public class TransferDaoImp implements TransferDAO {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	@Override
+	public int getMaxTriggerId() throws BusinessException {
+		try (Connection connection = OracleConnection.getConnection()) {
+			Statement statement = connection.createStatement();
+			ResultSet rs = statement.executeQuery("SELECT MAX(transfer_id) FROM transfer_request");
+			rs.next();
+			return rs.getInt(1);
+		} catch (ClassNotFoundException | SQLException e) {
+			throw new BusinessException("Internal error: " + e);
+		}
+	}
 	
 	@Override
 	public int getTransferCount(int accountId) throws BusinessException {
@@ -30,10 +43,10 @@ public class TransferDaoImp implements TransferDAO {
 			ResultSet result = preparedStatement.executeQuery();
 			result.next();
 			count = result.getInt(1);
+			return count;
 		} catch (ClassNotFoundException | SQLException e) {
 			throw new BusinessException("Internal error: " + e);
 		}
-		return count;
 	};
 
 	@Override
@@ -64,6 +77,26 @@ public class TransferDaoImp implements TransferDAO {
 	public List<Transfer> getTransfersByApprovalDate(Date date) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public boolean addNewTransfer(Transfer transfer) throws BusinessException {
+		try (Connection connection = OracleConnection.getConnection()) {
+			String sql = "INSERT INTO transfer_request "
+					+ "VALUES (?,?,?,?,?,?,?)";
+			PreparedStatement ps = connection.prepareStatement(sql);
+			ps.setInt(1, transfer.getTransferId());
+			ps.setFloat(2, transfer.getAmount());
+			ps.setInt(3, transfer.getSource());
+			ps.setInt(4, transfer.getDestination());
+			ps.setInt(5, transfer.getStatus());
+			ps.setDate(6,  new java.sql.Date(transfer.getRequestDate().getTime()));
+			ps.setDate(7, null);
+			
+			return ps.execute();
+		} catch (ClassNotFoundException | SQLException e) {
+			throw new BusinessException("Internal error: " + e);
+		}
 	}
 	
 }
