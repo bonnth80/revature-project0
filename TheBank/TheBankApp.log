@@ -1,0 +1,43 @@
+2020-01-01 15:14:22 INFO  BankMain:61 - Please make a selection:
+	1. Existing User Sign-in
+	2. New User Sign-up
+
+2020-01-01 15:14:24 INFO  BankMain:70 - Username:
+2020-01-01 15:14:25 INFO  BankMain:72 - Password: 
+2020-01-01 15:14:26 INFO  BankMain:78 - 
+Current user is: Employee
+2020-01-01 15:14:26 INFO  Menu:31 - 
+Please select from these available actions:
+2020-01-01 15:14:26 INFO  Menu:32 - 	1. View pending account applications. (3)
+2020-01-01 15:14:26 INFO  Menu:33 - 	2. Retrieve customer account info.
+2020-01-01 15:14:26 INFO  Menu:34 - 	3. Retrieve transaction log.
+2020-01-01 15:14:26 INFO  Menu:35 - 	4. Register new user.
+2020-01-01 15:14:26 INFO  Menu:36 - 	5. Sign out.
+2020-01-01 15:14:26 INFO  Menu:37 - 	6. Exit application.
+2020-01-01 15:14:39 INFO  BankMain:625 - 
+Goodbye.
+
+2020-01-01 15:14:48 INFO  BankMain:61 - Please make a selection:
+	1. Existing User Sign-in
+	2. New User Sign-up
+
+2020-01-01 15:14:50 INFO  BankMain:70 - Username:
+2020-01-01 15:14:50 INFO  BankMain:72 - Password: 
+2020-01-01 15:14:52 INFO  BankMain:78 - 
+Current user is: Employee
+2020-01-01 15:14:52 INFO  Menu:31 - 
+Please select from these available actions:
+2020-01-01 15:14:52 INFO  Menu:32 - 	1. View pending account applications. (3)
+2020-01-01 15:14:52 INFO  Menu:33 - 	2. Retrieve customer account info.
+2020-01-01 15:14:52 INFO  Menu:34 - 	3. Retrieve transaction log.
+2020-01-01 15:14:52 INFO  Menu:35 - 	4. Register new user.
+2020-01-01 15:14:52 INFO  Menu:36 - 	5. Sign out.
+2020-01-01 15:14:52 INFO  Menu:37 - 	6. Exit application.
+2020-01-01 15:14:54 INFO  Menu:67 - Account #       User Name                     S. Balance          Creation Date         Status          
+2020-01-01 15:14:54 INFO  Menu:68 - ------------------------------------------------------------------------------------------------------------
+2020-01-01 15:14:54 INFO  BankMain:111 - 0               Default Default               250.0               2019-12-29            PENDING APPROVAL
+2020-01-01 15:14:54 INFO  BankMain:111 - 3               Default Default               640.0               2019-07-09            PENDING APPROVAL
+2020-01-01 15:14:54 INFO  BankMain:111 - 5               Default Default               1200.0              2019-08-08            PENDING APPROVAL
+2020-01-01 15:14:54 INFO  BankMain:114 - Choose an account number or type -1 to return to the employee menu
+2020-01-01 15:14:56 INFO  BankMain:134 - This is not a valid account number.
+2020-01-01 15:14:56 INFO  BankMain:114 - Choose an account number or type -1 to return to the employee menu

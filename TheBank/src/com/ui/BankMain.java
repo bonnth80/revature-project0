@@ -22,112 +22,7 @@ import com.userBO.UserBoImp;
 
 
 public class BankMain {
-	//private static User user;
 	private static Logger log = Logger.getLogger(BankMain.class);
-	private static final String linebreak = "------------------------------------------------------------------------------------------------------------";
-	
-	// Main methods
-	private static void displayTitle() {
-		System.out.println("--------------------------------------------- WELCOME TO: -------------------------------------------------");
-		System.out.println("                  ___           ___                                  ___           ___           ___     ");
-		System.out.println("      ___        /__/\\         /  /\\                  _____         /  /\\         /__/\\         /__/|    ");
-		System.out.println("     /  /\\       \\  \\:\\       /  /:/_                /  /::\\       /  /::\\        \\  \\:\\       |  |:|    ");
-		System.out.println("    /  /:/        \\__\\:\\     /  /:/ /\\              /  /:/\\:\\     /  /:/\\:\\        \\  \\:\\      |  |:|    ");
-		System.out.println("   /  /:/     ___ /  /::\\   /  /:/ /:/_            /  /:/~/::\\   /  /:/~/::\\   _____\\__\\:\\   __|  |:|    ");
-		System.out.println("  /  /::\\    /__/\\  /:/\\:\\ /__/:/ /:/ /\\          /__/:/ /:/\\:| /__/:/ /:/\\:\\ /__/::::::::\\ /__/\\_|:|____");
-		System.out.println(" /__/:/\\:\\   \\  \\:\\/:/__\\/ \\  \\:\\/:/ /:/          \\  \\:\\/:/~/:/ \\  \\:\\/:/__\\/ \\  \\:\\~~\\~~\\/ \\  \\:\\/:::::/");
-		System.out.println(" \\__\\/  \\:\\   \\  \\::/       \\  \\::/ /:/            \\  \\::/ /:/   \\  \\::/       \\  \\:\\  ~~~   \\  \\::/~~~~ ");
-		System.out.println("      \\  \\:\\   \\  \\:\\        \\  \\:\\/:/              \\  \\:\\/:/     \\  \\:\\        \\  \\:\\        \\  \\:\\     ");
-		System.out.println("       \\__\\/    \\  \\:\\        \\  \\::/                \\  \\::/       \\  \\:\\        \\  \\:\\        \\  \\:\\    ");
-		System.out.println("                 \\__\\/         \\__\\/                  \\__\\/         \\__\\/         \\__\\/         \\__\\/ ");
-		System.out.println(linebreak + "\n");
-	}
-
-	private static void displayEmployeeMenu() {
-		try {
-			log.info("\nPlease select from these available actions:");
-			log.info("\t1. View pending account applications. (" + new AccountBoImp().getPendingApprovalCount() + ")");
-			log.info("\t2. Retrieve customer account info.");
-			log.info("\t3. Retrieve transaction log.");
-			log.info("\t4. Register new user.");
-			log.info("\t5. Sign out.");
-			log.info("\t6. Exit application.");
-			
-		} catch (BusinessException e) {
-			log.error(e.getMessage());
-		}
-	}
-	
-	private static void displayCustomerMenu(int userId) {
-		try {
-			log.info("\nPlease select from these available actions:");
-			log.info("\t1. Apply for a new account.");
-			log.info("\t2. View accounts list.");
-			log.info("\t3. Make a withdrawal.");
-			log.info("\t4. Make a deposit");
-			log.info("\t5. Post Money Transfer.");
-				log.info("\t6. View incumbent transfer requests. (" + 
-					new TransferBoImp().getTransferCountByUserId(userId) + ")");
-			log.info("\t7. Sign out.");
-			log.info("\t8. Exit application.");
-		} catch (BusinessException e) {
-			log.error(e.getMessage());
-		}
-	}
-	
-	private static void displayPendingAccountsHeader() {
-		String accountHeader = padStringRight("Account #", 16);
-		String userNameHeader = padStringRight("User Name", 30);
-		String startBalanceHeader = padStringRight("S. Balance", 20);
-		String creationDateHeader = padStringRight("Creation Date", 22);
-		String statusHeader = padStringRight("Status", 16);
-		log.info(accountHeader + userNameHeader + startBalanceHeader + creationDateHeader + statusHeader);
-		log.info(linebreak);
-	}
-	
-	private static void displayUserActiveAccountsHeader() {
-		String accountHeader = padStringRight("Account #", 25);
-		String balanceHeader = padStringRight("Balance", 25);
-		String creationDateHeader = padStringRight("Creation Date", 25);
-		log.info(accountHeader + balanceHeader + creationDateHeader);
-		log.info(linebreak);
-	}
-
-	private static void displayPendingTransfersHeader() {
-		String transferHeader = padStringRight("Transfer Number", 20);
-		String sourceHeader = padStringRight("Source Account", 25);
-		String destinationHeader = padStringRight("Destination Account", 25);
-		String amountHeader = padStringRight("Transfer Amount", 25);
-		String dateHeader = padStringRight("Date posted", 25);
-		log.info(transferHeader + sourceHeader + destinationHeader + amountHeader + dateHeader);
-		log.info(linebreak);
-	}
-	
-	private static void displayTransactionsHeader() {
-		String transactionIdHeader = padStringRight("Transaction Id", 18);
-		String accountIdHeader = padStringRight("Account #", 12);
-		String actingPartyHeader = padStringRight("Acting Party", 20);
-		String creditHeader = padStringRight("Credit", 12);
-		String debitHeader = padStringRight("Debit", 12);
-		String dateHeader = padStringRight("Date", 15);
-		String transferId = padStringRight("Transfer Id", 15);
-		log.info(transactionIdHeader + accountIdHeader + actingPartyHeader + creditHeader + debitHeader + dateHeader + transferId);
-		log.info(linebreak);
-	}
-	
-	private static String padStringRight(String str, int maxStringSize) {
-		StringBuffer sb = new StringBuffer(str);
-		if (sb.length() < maxStringSize) {
-			while (sb.length() < maxStringSize) {
-				sb.append(" ");
-			}
-		} else if (sb.length() > maxStringSize) {
-			sb.replace(maxStringSize - 3, sb.length(), "...");
-		}
-		
-		return sb.toString();
-	}
-	
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		User user;
@@ -161,7 +56,7 @@ public class BankMain {
 			List<Account> activeAccounts;
 			List<Account> pendingAccounts;
 			List<Integer> accountNums;
-			displayTitle();
+			Menu.displayTitle();
 			do {
 				log.info("Please make a selection:\n\t1. Existing User Sign-in\n\t2. New User Sign-up\n");
 				selection = Integer.parseInt(scanner.nextLine());
@@ -191,7 +86,7 @@ public class BankMain {
 						case 0:
 							// get valid input
 							while (selection < 1 || selection > 6) {
-								displayEmployeeMenu();
+								Menu.displayEmployeeMenu();
 								selection = Integer.parseInt(scanner.nextLine());
 								if (selection < 1 && selection > 6) {
 									log.info("Please enter a valid number (1-6).");
@@ -205,14 +100,14 @@ public class BankMain {
 									pendingAccounts = new AccountBoImp().getAccountsByStatus(0);
 									accountNums = new ArrayList<>();
 									System.out.println();
-									displayPendingAccountsHeader();
+									Menu.displayPendingAccountsHeader();
 									for (Account pa : pendingAccounts) {
 										accountNums.add(pa.getAccountNumber());
-										String acctString = padStringRight(Integer.toString(pa.getAccountNumber()), 16)
-												+ padStringRight(pa.getUserFirstName() + " " + pa.getUserLastName(), 30)
-												+ padStringRight(Float.toString(pa.getStartingBalance()), 20)
-												+ padStringRight(pa.getCreationDate().toString(), 22)
-												+ padStringRight("PENDING APPROVAL",16);
+										String acctString = Menu.padStringRight(Integer.toString(pa.getAccountNumber()), 16)
+												+ Menu.padStringRight(pa.getUserFirstName() + " " + pa.getUserLastName(), 30)
+												+ Menu.padStringRight(Float.toString(pa.getStartingBalance()), 20)
+												+ Menu.padStringRight(pa.getCreationDate().toString(), 22)
+												+ Menu.padStringRight("PENDING APPROVAL",16);
 										log.info(acctString);
 									}
 									do {
@@ -259,11 +154,11 @@ public class BankMain {
 									if (accounts.size() == 0) {
 										log.info("No accounts exist under that customer name.");
 									} else {
-										displayUserActiveAccountsHeader();
+										Menu.displayUserActiveAccountsHeader();
 										for (Account acc : accounts) {
-											log.info(padStringRight(Integer.toString(acc.getAccountNumber()), 25)
-													+padStringRight(Float.toString(acc.getAvailableBalance()),25)
-													+padStringRight(acc.getCreationDate().toString(),25)
+											log.info(Menu.padStringRight(Integer.toString(acc.getAccountNumber()), 25)
+													+Menu.padStringRight(Float.toString(acc.getAvailableBalance()),25)
+													+Menu.padStringRight(acc.getCreationDate().toString(),25)
 													);
 										}
 									}									
@@ -273,10 +168,10 @@ public class BankMain {
 									selection = Integer.parseInt(scanner.nextLine());
 									if (new AccountBoImp().accountExists(selection)) {
 										Account acct = new AccountBoImp().getAccountByAccountNumber(selection);
-										displayUserActiveAccountsHeader();
-										log.info(padStringRight(Integer.toString(acct.getAccountNumber()), 25)
-												+padStringRight(Float.toString(acct.getAvailableBalance()),25)
-												+padStringRight(acct.getCreationDate().toString(),25)
+										Menu.displayUserActiveAccountsHeader();
+										log.info(Menu.padStringRight(Integer.toString(acct.getAccountNumber()), 25)
+												+Menu.padStringRight(Float.toString(acct.getAvailableBalance()),25)
+												+Menu.padStringRight(acct.getCreationDate().toString(),25)
 												);
 									} else {
 										log.info("No account with that accunt number exists.");
@@ -288,17 +183,17 @@ public class BankMain {
 								break;
 							case 3: 	// Retrieve transaction log.
 								System.out.println();
-								displayTransactionsHeader();
+								Menu.displayTransactionsHeader();
 								
 								List<Transaction> transactions = new TransactionBoImp().getAllTransactions();
 								for (Transaction t : transactions) {									
-									log.info( padStringRight(Integer.toString(t.getTransactionId()),18)
-										+ padStringRight(Integer.toString(t.getAccountId()),12)
-										+ padStringRight(t.getActingParty(),20)
-										+ padStringRight((t.getCredit() == 0.0F ? "--" : Float.toString(t.getCredit()) ),12)
-										+ padStringRight((t.getDebit() == 0.0F ? "--" : Float.toString(t.getDebit()) ),12)
-										+ padStringRight(t.getTransactionDate().toString(),15)
-										+ padStringRight( (t.getTransferId() == -1 ? "--" : Integer.toString((t.getTransferId())) ),15)
+									log.info( Menu.padStringRight(Integer.toString(t.getTransactionId()),18)
+										+ Menu.padStringRight(Integer.toString(t.getAccountId()),12)
+										+ Menu.padStringRight(t.getActingParty(),20)
+										+ Menu.padStringRight((t.getCredit() == 0.0F ? "--" : Float.toString(t.getCredit()) ),12)
+										+ Menu.padStringRight((t.getDebit() == 0.0F ? "--" : Float.toString(t.getDebit()) ),12)
+										+ Menu.padStringRight(t.getTransactionDate().toString(),15)
+										+ Menu.padStringRight( (t.getTransferId() == -1 ? "--" : Integer.toString((t.getTransferId())) ),15)
 										);
 								}
 								break;
@@ -392,7 +287,7 @@ public class BankMain {
 						case 1:
 							// get valid input
 							while (selection < 1 || selection > 8) {
-								displayCustomerMenu(user.getUserId());
+								Menu.displayCustomerMenu(user.getUserId());
 								selection = Integer.parseInt(scanner.nextLine());
 								if (selection < 1 && selection > 8) {
 									log.info("Please enter a valid number (1-8).");
@@ -430,12 +325,12 @@ public class BankMain {
 							case 2: 	// View Accounts List
 								activeAccounts = new AccountBoImp().getAccountsByUserId(user.getUserId());
 								System.out.println();
-								displayUserActiveAccountsHeader();
+								Menu.displayUserActiveAccountsHeader();
 								if (activeAccounts.size() > 0 ) {
 									for (Account acc : activeAccounts ) {
-										log.info(padStringRight(Integer.toString(acc.getAccountNumber()), 25)
-												+padStringRight(Float.toString(acc.getAvailableBalance()),25)
-												+padStringRight(acc.getCreationDate().toString(),25)
+										log.info(Menu.padStringRight(Integer.toString(acc.getAccountNumber()), 25)
+												+Menu.padStringRight(Float.toString(acc.getAvailableBalance()),25)
+												+Menu.padStringRight(acc.getCreationDate().toString(),25)
 												);
 									}									
 								} else {
@@ -448,12 +343,12 @@ public class BankMain {
 								accountNums = new ArrayList<>();
 								log.info("\nEnter the account number from which you'd like to make a withdrawal (-1 to return to menu). If you do not see your\n"
 										+ "account listed here and you believe this is in error, please contact a representative.\n");
-								displayUserActiveAccountsHeader();
+								Menu.displayUserActiveAccountsHeader();
 								for (Account acc : activeAccounts) {
 									accountNums.add(acc.getAccountNumber());
-									log.info(padStringRight(Integer.toString(acc.getAccountNumber()), 25)
-											+padStringRight(Float.toString(acc.getAvailableBalance()),25)
-											+padStringRight(acc.getCreationDate().toString(),25)
+									log.info(Menu.padStringRight(Integer.toString(acc.getAccountNumber()), 25)
+											+Menu.padStringRight(Float.toString(acc.getAvailableBalance()),25)
+											+Menu.padStringRight(acc.getCreationDate().toString(),25)
 											);
 								}
 								do {
@@ -495,12 +390,12 @@ public class BankMain {
 								System.out.println();
 								log.info("\nEnter the account number from which you'd like to make a deposit (-1 to return to menu). If you do not see your\n"
 										+ "account listed here and you believe this is in error, please contact a representative.\n");
-								displayUserActiveAccountsHeader();
+								Menu.displayUserActiveAccountsHeader();
 								for (Account acc : activeAccounts) {
 									accountNums.add(acc.getAccountNumber());
-									log.info(padStringRight(Integer.toString(acc.getAccountNumber()), 25)
-											+padStringRight(Float.toString(acc.getAvailableBalance()),25)
-											+padStringRight(acc.getCreationDate().toString(),25)
+									log.info(Menu.padStringRight(Integer.toString(acc.getAccountNumber()), 25)
+											+Menu.padStringRight(Float.toString(acc.getAvailableBalance()),25)
+											+Menu.padStringRight(acc.getCreationDate().toString(),25)
 											);
 								}
 								do {
@@ -540,12 +435,12 @@ public class BankMain {
 								System.out.println();
 								log.info("\nEnter the account number for which you'd like to transfer money from (-1 to return to menu). If you do not see your\n"
 										+ "account listed here and you believe this is in error, please contact a representative.\n");
-								displayUserActiveAccountsHeader();
+								Menu.displayUserActiveAccountsHeader();
 								for (Account acc : activeAccounts) {
 									accountNums.add(acc.getAccountNumber());
-									log.info(padStringRight(Integer.toString(acc.getAccountNumber()), 25)
-											+padStringRight(Float.toString(acc.getAvailableBalance()),25)
-											+padStringRight(acc.getCreationDate().toString(),25)
+									log.info(Menu.padStringRight(Integer.toString(acc.getAccountNumber()), 25)
+											+Menu.padStringRight(Float.toString(acc.getAvailableBalance()),25)
+											+Menu.padStringRight(acc.getCreationDate().toString(),25)
 											);
 								}
 								do {
@@ -596,17 +491,17 @@ public class BankMain {
 								break;
 							case 6:		// View incumbent transfers
 								System.out.println();
-								displayPendingTransfersHeader();
+								Menu.displayPendingTransfersHeader();
 								List<Transfer> transfers = new TransferBoImp().getTransfersByUserId(user.getUserId());
 								List<Integer> validTransfers = new ArrayList<>();
 								if (!transfers.isEmpty()) {
 									for (Transfer t : transfers) {
 										validTransfers.add(t.getTransferId());
-										log.info(padStringRight(Integer.toString(t.getTransferId()),20)
-												+padStringRight(Integer.toString(t.getSource()),25)
-												+padStringRight(Integer.toString(t.getDestination()),25)
-												+padStringRight(Float.toString(t.getAmount()),25)
-												+padStringRight(t.getRequestDate().toString(),25)
+										log.info(Menu.padStringRight(Integer.toString(t.getTransferId()),20)
+												+Menu.padStringRight(Integer.toString(t.getSource()),25)
+												+Menu.padStringRight(Integer.toString(t.getDestination()),25)
+												+Menu.padStringRight(Float.toString(t.getAmount()),25)
+												+Menu.padStringRight(t.getRequestDate().toString(),25)
 												);
 									}
 									log.info("Select a transfer request number.");
