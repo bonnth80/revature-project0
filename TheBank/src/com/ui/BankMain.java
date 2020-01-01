@@ -371,11 +371,12 @@ public class BankMain {
 									log.info("Choose an account number or type -1 to return to the customer menu");
 									selection = Integer.parseInt(scanner.nextLine());
 									if (accountNums.contains(selection)) {
+										// need source account to verify available balance
 										Account sourceAccount = new AccountBoImp().getAccountByAccountNumber(selection);
 										Float selectionAmount = -1.0F;
 										
 										do {
-											log.info("Enter the ammount you want to transfer.");
+											log.info("Enter the amount you want to withdraw.");
 											selectionAmount = Float.parseFloat(scanner.nextLine());
 											if (selectionAmount <= 0.0F) {
 												log.info("You cannot withdraw an amount of $0 or less.");
@@ -400,6 +401,48 @@ public class BankMain {
 								} while (!(accountNums.contains(selection) || selection == -1));
 								break;
 							case 4:		// Make deposit
+								activeAccounts = new AccountBoImp().getAccountsByUserId(user.getUserId());
+								accountNums = new ArrayList<>();
+								log.info("\nEnter the account number from which you'd like to make a deposit (-1 to return to menu). If you do not see your\n"
+										+ "account listed here and you believe this is in error, please contact a representative.\n");
+								displayUserActiveAccountsHeader();
+								for (Account acc : activeAccounts) {
+									accountNums.add(acc.getAccountNumber());
+									log.info(padStringRight(Integer.toString(acc.getAccountNumber()), 25)
+											+padStringRight(Float.toString(acc.getAvailableBalance()),25)
+											+padStringRight(acc.getCreationDate().toString(),25)
+											);
+								}
+								do {
+									log.info("Choose an account number or type -1 to return to the customer menu");
+									selection = Integer.parseInt(scanner.nextLine());
+									if (accountNums.contains(selection)) {
+										// source account not required since available balance is not relevant for deposits
+										Float selectionAmount = -1.0F;
+										
+										do {
+											log.info("Enter the amount you want to deposit.");
+											selectionAmount = Float.parseFloat(scanner.nextLine());											
+											if (selectionAmount <= 0.0F) {
+												log.info("You cannot deposit an amount of $0 or less.");
+											}
+											
+										} while (selectionAmount <= 0.0F);
+										
+										new TransactionBoImp().addTransaction(new Transaction(
+												new TransactionBoImp().getMaxTransactionId() + 1,
+												selection,
+												user.getFirstName() + " " + user.getLastName(),
+												selectionAmount,
+												0.0F,
+												new Date(),
+												-1
+												));
+										
+									} else if (selection != -1) {
+										log.info("This is not a valid account number.");
+									}
+								} while (!(accountNums.contains(selection) || selection == -1));
 								break;
 							case 5: 	// Post money transfer
 								activeAccounts = new AccountBoImp().getAccountsByUserId(user.getUserId());
