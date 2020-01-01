@@ -44,24 +44,10 @@ public class BankMain {
 		System.out.println(linebreak + "\n");
 	}
 
-	private static int getApplyCount() throws BusinessException {
-		AccountBO acct = new AccountBoImp();
-		return acct.getPendingApprovalCount();
-	}	
-	
-	private static int getPendingTransferCount(int userId) throws BusinessException {
-		TransferBO transfer = new TransferBoImp();
-		return transfer.getTransferCountByUserId(userId);
-	}
-	
-	private static void displaySignInPage() {
-		log.info("Please make a selection:\n\t1. Existing User Sign-in\n\t2. New User Sign-up\n");
-	}
-	
 	private static void displayEmployeeMenu() {
 		try {
 			log.info("\nPlease select from these available actions:");
-			log.info("\t1. View pending account applications. (" + getApplyCount() + ")");
+			log.info("\t1. View pending account applications. (" + new AccountBoImp().getPendingApprovalCount() + ")");
 			log.info("\t2. Retrieve customer account info.");
 			log.info("\t3. Retrieve transaction log.");
 			log.info("\t4. Register new user.");
@@ -73,16 +59,21 @@ public class BankMain {
 		}
 	}
 	
-	private static void displayCustomerMenu(int userId) throws BusinessException {
-		log.info("\nPlease select from these available actions:");
-		log.info("\t1. Apply for a new account.");
-		log.info("\t2. View account balance.");
-		log.info("\t3. Make a withdrawal.");
-		log.info("\t4. Make a deposit");
-		log.info("\t5. Post Money Transfer.");
-		log.info("\t6. View incumbent transfer requests. (" + getPendingTransferCount(userId) + ")");
-		log.info("\t7. Sign out.");
-		log.info("\t8. Exit application.");
+	private static void displayCustomerMenu(int userId) {
+		try {
+			log.info("\nPlease select from these available actions:");
+			log.info("\t1. Apply for a new account.");
+			log.info("\t2. View accounts list.");
+			log.info("\t3. Make a withdrawal.");
+			log.info("\t4. Make a deposit");
+			log.info("\t5. Post Money Transfer.");
+				log.info("\t6. View incumbent transfer requests. (" + 
+					new TransferBoImp().getTransferCountByUserId(userId) + ")");
+			log.info("\t7. Sign out.");
+			log.info("\t8. Exit application.");
+		} catch (BusinessException e) {
+			log.error(e.getMessage());
+		}
 	}
 	
 	private static void displayPendingAccountsHeader() {
@@ -145,7 +136,7 @@ public class BankMain {
 			List<Integer> accountNums;
 			displayTitle();
 			do {
-				displaySignInPage();
+				log.info("Please make a selection:\n\t1. Existing User Sign-in\n\t2. New User Sign-up\n");
 				selection = Integer.parseInt(scanner.nextLine());
 				if (!(selection == 1 || selection == 2)) {
 					log.info("Invalid selection.");
@@ -183,7 +174,7 @@ public class BankMain {
 							// execute employee selection
 							switch (selection) {
 							case 1:		// View pending account applications
-								if (getApplyCount() > 0) {
+								if (new AccountBoImp().getPendingApprovalCount() > 0) {
 									pendingAccounts = new AccountBoImp().getAccountsByStatus(0);
 									accountNums = new ArrayList<>();
 									displayPendingAccountsHeader();
@@ -352,7 +343,7 @@ public class BankMain {
 								
 								
 								break;
-							case 2: 	// View Account Balance
+							case 2: 	// View Accounts List
 								break;
 							case 3: 	// Make Withdrawal
 								activeAccounts = new AccountBoImp().getAccountsByUserId(user.getUserId());
