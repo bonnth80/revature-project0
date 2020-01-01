@@ -71,5 +71,10 @@ public class AccountBoImp implements AccountBO {
 		return new AccountDaoImp().getUserLastName(account);
 	}
 
+	@Override
+	public List<Account> getAccountsByUserName(String firstName, String lastName) throws BusinessException {
+		return new AccountDaoImp().getAccountsByUserName(firstName, lastName);
+	}
+
 
 }

@@ -241,4 +241,43 @@ public class AccountDaoImp implements AccountDAO {
 		}
 	}
 
+	@Override
+	public List<Account> getAccountsByUserName(String firstName, String lastName) throws BusinessException {
+		List<Account> accounts = new ArrayList<>();
+		try (Connection connection = OracleConnection.getConnection()) {
+			String sql = "SELECT acc.account_n, acc.user_id, acc.creation_date, acc.status, acc.starting_balance, NVL(acc.starting_balance + SUM(acc.credit) - SUM(acc.debit), acc.starting_balance) as available_balance "
+					+ "FROM ("
+					+ "    SELECT a.account_number AS account_n, a.user_id AS user_id, a.creation_date AS creation_date, a.status AS status,a.starting_balance AS starting_balance, th.credit AS credit, th.debit AS debit "
+					+ "    FROM account a "
+					+ "    LEFT OUTER JOIN transaction_history th "
+					+ "    ON th.account_number = a.account_number "
+					+ ") acc "
+					+ "INNER JOIN bank_user bu "
+					+ "ON acc.user_id = bu.user_id "
+					+ "WHERE bu.first_name = ? and bu.last_name = ? "
+					+ "GROUP BY acc.account_n, acc.user_id, acc.creation_date, acc.status, acc.starting_balance "
+					+ "ORDER BY account_n";
+			PreparedStatement ps = connection.prepareStatement(sql);
+			ps.setString(1, firstName);
+			ps.setString(2, lastName);
+			
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()) {
+				accounts.add(new Account(
+						rs.getInt(1),
+						rs.getInt(2),
+						rs.getDate(3),
+						rs.getInt(4),
+						rs.getFloat(5),
+						rs.getFloat(6)
+						));
+			}
+			
+			
+			return accounts;		
+		} catch (ClassNotFoundException | SQLException e) {
+			throw new BusinessException("Internal error: " + e);
+		}
+	}
+
 }

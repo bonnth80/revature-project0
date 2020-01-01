@@ -133,6 +133,7 @@ public class BankMain {
 		User user;
 		String username;
 		String password;
+		String name;
 		int selection = 0;
 		boolean runAppLoop = true;
 		boolean runUserLoop = true;
@@ -203,6 +204,7 @@ public class BankMain {
 								if (new AccountBoImp().getPendingApprovalCount() > 0) {
 									pendingAccounts = new AccountBoImp().getAccountsByStatus(0);
 									accountNums = new ArrayList<>();
+									System.out.println();
 									displayPendingAccountsHeader();
 									for (Account pa : pendingAccounts) {
 										accountNums.add(pa.getAccountNumber());
@@ -242,7 +244,47 @@ public class BankMain {
 								}
 								break;
 							case 2: 	// Retrieve customer account info.
+								System.out.println();
+								log.info("Please select how you want to search for an accout: ");
+								log.info("1. Search by customer's first and last names.");
+								log.info("2. Search by account number.");
+								selection = Integer.parseInt( scanner.nextLine() );
 								
+								switch (selection) {
+								case 1:
+									log.info("\nEnter the first and last name to search for accounts on record for that customer.");
+									name = scanner.nextLine();
+									String[] fullName = name.split(" ");
+									List<Account> accounts = new AccountBoImp().getAccountsByUserName(fullName[0], fullName[1]);
+									if (accounts.size() == 0) {
+										log.info("No accounts exist under that customer name.");
+									} else {
+										displayUserActiveAccountsHeader();
+										for (Account acc : accounts) {
+											log.info(padStringRight(Integer.toString(acc.getAccountNumber()), 25)
+													+padStringRight(Float.toString(acc.getAvailableBalance()),25)
+													+padStringRight(acc.getCreationDate().toString(),25)
+													);
+										}
+									}									
+									break;
+								case 2:
+									log.info("\nEnter the account number for the account you wish to view.");
+									selection = Integer.parseInt(scanner.nextLine());
+									if (new AccountBoImp().accountExists(selection)) {
+										Account acct = new AccountBoImp().getAccountByAccountNumber(selection);
+										displayUserActiveAccountsHeader();
+										log.info(padStringRight(Integer.toString(acct.getAccountNumber()), 25)
+												+padStringRight(Float.toString(acct.getAvailableBalance()),25)
+												+padStringRight(acct.getCreationDate().toString(),25)
+												);
+									} else {
+										log.info("No account with that accunt number exists.");
+									}
+									break;
+								default:
+									log.info("Invalid Selection. Returning to menu...");
+								}
 								break;
 							case 3: 	// Retrieve transaction log.
 								System.out.println();
@@ -261,6 +303,7 @@ public class BankMain {
 								}
 								break;
 							case 4:		// Register New User
+								System.out.println();
 								log.info("Welcome to New User creation. Please enter the information as follows.");
 								int newUserId;
 								String firstName;

@@ -9,11 +9,14 @@ import com.bank.to.Account;
 public interface AccountBO {
 	Account getAccountByAccountNumber(int accountNumber) throws BusinessException;
 	List<Account> getAccountsByUserId(int userId) throws BusinessException;
+	List<Account> getAccountsByUserName(String firstName, String lastName) throws BusinessException;
+	boolean accountExists(int accountNumber) throws BusinessException;
 	int getMaxAccountNumber() throws BusinessException;
-	public int getPendingApprovalCount() throws BusinessException;
+	int getPendingApprovalCount() throws BusinessException;
 	List<Account> getAccountsByCreationDate(Date date);
 	List<Account> getAccountsByStatus(int status) throws BusinessException;
+	
+	
 	boolean addNewAccount(Account account) throws BusinessException;
 	boolean updateAccountStatus(Account account, int status) throws BusinessException;
-	boolean accountExists(int accountNumber) throws BusinessException;
 }
