@@ -140,11 +140,12 @@ public class TransferDaoImp implements TransferDAO {
 		boolean execute;
 		try (Connection connection = OracleConnection.getConnection()) {
 			String sql = "UPDATE transfer_request "
-					+ "SET status = ? "
+					+ "SET status = ?, response_date = ? "
 					+ "WHERE transfer_id = ?";
 			PreparedStatement ps = connection.prepareStatement(sql);
 			ps.setInt(1, status);
-			ps.setInt(2, transfer.getTransferId());
+			ps.setDate(2, new java.sql.Date(new Date().getTime()));
+			ps.setInt(3, transfer.getTransferId());
 			execute = ps.execute();			
 		} catch (ClassNotFoundException | SQLException e) {
 			throw new BusinessException("Internal error: " + e);
