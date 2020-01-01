@@ -33,13 +33,17 @@ public class TransferDaoImp implements TransferDAO {
 	}
 	
 	@Override
-	public int getTransferCount(int accountId) throws BusinessException {
+	public int getTransferCountByUserId(int userId) throws BusinessException {
 		int count = 0;
 		try (Connection connection = OracleConnection.getConnection()) {
-			String sql = "SELECT COUNT(*) FROM transfer_request "
-					+ "WHERE status = 0 AND source = ?";
+			String sql =  "SELECT COUNT(*) "
+					+ "FROM transfer_request tr "
+					+ "INNER JOIN account a "
+					+ "ON a.account_number = tr.destination_account "
+					+ "WHERE a.user_id = ? "
+					+ "ORDER BY tr.transfer_id";
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
-			preparedStatement.setInt(1, accountId);
+			preparedStatement.setInt(1, userId);
 			ResultSet result = preparedStatement.executeQuery();
 			result.next();
 			count = result.getInt(1);

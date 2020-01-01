@@ -9,7 +9,7 @@ import com.bank.to.Transfer;
 public interface TransferDAO {
 	Transfer getTransferById(int id);
 	int getMaxTriggerId() throws BusinessException;
-	int getTransferCount(int accountId) throws BusinessException;
+	int getTransferCountByUserId(int userId) throws BusinessException;
 	List<Transfer> getTransfersBySourceAccount(int accountId);
 	List<Transfer> getTransfersByDestinationAccount(int accountId);
 	List<Transfer> getTransfersByStatus(int status);

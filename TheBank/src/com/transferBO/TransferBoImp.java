@@ -22,9 +22,9 @@ public class TransferBoImp implements TransferBO {
 	}
 	
 	@Override
-	public int getTransferCount(int accountId) throws BusinessException {
+	public int getTransferCountByUserId(int userId) throws BusinessException {
 		TransferDAO dao = new TransferDaoImp();
-		return dao.getTransferCount(accountId);
+		return dao.getTransferCountByUserId(userId);
 	}
 	
 	@Override

@@ -46,9 +46,9 @@ public class BankMain {
 		return acct.getPendingApprovalCount();
 	}	
 	
-	private static int getPendingTransferCount(int accountId) throws BusinessException {
+	private static int getPendingTransferCount(int userId) throws BusinessException {
 		TransferBO transfer = new TransferBoImp();
-		return transfer.getTransferCount(accountId);
+		return transfer.getTransferCountByUserId(userId);
 	}
 	
 	private static void displaySignInPage() {
@@ -70,15 +70,16 @@ public class BankMain {
 		}
 	}
 	
-	private static void displayCustomerMenu() {
+	private static void displayCustomerMenu(int userId) throws BusinessException {
 		log.info("\nPlease select from these available actions:");
 		log.info("\t1. Apply for a new account.");
 		log.info("\t2. View account balance.");
 		log.info("\t3. Make a withdrawal.");
 		log.info("\t4. Make a deposit");
 		log.info("\t5. Post Money Transfer.");
-		log.info("\t6. Sign out.");
-		log.info("\t7. Exit application.");
+		log.info("\t6. View incumbent transfer requests. (" + getPendingTransferCount(userId) + ")");
+		log.info("\t7. Sign out.");
+		log.info("\t8. Exit application.");
 	}
 	
 	private static void displayPendingAccountsHeader() {
@@ -301,11 +302,11 @@ public class BankMain {
 						// Customer Menu
 						case 1:
 							// get valid input
-							while (selection < 1 || selection > 7) {
-								displayCustomerMenu();
+							while (selection < 1 || selection > 8) {
+								displayCustomerMenu(user.getUserId());
 								selection = Integer.parseInt(scanner.nextLine());
-								if (selection < 1 && selection > 7) {
-									log.info("Please enter a valid number (1-7).");
+								if (selection < 1 && selection > 8) {
+									log.info("Please enter a valid number (1-8).");
 								}
 							}
 							
@@ -401,10 +402,12 @@ public class BankMain {
 								
 								
 								break;
-							case 6: 	// Sign out
+							case 6:		// View incumbent transfers
+								break;
+							case 7: 	// Sign out
 								runUserLoop = false;
 								break;
-							case 7:		// Exit application
+							case 8:		// Exit application
 								runUserLoop = false;
 								runAppLoop = false;
 								break;
