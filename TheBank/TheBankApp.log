@@ -41,3 +41,92 @@ Please select from these available actions:
 2020-01-01 15:14:54 INFO  BankMain:114 - Choose an account number or type -1 to return to the employee menu
 2020-01-01 15:14:56 INFO  BankMain:134 - This is not a valid account number.
 2020-01-01 15:14:56 INFO  BankMain:114 - Choose an account number or type -1 to return to the employee menu
+2020-01-01 16:54:14 INFO  BankMain:61 - Please make a selection:
+	1. Existing User Sign-in
+	2. New User Sign-up
+
+2020-01-01 16:54:18 INFO  BankMain:70 - Username:
+2020-01-01 16:54:20 INFO  BankMain:72 - Password: 
+2020-01-01 16:54:21 INFO  BankMain:78 - 
+Current user is: Employee
+2020-01-01 16:54:21 INFO  Menu:31 - 
+Please select from these available actions:
+2020-01-01 16:54:21 INFO  Menu:32 - 	1. View pending account applications. (3)
+2020-01-01 16:54:21 INFO  Menu:33 - 	2. Retrieve customer account info.
+2020-01-01 16:54:21 INFO  Menu:34 - 	3. Retrieve transaction log.
+2020-01-01 16:54:21 INFO  Menu:35 - 	4. Register new user.
+2020-01-01 16:54:21 INFO  Menu:36 - 	5. Sign out.
+2020-01-01 16:54:21 INFO  Menu:37 - 	6. Exit application.
+2020-01-01 16:54:34 INFO  BankMain:61 - Please make a selection:
+	1. Existing User Sign-in
+	2. New User Sign-up
+
+2020-01-01 16:54:37 INFO  BankMain:70 - Username:
+2020-01-01 16:54:43 INFO  BankMain:72 - Password: 
+2020-01-01 16:54:45 INFO  BankMain:78 - 
+Current user is: Customer
+2020-01-01 16:54:45 INFO  Menu:46 - 
+Please select from these available actions:
+2020-01-01 16:54:45 INFO  Menu:47 - 	1. Apply for a new account.
+2020-01-01 16:54:45 INFO  Menu:48 - 	2. View accounts list.
+2020-01-01 16:54:45 INFO  Menu:49 - 	3. Make a withdrawal.
+2020-01-01 16:54:45 INFO  Menu:50 - 	4. Make a deposit
+2020-01-01 16:54:45 INFO  Menu:51 - 	5. Post Money Transfer.
+2020-01-01 16:54:45 INFO  Menu:52 - 	6. View incumbent transfer requests. (0)
+2020-01-01 16:54:45 INFO  Menu:54 - 	7. Sign out.
+2020-01-01 16:54:45 INFO  Menu:55 - 	8. Exit application.
+2020-01-01 16:54:55 INFO  BankMain:61 - Please make a selection:
+	1. Existing User Sign-in
+	2. New User Sign-up
+
+2020-01-01 16:54:57 INFO  BankMain:70 - Username:
+2020-01-01 16:55:00 INFO  BankMain:72 - Password: 
+2020-01-01 16:55:06 INFO  BankMain:78 - 
+Current user is: Customer
+2020-01-01 16:55:06 INFO  Menu:46 - 
+Please select from these available actions:
+2020-01-01 16:55:06 INFO  Menu:47 - 	1. Apply for a new account.
+2020-01-01 16:55:06 INFO  Menu:48 - 	2. View accounts list.
+2020-01-01 16:55:06 INFO  Menu:49 - 	3. Make a withdrawal.
+2020-01-01 16:55:06 INFO  Menu:50 - 	4. Make a deposit
+2020-01-01 16:55:06 INFO  Menu:51 - 	5. Post Money Transfer.
+2020-01-01 16:55:06 INFO  Menu:52 - 	6. View incumbent transfer requests. (0)
+2020-01-01 16:55:06 INFO  Menu:54 - 	7. Sign out.
+2020-01-01 16:55:06 INFO  Menu:55 - 	8. Exit application.
+2020-01-01 16:55:10 INFO  BankMain:301 - Welcome to your Account application. Please enter the information as follows.
+2020-01-01 16:55:10 INFO  BankMain:306 - How much would you like to deposit for your starting balance? (0 to cancel)
+2020-01-01 16:55:16 INFO  BankMain:315 - Application submitted. You will be notified when your account application has been approved.
+Congratulations on investing in your future, and we look forward to doing business with you.
+2020-01-01 16:55:16 INFO  Menu:46 - 
+Please select from these available actions:
+2020-01-01 16:55:16 INFO  Menu:47 - 	1. Apply for a new account.
+2020-01-01 16:55:16 INFO  Menu:48 - 	2. View accounts list.
+2020-01-01 16:55:16 INFO  Menu:49 - 	3. Make a withdrawal.
+2020-01-01 16:55:16 INFO  Menu:50 - 	4. Make a deposit
+2020-01-01 16:55:16 INFO  Menu:51 - 	5. Post Money Transfer.
+2020-01-01 16:55:16 INFO  Menu:52 - 	6. View incumbent transfer requests. (0)
+2020-01-01 16:55:16 INFO  Menu:54 - 	7. Sign out.
+2020-01-01 16:55:16 INFO  Menu:55 - 	8. Exit application.
+2020-01-01 16:55:20 INFO  BankMain:61 - Please make a selection:
+	1. Existing User Sign-in
+	2. New User Sign-up
+
+2020-01-01 16:55:22 INFO  BankMain:70 - Username:
+2020-01-01 16:55:23 INFO  BankMain:72 - Password: 
+2020-01-01 16:55:24 INFO  BankMain:78 - 
+Current user is: Employee
+2020-01-01 16:55:24 INFO  Menu:31 - 
+Please select from these available actions:
+2020-01-01 16:55:24 INFO  Menu:32 - 	1. View pending account applications. (4)
+2020-01-01 16:55:24 INFO  Menu:33 - 	2. Retrieve customer account info.
+2020-01-01 16:55:24 INFO  Menu:34 - 	3. Retrieve transaction log.
+2020-01-01 16:55:24 INFO  Menu:35 - 	4. Register new user.
+2020-01-01 16:55:24 INFO  Menu:36 - 	5. Sign out.
+2020-01-01 16:55:24 INFO  Menu:37 - 	6. Exit application.
+2020-01-01 16:55:26 INFO  Menu:67 - Account #       User Name                     S. Balance          Creation Date         Status          
+2020-01-01 16:55:26 INFO  Menu:68 - ------------------------------------------------------------------------------------------------------------
+2020-01-01 16:55:26 INFO  BankMain:111 - 0               Default Default               250.0               2019-12-29            PENDING APPROVAL
+2020-01-01 16:55:26 INFO  BankMain:111 - 3               Default Default               640.0               2019-07-09            PENDING APPROVAL
+2020-01-01 16:55:26 INFO  BankMain:111 - 5               Default Default               1200.0              2019-08-08            PENDING APPROVAL
+2020-01-01 16:55:26 INFO  BankMain:111 - 10              Jake Jellyhall                4000.0              2020-01-01            PENDING APPROVAL
+2020-01-01 16:55:26 INFO  BankMain:114 - Choose an account number or type -1 to return to the employee menu

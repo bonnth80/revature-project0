@@ -177,8 +177,7 @@ public class AccountDaoImp implements AccountDAO {
 	@Override
 	public boolean addNewAccount(Account account) throws BusinessException {
 		try (Connection connection = OracleConnection.getConnection()) {
-			String sql = "INSERT INTO account "
-					+ "VALUES (?,?,?,?,?)";
+			String sql = "{call EASY_ACCOUNT_ADD(?,?,?,?,?)}";
 			PreparedStatement ps = connection.prepareStatement(sql);
 			ps.setInt(1, account.getAccountNumber());
 			ps.setInt(2, account.getUserId());
