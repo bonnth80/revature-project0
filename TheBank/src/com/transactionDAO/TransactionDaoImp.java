@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.Types;
 import java.util.Date;
 import java.util.List;
 
@@ -58,7 +59,7 @@ public class TransactionDaoImp implements TransactionDAO {
 
 	@Override
 	public boolean addTransaction(Transaction transaction) throws BusinessException {
-
+		// Set transaction.transferId to -1 if you want a null value
 		try (Connection connection = OracleConnection.getConnection()) {
 			String sql = "INSERT INTO transaction_history "
 					+ "VALUES (?,?,?,?,?,?,?)";
@@ -69,7 +70,11 @@ public class TransactionDaoImp implements TransactionDAO {
 			ps.setFloat(4, transaction.getCredit());
 			ps.setFloat(5,  transaction.getDebit());
 			ps.setDate(6, new java.sql.Date(transaction.getTransactionDate().getTime()));
-			ps.setInt(7, transaction.getTransferId());
+			if (transaction.getTransferId() == -1) {
+				ps.setInt(7, transaction.getTransferId());				
+			} else {
+				ps.setNull(7,  Types.INTEGER);
+			}
 			return ps.execute();			
 		} catch (ClassNotFoundException | SQLException e) {
 			throw new BusinessException("Internal error: " + e);

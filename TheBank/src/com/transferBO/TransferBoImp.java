@@ -5,7 +5,6 @@ import java.util.List;
 
 import com.bank.exception.BusinessException;
 import com.bank.to.Transfer;
-import com.transferDAO.TransferDAO;
 import com.transferDAO.TransferDaoImp;
 
 public class TransferBoImp implements TransferBO {

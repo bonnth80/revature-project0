@@ -12,8 +12,10 @@ import com.accountBO.AccountBoImp;
 import com.accountDAO.AccountDaoImp;
 import com.bank.exception.BusinessException;
 import com.bank.to.Account;
+import com.bank.to.Transaction;
 import com.bank.to.Transfer;
 import com.bank.to.User;
+import com.transactionBO.TransactionBoImp;
 import com.transferBO.TransferBO;
 import com.transferBO.TransferBoImp;
 import com.transferDAO.TransferDaoImp;
@@ -138,7 +140,9 @@ public class BankMain {
 			user = null;
 			username = "";
 			password = "";
-			
+			List<Account> activeAccounts;
+			List<Account> pendingAccounts;
+			List<Integer> accountNums;
 			displayTitle();
 			do {
 				displaySignInPage();
@@ -180,8 +184,8 @@ public class BankMain {
 							switch (selection) {
 							case 1:		// View pending account applications
 								if (getApplyCount() > 0) {
-									List<Account> pendingAccounts = new AccountBoImp().getAccountsByStatus(0);
-									List<Integer> accountNums = new ArrayList<>();
+									pendingAccounts = new AccountBoImp().getAccountsByStatus(0);
+									accountNums = new ArrayList<>();
 									displayPendingAccountsHeader();
 									for (Account pa : pendingAccounts) {
 										accountNums.add(pa.getAccountNumber());
@@ -351,12 +355,55 @@ public class BankMain {
 							case 2: 	// View Account Balance
 								break;
 							case 3: 	// Make Withdrawal
+								activeAccounts = new AccountBoImp().getAccountsByUserId(user.getUserId());
+								accountNums = new ArrayList<>();
+								log.info("\nEnter the account number from which you'd like to make a withdrawal (-1 to return to menu). If you do not see your\n"
+										+ "account listed here and you believe this is in error, please contact a representative.\n");
+								displayUserActiveAccountsHeader();
+								for (Account acc : activeAccounts) {
+									accountNums.add(acc.getAccountNumber());
+									log.info(padStringRight(Integer.toString(acc.getAccountNumber()), 25)
+											+padStringRight(Float.toString(acc.getAvailableBalance()),25)
+											+padStringRight(acc.getCreationDate().toString(),25)
+											);
+								}
+								do {
+									log.info("Choose an account number or type -1 to return to the customer menu");
+									selection = Integer.parseInt(scanner.nextLine());
+									if (accountNums.contains(selection)) {
+										Account sourceAccount = new AccountBoImp().getAccountByAccountNumber(selection);
+										Float selectionAmount = -1.0F;
+										
+										do {
+											log.info("Enter the ammount you want to transfer.");
+											selectionAmount = Float.parseFloat(scanner.nextLine());
+											if (selectionAmount <= 0.0F) {
+												log.info("You cannot withdraw an amount of $0 or less.");
+											} else if (selectionAmount > sourceAccount.getAvailableBalance()) {
+												log.info("Your withdrawal cannot exceed your available balance.");
+											}
+										} while (selectionAmount <= 0.0F || selectionAmount > sourceAccount.getAvailableBalance());
+										
+										new TransactionBoImp().addTransaction(new Transaction(
+												new TransactionBoImp().getMaxTransactionId() + 1,
+												selection,
+												user.getFirstName() + " " + user.getLastName(),
+												0.0F,
+												selectionAmount,
+												new Date(),
+												-1
+												));
+										
+									} else if (selection != -1) {
+										log.info("This is not a valid account number.");
+									}
+								} while (!(accountNums.contains(selection) || selection == -1));
 								break;
 							case 4:		// Make deposit
 								break;
 							case 5: 	// Post money transfer
-								List<Account> activeAccounts = new AccountBoImp().getAccountsByUserId(user.getUserId());
-								List<Integer> accountNums = new ArrayList<>();
+								activeAccounts = new AccountBoImp().getAccountsByUserId(user.getUserId());
+								accountNums = new ArrayList<>();
 								log.info("\nEnter the account number for which you'd like to transfer money from (-1 to return to menu). If you do not see your\n"
 										+ "account listed here and you believe this is in error, please contact a representative.\n");
 								displayUserActiveAccountsHeader();

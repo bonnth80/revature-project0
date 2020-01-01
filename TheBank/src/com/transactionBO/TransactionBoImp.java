@@ -41,8 +41,7 @@ public class TransactionBoImp implements TransactionBO {
 
 	@Override
 	public boolean addTransaction(Transaction transaction) throws BusinessException {
-		// TODO Auto-generated method stub
-		return false;
+		return new TransactionDaoImp().addTransaction(transaction);
 	}
 
 	@Override
