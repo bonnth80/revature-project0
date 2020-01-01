@@ -15,4 +15,5 @@ public interface TransactionDAO {
 	
 	boolean addTransaction(Transaction transaction) throws BusinessException;
 	int getMaxTransactionId() throws BusinessException;
+	List<Transaction> getAllTransactions() throws BusinessException;
 }

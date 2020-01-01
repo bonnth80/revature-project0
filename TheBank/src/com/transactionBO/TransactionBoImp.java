@@ -14,6 +14,11 @@ public class TransactionBoImp implements TransactionBO {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	@Override
+	public List<Transaction> getAllTransactions() throws BusinessException {
+		return new TransactionDaoImp().getAllTransactions();
+	}
 
 	@Override
 	public List<Transaction> getTransactionsByAccountId(int accountId) {

@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Types;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -28,6 +29,34 @@ public class TransactionDaoImp implements TransactionDAO {
 			ResultSet rs = statement.executeQuery("SELECT MAX(transaction_id) FROM transaction_history");
 			rs.next();
 			return rs.getInt(1);
+		} catch (ClassNotFoundException | SQLException e) {
+			throw new BusinessException("Internal error: " + e);
+		}
+	}
+	
+	@Override
+	public List<Transaction> getAllTransactions() throws BusinessException {
+		List<Transaction> transactions = new ArrayList<>();
+		try (Connection connection = OracleConnection.getConnection()) {
+			String sql = "SELECT transaction_id, account_number, acting_party, credit, debit, transaction_date, NVL(transfer_id, -1)"
+					+ "FROM transaction_history "
+					+ "ORDER BY transaction_id";
+			PreparedStatement ps = connection.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			
+			while (rs.next()) {
+				transactions.add(new Transaction(
+						rs.getInt(1),
+						rs.getInt(2),
+						rs.getString(3),
+						rs.getFloat(4),
+						rs.getFloat(5),
+						rs.getDate(6),
+						rs.getInt(7)
+						));
+			}
+			
+			return transactions;			
 		} catch (ClassNotFoundException | SQLException e) {
 			throw new BusinessException("Internal error: " + e);
 		}

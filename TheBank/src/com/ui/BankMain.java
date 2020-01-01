@@ -7,7 +7,6 @@ import java.util.Scanner;
 
 import org.apache.log4j.Logger;
 
-import com.accountBO.AccountBO;
 import com.accountBO.AccountBoImp;
 import com.accountDAO.AccountDaoImp;
 import com.bank.exception.BusinessException;
@@ -15,8 +14,8 @@ import com.bank.to.Account;
 import com.bank.to.Transaction;
 import com.bank.to.Transfer;
 import com.bank.to.User;
+import com.dbutil.OracleConnection;
 import com.transactionBO.TransactionBoImp;
-import com.transferBO.TransferBO;
 import com.transferBO.TransferBoImp;
 import com.transferDAO.TransferDaoImp;
 import com.userBO.UserBoImp;
@@ -104,6 +103,18 @@ public class BankMain {
 		log.info(linebreak);
 	}
 	
+	private static void displayTransactionsHeader() {
+		String transactionIdHeader = padStringRight("Transaction Id", 18);
+		String accountIdHeader = padStringRight("Account #", 12);
+		String actingPartyHeader = padStringRight("Acting Party", 20);
+		String creditHeader = padStringRight("Credit", 12);
+		String debitHeader = padStringRight("Debit", 12);
+		String dateHeader = padStringRight("Date", 15);
+		String transferId = padStringRight("Transfer Id", 15);
+		log.info(transactionIdHeader + accountIdHeader + actingPartyHeader + creditHeader + debitHeader + dateHeader + transferId);
+		log.info(linebreak);
+	}
+	
 	private static String padStringRight(String str, int maxStringSize) {
 		StringBuffer sb = new StringBuffer(str);
 		if (sb.length() < maxStringSize) {
@@ -125,6 +136,21 @@ public class BankMain {
 		int selection = 0;
 		boolean runAppLoop = true;
 		boolean runUserLoop = true;
+		
+		// Setup up Oracle custom connection
+		if (args.length >= 1) {
+			System.out.println("HOLY SHIT!");
+			String dbUrl = args[0];
+			OracleConnection.setConnectionURL(dbUrl);			
+		}
+		
+		if (args.length == 3) {
+			System.out.println("HOLY SHIT!");
+			String dbUn = args[1];
+			String dbPw = args[2];
+			OracleConnection.setUsername(dbUn);
+			OracleConnection.setPassword(dbPw);			
+		}
 		
 		while (runAppLoop) {
 			runUserLoop = true;
@@ -219,6 +245,23 @@ public class BankMain {
 								
 								break;
 							case 3: 	// Retrieve transaction log.
+								System.out.println();
+								displayTransactionsHeader();
+								
+								List<Transaction> transactions = new TransactionBoImp().getAllTransactions();
+//								System.out.println(transactions.size());
+//								scanner.nextLine();
+								
+								for (Transaction t : transactions) {									
+									log.info( padStringRight(Integer.toString(t.getTransactionId()),18)
+										+ padStringRight(Integer.toString(t.getAccountId()),12)
+										+ padStringRight(t.getActingParty(),20)
+										+ padStringRight((t.getCredit() == 0.0F ? "--" : Float.toString(t.getCredit()) ),12)
+										+ padStringRight((t.getDebit() == 0.0F ? "--" : Float.toString(t.getDebit()) ),12)
+										+ padStringRight(t.getTransactionDate().toString(),15)
+										+ padStringRight( (t.getTransferId() == -1 ? "--" : Integer.toString((t.getTransferId())) ),15)
+);
+								}
 								break;
 							case 4:		// Register New User
 								log.info("Welcome to New User creation. Please enter the information as follows.");
