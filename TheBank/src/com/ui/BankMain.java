@@ -371,8 +371,10 @@ public class BankMain {
 													selectionAmount = Float.parseFloat(scanner.nextLine());
 													if (selectionAmount <= 0.0F) {
 														log.info("You cannot transfer an amount of $0 or less.");
+													} else if (selectionAmount > sourceAccount.getAvailableBalance()) {
+														log.info("Your transfer cannot exceed your available balance.");
 													}
-												} while (selectionAmount <= 0.0F);
+												} while (selectionAmount <= 0.0F || selectionAmount > sourceAccount.getAvailableBalance());
 												
 												Transfer transfer = new Transfer(
 															new TransferBoImp().getMaxTriggerId() +1,
